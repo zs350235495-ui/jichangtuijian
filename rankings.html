@@ -1,0 +1,2503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>推荐排行榜 | 机场图鉴</title>
+  <meta name="description" content="按服务质量、性价比、解锁能力与长期稳定性排序，包含实测延迟、测速报告与套餐对比。">
+  <link rel="canonical" href="https://jichangtujian.vip/rankings.html">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="./assets/logo-mark.svg" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <!-- Breadcrumb -->
+    <div class="mx-auto max-w-6xl px-6 pt-8">
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80" aria-current="page">推荐排行榜</span>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- Title & Intro -->
+    <div class="mx-auto max-w-6xl px-6 py-8">
+      <div>
+        <h1 class="font-display mt-1 text-2xl font-semibold text-ink md:text-3xl">
+          综合推荐排行榜清单
+        </h1>
+        <p class="mt-2 text-ink/70 max-w-3xl text-sm md:text-base leading-relaxed">
+          按线路质量、流量性价比、流媒体与 AI 服务解锁能力和长期稳定性综合排序，附各方案实测速度与关键参数。
+        </p>
+      </div>
+
+      <!-- Disclaimer notice -->
+      <div class="mt-6 card p-4">
+        <p class="text-xs leading-relaxed text-ink/70">
+          <strong>评测说明：</strong>实测数据为晚高峰时段采样，受各地区骨干网与运营商调度影响可能存在微小差异；套餐与优惠信息以官方实时发布为准。本框架展示结构与样式完全按照原站 1:1 还原。
+        </p>
+      </div>
+
+      <!-- Layout: Ranking Cards List + Quick Navigation Aside -->
+      <div class="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_240px]">
+
+        <!-- Left: Ranking Cards List -->
+        <div class="space-y-10">
+
+          <!-- Card 1: 环球梯 -->
+          <div id="item-1" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-paper">
+                  1
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">环球梯</h2>
+                    <span class="rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">编辑精选 No.1</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">60GB - 600GB · 优质专线网络 · 7折后低至 ¥5.60/月起 (月付 ¥14.70/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./post.html" class="btn-secondary text-sm">
+                  查看深度评测 →
+                </a>
+                <a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达环球梯官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                综合实力位列榜首，主打优质精品专线网络与高峰期稳定性优化。全原生节点覆盖，完美解锁 Netflix、Disney+、YouTube 4K 与 ChatGPT、Claude 等常用 AI 工具。无论是轻度个人使用、日常办公，还是高流量多设备家庭共享均有专属灵活方案。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="HQ66" aria-label="复制优惠码 HQ66">
+                    <span class="copy-code-text font-bold text-accent">HQ66</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场限时特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高优先级精品网络与晚高峰稳定性优化，多地区节点选择，不限速畅连</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>原生纯净 IP 覆盖，完美解锁 ChatGPT、Claude 等主流 AI 工具与常用流媒体服务</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>支持 Clash、v2rayN、小火箭等多客户端一键订阅，提供按量随行包（365天有效不清零）</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 7折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 <code>HQ66</code> 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">券后实付标准</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">7折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">高速流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">重置与有效期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 环球学生套餐 -->
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            环球学生套餐
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热门推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥67.20/年 <span class="text-xs font-normal text-ink/60">(约¥5.60/月)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">3 台设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 不限速</td>
+                      </tr>
+                      <!-- 环球轻享 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">环球轻享</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥21.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥14.70/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">120GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">3 台设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 不限速</td>
+                      </tr>
+                      <!-- 环球畅游 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">环球畅游</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥39.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥27.30/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">240GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">5 台设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 不限速</td>
+                      </tr>
+                      <!-- 环球尊享 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">环球尊享</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥69.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥48.30/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">600GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">10 台设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 不限速</td>
+                      </tr>
+                      <!-- 环球随行包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">环球随行包 (按量)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥99.00</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥69.30</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">80GB</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">5 台设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">365天有效 · 不清零</td>
+                      </tr>
+                      <!-- 环球灵活包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">环球灵活包 (按量)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥299.00</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥209.30</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">400GB</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">8 台设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">365天有效 · 不清零</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Speed Test Report Section -->
+              <div class="mt-8">
+                <h3 class="font-display text-base font-semibold text-ink">测速报告</h3>
+                <h4 class="mt-1 text-sm font-normal text-ink/70">主要节点实测延迟与下行速率</h4>
+                <div class="mt-3 flex h-full flex-col overflow-hidden rounded-lg bg-ink text-paper">
+                  <div class="flex items-center justify-between border-b border-paper/10 px-5 py-3">
+                    <p class="font-display text-sm font-semibold">测速看板抽样</p>
+                    <span class="text-xs text-paper/60">晚高峰 21:00 采样</span>
+                  </div>
+                  <div class="divide-y divide-paper/5">
+                    <div class="flex items-center justify-between px-5 py-3 text-sm">
+                      <span class="text-paper/80">香港 专线 01</span>
+                      <span class="flex gap-4 text-paper font-mono">
+                        <span>延迟 24ms</span>
+                        <span>下行 560Mbps</span>
+                      </span>
+                    </div>
+                    <div class="flex items-center justify-between px-5 py-3 text-sm">
+                      <span class="text-paper/80">新加坡 专线 01</span>
+                      <span class="flex gap-4 text-paper font-mono">
+                        <span>延迟 45ms</span>
+                        <span>下行 450Mbps</span>
+                      </span>
+                    </div>
+                    <div class="flex items-center justify-between px-5 py-3 text-sm">
+                      <span class="text-paper/80">日本 专线 01</span>
+                      <span class="flex gap-4 text-paper font-mono">
+                        <span>延迟 50ms</span>
+                        <span>下行 380Mbps</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="border-t border-paper/10 px-5 py-2.5 text-xs text-paper/60">
+                    <span>测试数据仅供参考</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Streaming & AI Unlock Matrix -->
+              <div class="mt-6">
+                <h3 class="font-display text-base font-semibold text-ink">流媒体与 AI 解锁情况</h3>
+                <h4 class="mt-1 text-sm font-normal text-ink/70">基于原生 IP 节点的常用工具支持情况</h4>
+                <div class="mt-3 overflow-hidden rounded-lg bg-ink text-paper">
+                  <div class="flex items-center justify-between border-b border-paper/10 px-5 py-3">
+                    <p class="font-display text-sm font-semibold">服务解锁状态</p>
+                    <span class="text-xs text-paper/60">实测全通</span>
+                  </div>
+                  <div class="grid grid-cols-1 gap-px bg-paper/5 sm:grid-cols-3">
+                    <div class="flex items-center gap-3 bg-ink px-5 py-4">
+                      <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-accent-light" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-paper">ChatGPT</p>
+                        <p class="text-xs text-accent-light">支持</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-ink px-5 py-4">
+                      <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-accent-light" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-paper">Claude</p>
+                        <p class="text-xs text-accent-light">支持</p>
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-3 bg-ink px-5 py-4">
+                      <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-accent-light" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <div class="min-w-0">
+                        <p class="truncate text-sm font-medium text-paper">Netflix / Disney+</p>
+                        <p class="text-xs text-accent-light">原生解锁</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 2: 大佬云 -->
+          <div id="item-2" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/80 text-sm font-semibold text-paper">
+                  2
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">大佬云</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">高性价比 IPLC 专线 No.2</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">60GB - 600GB · 全IPLC专线·不限设备数 · 7折后低至 ¥5.60/月起 (月付 ¥16.10/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./post.html" class="btn-secondary text-sm">
+                  查看深度评测 →
+                </a>
+                <a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达大佬云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC 专线接入与高性价比大带宽，低延迟单节点峰值最高可达 2.5Gbps，全节点 1x 真实倍率且晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，无论是个人多设备、宿舍共享还是家庭全屋网络都能自由在线。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="dly88" aria-label="复制优惠码 dly88">
+                    <span class="copy-code-text font-bold text-accent">dly88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC 专线，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率且晚高峰不限速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>：真正实现多端自由同时在线，手机、电脑、软路由同时连接不挤占</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>节点超大集群：香港×20、台湾×10、日本×10、新加坡×10、美国×10，原生 IP 解锁 Netflix 与 AI</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 7折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 <code>dly88</code> 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">券后实付标准</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">7折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">高速流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">重置与有效期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 年付活动包 -->
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            年付活动包
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热销精选</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥67.20/年 <span class="text-xs font-normal text-ink/60">(约¥5.60/月)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天自动刷新</td>
+                      </tr>
+                      <!-- 初云·入门版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">初云·入门版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥23.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥16.10/月 <span class="text-xs font-normal text-ink/60">(年付¥159.60)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">130GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 1x倍率</td>
+                      </tr>
+                      <!-- 凌云·基础版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">凌云·基础版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥43.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥30.10/月 <span class="text-xs font-normal text-ink/60">(年付¥285.60)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">300GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 1x倍率</td>
+                      </tr>
+                      <!-- 御云·高级版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">御云·高级版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥73.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥51.10/月 <span class="text-xs font-normal text-ink/60">(年付¥487.20)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">600GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 1x倍率</td>
+                      </tr>
+                      <!-- 闲云·随心包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">闲云·随心包 (按量)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥99.00</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥69.30</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">78GB</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">不限时 · 用完即止</td>
+                      </tr>
+                      <!-- 悠云·长享包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">悠云·长享包 (按量)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥199.00</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥139.30</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">160GB</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">不限时 · 用完即止</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: 云界线 -->
+          <div id="item-3" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  3
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">云界线</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全IPLC专线 No.3</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥15.40/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./post.html" class="btn-secondary text-sm">
+                  查看深度评测 →
+                </a>
+                <a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达云界线官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC 专线接入与高性价比大带宽，低延迟低丢包，单节点峰值最高可达 2.5Gbps，全节点 1x 真实倍率且晚高峰不限速。最突出的核心特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，全原生 IP 覆盖，完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等常用 AI 工具。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="yjx888" aria-label="复制优惠码 yjx888">
+                    <span class="copy-code-text font-bold text-accent">yjx888</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC 专线架构，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不限速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>：真正实现多端自由同时在线，手机、电脑、软路由同时连接不挤占</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>原生 IP 纯净覆盖，稳定解锁 ChatGPT、Claude 等主流 AI 工具与 Netflix、Disney+ 全球流媒体</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 7折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 <code>yjx888</code> 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">券后实付标准</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">7折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">高速流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">重置与有效期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 云界年付小包 -->
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            云界年付小包
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热销精选</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥67.20/年 <span class="text-xs font-normal text-ink/60">(约¥5.60/月)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天自动刷新 · 1x倍率</td>
+                      </tr>
+                      <!-- 轻云·基础版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">轻云·基础版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥22.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥15.40/月 <span class="text-xs font-normal text-ink/60">(年付¥168.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">150GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 全流媒体解锁</td>
+                      </tr>
+                      <!-- 凌云·进阶版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">凌云·进阶版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥40.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥28.00/月 <span class="text-xs font-normal text-ink/60">(年付¥302.40)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">300GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 晚高峰大带宽</td>
+                      </tr>
+                      <!-- 御云·高级版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">御云·高级版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥66.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥46.20/月 <span class="text-xs font-normal text-ink/60">(年付¥504.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">600GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 高频影音首选</td>
+                      </tr>
+                      <!-- 闲云·随心包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">闲云·随心包 (按量)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性 (终身)</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥99.00</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥69.30</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">80GB</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">不限时 · 用完即止 · 流量不清零</td>
+                      </tr>
+                      <!-- 悠云·长享包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">悠云·长享包 (按量)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性 (终身)</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥199.00</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥139.30</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">200GB</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">不限时 · 用完即止 · 流量不清零</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: 榴莲云 -->
+          <div id="item-4" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  4
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">榴莲云</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全IPLC专线 No.4</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥16.80/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./post.html" class="btn-secondary text-sm">
+                  查看深度评测 →
+                </a>
+                <a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达榴莲云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC 专线接入与超大带宽，低延迟低丢包，单节点峰值最高可达 2.5Gbps，全节点 1x 真实倍率且晚高峰不限速。最突出的核心特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，全原生 IP 覆盖，完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等各类 AI 服务。提供榴莲包特惠年付、月付轻享/畅享/尊享及 750GB 超大容量榴莲王套餐。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="ll88" aria-label="复制优惠码 ll88">
+                    <span class="copy-code-text font-bold text-accent">ll88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC 专线架构，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不限速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>：真正实现多端自由同时在线，手机、电脑、软路由同时连接不挤占</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>节点超大集群：香港×20、台湾×10、日本×10、新加坡×10、美国×10，原生 IP 解锁 Netflix 与 AI</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 7折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 <code>ll88</code> 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">券后实付标准</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">7折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">高速流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">重置与有效期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 榴莲包·年付特惠版 -->
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            榴莲包·年付特惠版
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热门推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥67.20/年 <span class="text-xs font-normal text-ink/60">(约¥5.60/月)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天自动刷新 · 1x倍率</td>
+                      </tr>
+                      <!-- 轻享包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">轻享包</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥24.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥16.80/月 <span class="text-xs font-normal text-ink/60">(年付¥161.28)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">140GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 日常浏览与办公</td>
+                      </tr>
+                      <!-- 畅享包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">畅享包</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥40.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥28.00/月 <span class="text-xs font-normal text-ink/60">(年付¥268.80)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">260GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 追剧与学习进阶</td>
+                      </tr>
+                      <!-- 尊享包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">尊享包</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥60.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥42.00/月 <span class="text-xs font-normal text-ink/60">(年付¥403.20)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">420GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 重度娱乐与工作</td>
+                      </tr>
+                      <!-- 榴莲王 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">榴莲王 (海量大带宽)</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥100.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥70.00/月 <span class="text-xs font-normal text-ink/60">(年付¥672.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">750GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 海量超大流量首选</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: 神行加速 -->
+          <div id="item-5" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  5
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">神行加速</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全IPLC专线 No.5</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC/IEPL专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥16.10/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./post.html" class="btn-secondary text-sm">
+                  查看深度评测 →
+                </a>
+                <a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达神行加速官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC / IEPL 高速专线架构与 VLESS 协议支持，低延迟直连，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率且晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，全原生纯净 IP 覆盖，完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等各类 AI 服务。提供年付特惠版、尝鲜包、基础包及 520GB 大容量尊享包。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="sx0077" aria-label="复制优惠码 sx0077">
+                    <span class="copy-code-text font-bold text-accent">sx0077</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC / IEPL 专线，最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不降速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>：真正实现多端自由同时在线，手机、电脑、软路由同时连接不挤占</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>50+ 原生节点大集群：香港×20、台湾×10、日本×10、新加坡×10、美国等，原生 IP 解锁 Netflix 与 AI</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 7折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 <code>sx0077</code> 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">券后实付标准</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">7折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">高速流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">重置与有效期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 神行-年付特惠版 -->
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            神行-年付特惠版
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热门推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥67.20/年 <span class="text-xs font-normal text-ink/60">(约¥5.60/月)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天自动刷新 · 1x倍率</td>
+                      </tr>
+                      <!-- 神行·尝鲜包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">神行·尝鲜包</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥23.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥16.10/月 <span class="text-xs font-normal text-ink/60">(年付¥161.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">120GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 文献查阅与日常首选</td>
+                      </tr>
+                      <!-- 神行·基础包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">神行·基础包</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥40.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥28.00/月 <span class="text-xs font-normal text-ink/60">(年付¥280.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">260GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 大流量下载与软路由分流</td>
+                      </tr>
+                      <!-- 神行·尊享包 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">神行·尊享包</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥72.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥50.40/月 <span class="text-xs font-normal text-ink/60">(年付¥504.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">520GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每月重置 · 高频工作流与高端娱乐</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: 闪电鼠 -->
+          <div id="item-6" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  6
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">闪电鼠</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全线IEPL专线 No.6</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全线IEPL专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥15.40/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./post.html" class="btn-secondary text-sm">
+                  查看深度评测 →
+                </a>
+                <a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达闪电鼠官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全线优质 IEPL 专线接入与智能优选路由，单节点峰值最高可达 2.5Gbps，全节点 1x 真实倍率且晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，电脑、手机、路由器通用自由连接。全原生 IP 覆盖，完美解锁 Netflix、Disney+、TikTok 与 ChatGPT、Claude 等各类 AI 服务。提供限时钜惠年付小包、轻快版、疾速版及 500GB 大容量雷霆版套餐。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="sds88" aria-label="复制优惠码 sds88">
+                    <span class="copy-code-text font-bold text-accent">sds88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全线 IEPL 专线，最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不降速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>：电脑、手机、软路由通用，真正实现多端自由同时在线</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>智能优选路由与原生 IP，稳定解锁 ChatGPT、Claude、TikTok 与 Netflix、Disney+ 全球流媒体</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 7折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 <code>sds88</code> 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">券后实付标准</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">7折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">高速流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">重置与有效期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 限时钜惠小包 -->
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            限时钜惠小包
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热门推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥67.20/年 <span class="text-xs font-normal text-ink/60">(约¥5.60/月)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天自动刷新 · 1x倍率</td>
+                      </tr>
+                      <!-- 闪电鼠·轻快版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">闪电鼠·轻快版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥22.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥15.40/月 <span class="text-xs font-normal text-ink/60">(年付¥154.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">120GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天重置 · 日常浏览与AI助手</td>
+                      </tr>
+                      <!-- 闪电鼠·疾速版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">闪电鼠·疾速版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥40.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥28.00/月 <span class="text-xs font-normal text-ink/60">(年付¥280.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">250GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天重置 · 追剧娱乐与办公进阶</td>
+                      </tr>
+                      <!-- 闪电鼠·雷霆版 -->
+                      <tr>
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">闪电鼠·雷霆版</th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥70.00/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥49.00/月 <span class="text-xs font-normal text-ink/60">(年付¥490.00)</span></td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">500GB/月</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">每30天重置 · 大流量畅享与多端共用</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 7: 瞬云 -->
+          <div id="item-7" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  7
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">瞬云</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">ANYCAST动态路由 No.7</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">ANYCAST高速直连专线 · 1.0倍率不限速 · 低至 ¥8.25/月起 (月付 ¥20.00/月)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://ddd.jichang.best/#/register?code=nldUZaYc" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达瞬云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                瞬云机场（Shunyun Airport）凭借特色的 ANYCAST（任播）动态路由加速技术与扎实的带宽吞吐表现脱颖而出。主打全站统一 1.0 倍率、不限速、高性价比，尤其适合流媒体高清追剧以及跨境电商、AI 工具等对网络稳定性要求极高的日常场景。晚高峰实测零丢包，秒开 YouTube 8K 与 Netflix 4K HDR。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>ANYCAST 任播加速架构与智能多入口专线，晚高峰 8K 视频秒开无缓冲</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全站节点 1.0 统一倍率，不限速，流量真实扣费绝无虚标</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>完美解锁 Netflix、Disney+、YouTube 4K 以及 ChatGPT、Claude 等主流 AI 工具</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (ANYCAST 高速专线方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">支持月付体验与年付超值方案，全节点统一无虚标倍率</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">折合月均价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">设备限制</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">线路类型</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            限时年付小包
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热门推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥99.00/年 <span class="text-xs font-normal text-ink/60">(¥8.25/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">¥8.25/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">59G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">1台在线</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">ANYCAST 高速直连专线</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            行者套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥20.00/月 <span class="text-xs font-normal text-ink/60">(¥20.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">¥20.00/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">150G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">个人多端</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">ANYCAST 高速直连专线</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            纵横套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥36.00/月 <span class="text-xs font-normal text-ink/60">(¥30.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">¥30.00/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">300G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">个人多端</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">ANYCAST 智能多入口专线</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            凌霄套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥68.00/月 <span class="text-xs font-normal text-ink/60">(¥68.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">¥68.00/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">600G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">个人多端</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">ANYCAST 极致大带宽专线</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 8: 极连云 -->
+          <div id="item-8" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  8
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">极连云</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">优质IPLC专线 No.8</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC物理专线 · 不限制设备 · 8折后低至 ¥6.40/月起 (月付 ¥12.40/月起)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://haozevpn.jlyvipaff.com/#/?code=jwCMOvQO" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达极连云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                极连云（JLY Cloud）是一家主打高性价比与高稳定性的物理内网专线服务商。在敏感时期或晚高峰网络拥堵中，凭借其优质的 IPLC 物理专线与合理的负载调度赢得了极佳口碑。全系套餐均不限制设备数量，提供超大带宽与全原生住宅 IP，完美解锁全球流媒体与主流 AI 平台。
+              </p>
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="JLY888" aria-label="复制优惠码 JLY888">
+                    <span class="copy-code-text font-bold text-accent">JLY888</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">8折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全物理 IPLC 内网专线，晚高峰超低延迟、零丢包抗封锁能力强</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全套餐不限制同时在线客户端数量，多设备与家庭共享无压力</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>原生节点全面覆盖，极速秒开 Netflix、YouTube 8K 及 ChatGPT、Claude 访问</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (已填写 8折 优惠折后价格)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账时输入专属优惠码 JLY888 即可享受打折后实付价</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">原价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">8折到手价</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">同时在线设备</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">适用建议</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            轻量体验(年付)
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热销推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥96.00/年</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥76.80/年 <span class="text-xs font-normal text-ink/60">(约¥6.40/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">适合备用或轻度网页浏览</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            基础套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥15.50/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥12.40/月 <span class="text-xs font-normal text-ink/60">(年付更优惠)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">100GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">日常主力首选，性价比最高</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            进阶套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥30.50/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥24.40/月 <span class="text-xs font-normal text-ink/60">(年付更优惠)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">200GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">流媒体重度用户、程序员首选</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            旗舰套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥65.50/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥52.40/月 <span class="text-xs font-normal text-ink/60">(年付更优惠)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">500GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">企业多端共享、重度下载</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            尊享套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥120.50/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥96.40/月 <span class="text-xs font-normal text-ink/60">(年付更优惠)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">1000GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">团队或多设备高并发用户</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            一次性不限时
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性买断</td><td class="border-b border-ink/10 px-4 py-3 text-ink/40 text-center line-through text-xs">¥399.00</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥319.20 <span class="text-xs font-normal text-ink/60">(永久有效)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">600GB</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性买断，流量永久有效</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 9: 边缘节点 -->
+          <div id="item-9" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  9
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">边缘节点</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">中转加速高性价 No.9</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">高速中转代理 · 不限制设备 · 年付低至 ¥9.00/月起 (月付 ¥25.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://wep.edgenovaaff.com/#/?code=mLLL6h6F" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达边缘节点官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                边缘节点（Edge Node）是一家专注于高性价比且节点覆盖全面的代理服务商，通过中转加速架构提供极为稳定的连接。全节点不限速且不限制设备数量，支持按年付享受折合低至每月 9 元的高性价比套餐，适合高清追剧、多终端设备共享与高频科学上网用户。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高速中转加速架构，覆盖全球主要国家与地区节点</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全系套餐不限速、不限制在线设备数，支持多终端同时使用</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>稳定解锁 YouTube 4K、Netflix、Disney+ 及 ChatGPT、Claude 工具</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (高速中转方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">两年付享 9 折优惠，全系列支持多端共享</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">折合月均</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">限制说明</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">适用建议</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            限时年付
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">限时特惠</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥108.00/年 <span class="text-xs font-normal text-ink/60">(¥9.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">45GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">适合轻度用户，两年付享9折</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            极界·标准套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥25.00/月 <span class="text-xs font-normal text-ink/60">(¥25.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">120GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">日常主力首选，多周期优惠方案</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            极界·进阶套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥50.00/月 <span class="text-xs font-normal text-ink/60">(¥50.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">250GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">重度用户/多设备用户首选</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 10: 快狸快狸 -->
+          <div id="item-10" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  10
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">快狸快狸</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">专属客户端专线 No.10</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">极速专线 · 支持专属客户端 · 年付低至 ¥10.00/月起 (月付 ¥15.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://fanxiaobin.kuailiaff.com/#/?code=e0cAmK7F" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达快狸快狸官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                快狸（Kuaili）致力于提供极高性价比与专属一键客户端的专线服务，拥有丰富的全球节点与良好的解锁能力。新手用户无需复杂订阅配置，可直接使用官方客户端一键连接，同时全面兼容 Clash、Shadowrocket 等通用协议客户端。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>提供定制专属一键客户端，小白新手一键连接无门槛</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高速专线网络架构，全节点不限速不限制在线设备数</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>丰富全球节点覆盖，完美解锁 Netflix、Disney+ 与 ChatGPT</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (专属客户端专线方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">支持官方定制客户端与通用代理协议订阅</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">折合月均</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">设备限制</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">适用建议</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            森狸年付小套餐
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">年付精选</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥120.00/年 <span class="text-xs font-normal text-ink/60">(¥10.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">30GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">专属客户端</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">折合 ¥10/月，适合低流量轻度用户</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            月狸月付小套餐
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥15.00/月 <span class="text-xs font-normal text-ink/60">(¥15.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">50GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">适合月度试用，重置15元/次</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            小狸基础版
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥22.00/月 <span class="text-xs font-normal text-ink/60">(¥22.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">100GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限制</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">日常主力首选，长期周期优惠更多</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 11: 可信云 -->
+          <div id="item-11" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  11
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">可信云</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">IEPL优质专线 No.11</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">IEPL物理专线 · 不限制设备 · 年付低至 ¥8.00/月起 (月付 ¥15.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://everett7623.kosingaff.com/#/?code=sFKKfEYs" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达可信云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                可信云是一家主打高性价比与高稳定性的 IEPL 专线机场。在敏感时期或晚高峰拔线潮中，凭借其优质的 IEPL 物理专线与合理的负载调度在行业中赢得了极佳口碑。覆盖全球 60+ 顶级专线节点，不限制设备数量且无限速，适合月付试用与长期主力订阅。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>优质 IEPL 物理专线，晚高峰网络平稳，抗封锁性能优异</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全套餐不限制设备数量且不设速率上限，适合多端共用</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>覆盖 60+ 顶级专线节点，完美解锁海外流媒体及 ChatGPT 等 AI 应用</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (IEPL 高速专线方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">不限制在线设备数，晚高峰无限速畅享</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">折合月均</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">限制说明</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">适用建议</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            可信云年费小礼包
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">年度爆款</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥96.00/年 <span class="text-xs font-normal text-ink/60">(¥8.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备/无限速</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">适合轻度使用，平均低至8元/月</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            可信云月付小包
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥15.00/月 <span class="text-xs font-normal text-ink/60">(¥15.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">60GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备/无限速</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">适合月付试用，覆盖60+顶级专线节点</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            基础版 (Basic)
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥25.00/月 <span class="text-xs font-normal text-ink/60">(¥25.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">150GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备/无限速</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">适合主力使用，季付及以上有折扣优惠</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 12: 速界 -->
+          <div id="item-12" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  12
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">速界</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">大流量高速架构 No.12</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">高速节点架构 · 不限设备不限速 · 年付低至 ¥7.50/月起 (月付 ¥25.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://pygllc.speedworldaff.cc/#/?code=kcoensXG" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达速界官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                速界（Speed World）是一家专注于高速稳定代理服务的机场，线路吞吐表现出色，特别适合大流量下载和超清视频流媒体播放。节点架构不限速且不限制设备数量，提供从 50GB 年付到 250GB 超速版月付的多种规格，满足不同层级用户的使用需求。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高速节点架构与大带宽储备，超清 4K 流媒体秒开流畅</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全系套餐不限速且不限制设备数量，支持多终端自由连接</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>稳定支持主流流媒体解锁，ChatGPT 及日常学术科研秒开</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (高速节点架构方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">不限制设备数量，不限速率，多周期优惠支持</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">折合月均</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">限制说明</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">适用建议</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            年付体验包
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">超值体验</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥90.00/年 <span class="text-xs font-normal text-ink/60">(¥7.50/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">50GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限速/不限设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">折合 ¥7.5/月，适合轻度用户</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            极速版
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥25.00/月 <span class="text-xs font-normal text-ink/60">(¥25.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">120GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限速/不限设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">日常主力首选，多周期优惠方案</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            超速版
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥50.00/月 <span class="text-xs font-normal text-ink/60">(¥50.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">250GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限速/不限设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">重度用户/多设备用户首选</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 13: 云图机场 -->
+          <div id="item-13" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  13
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">云图机场</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">金融级专线品质 No.13</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">金融级专线传输 · 1倍率无暗扣 · 低至 ¥25.00/月起 (含150G高速流量)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://super.ytjcok.org/#/register?code=poKwFVtv" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达云图机场官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                云图机场是一家高品质的科学上网服务商，线路传输采用金融级专线，全站统一 1 倍率扣费绝无高倍率暗扣。晚高峰 24 小时保持极高稳定性，完美解锁主流流媒体及 AI 平台，支持原生 IP，并提供按量不限时套餐供轻度低频用户选择。
+              </p>
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="yt88" aria-label="复制优惠码 yt88">
+                    <span class="copy-code-text font-bold text-accent">yt88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">专属特惠优惠码</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>金融级物理专线传输，晚高峰 24H 稳定不卡顿</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全站节点 1 倍率真实扣费，无暗扣，支持 5 台设备并发</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>原生 IP 全面解锁 Netflix、Disney+ 以及 ChatGPT、TikTok 等平台</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (金融级专线方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">结账输入优惠码 yt88 享专属折扣，全站节点 1 倍率真实扣费</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">可用流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">设备限制</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">核心特性与说明</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            岚图
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">主力推荐</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥25.00/月 <span class="text-xs font-normal text-ink/60">(1倍率无套路)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">150G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5台设备，流媒体全解锁，1倍率</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            梦图
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥49.00/月 <span class="text-xs font-normal text-ink/60">(1倍率无套路)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">300G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5台设备，流媒体全解锁，1倍率</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            星图
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥99.00/月 <span class="text-xs font-normal text-ink/60">(1倍率无套路)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">600G/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5台设备，流媒体全解锁，1倍率</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            50G不限时流量
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性买断</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥78.00 <span class="text-xs font-normal text-ink/60">(不限时间)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">50G (一次性)</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">限时套餐，5台设备，1倍率，不限时间</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            100G不限时流量
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性买断</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥119.00 <span class="text-xs font-normal text-ink/60">(不限时间)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">100G (一次性)</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">限时套餐，5台设备，1倍率，不限时间</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 14: 鲲鹏加速 -->
+          <div id="item-14" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  14
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">鲲鹏加速</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全站1.0倍率专线 No.14</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全球原生节点 · 1元尝鲜试用 · 订阅低至 ¥12.00/月起 (含99G流量)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://kunpengjiasu.com/#/register?code=WPugVZUe" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达鲲鹏加速官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                鲲鹏加速是一家全站统一 1.0 倍率的高性价比专线服务商，拥有全球多国原生节点与冷门地区线路，绝无高倍暗扣。支持 1 元 1G 极低门槛上车测速试用，常规订阅套餐低至 12 元/月即享 99GB 流量与 5 台设备支持，晚高峰设有专属备用节点保障畅通。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>提供 1 元尝鲜试用套餐，低成本先测速体验满意再订阅</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全站节点统一 1.0 倍率扣费，绝无暗扣，支持 5-8 台设备并发</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>完美解锁 Netflix、YouTube 4K、Disney+ 与 ChatGPT 等主流 AI</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (全站 1.0 倍率专线方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">1元低门槛试用，常规订阅低至 ¥12/月起</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">基础流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">设备支持</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">核心权益与服务</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            【1元/1G】扶摇尝鲜
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">超低门槛</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">一次性体验</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥1.00 <span class="text-xs font-normal text-ink/60">(一次性)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">1GB 体验流量</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">1 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">低成本测速体验，全站 1.0 倍率，解锁 AI 与流媒体</td>
+                      </tr>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            【12元/99G】逍遥畅游
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">热销爆款</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥12.00/月 <span class="text-xs font-normal text-ink/60">(重置包¥10/次)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">99GB 每月流量</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">5 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">全网热销首选，重置包 ¥10/次，支持季付/年付</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            【22元/199G】吞吐山海
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥22.00/月 <span class="text-xs font-normal text-ink/60">(VIP专属)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">199GB 每月流量</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">8 台设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">重度追剧/4K尊享，晚高峰专属备用节点，VIP工单优先</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 15: 光年梯 -->
+          <div id="item-15" class="card overflow-hidden">
+            <!-- Card Header -->
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  15
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h2 class="font-display text-xl font-semibold text-ink">光年梯</h2>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">老牌IPLC专线 No.15</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">老牌IPLC专线 · 极低门槛 · 年付折合仅 ¥7.50/月起 (月付 ¥18.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a href="https://gnt001.gntvipaff.cc/#/?code=PQhPFDhO" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达光年梯官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                光年梯是一家老牌稳定的高速 IPLC 专线机场，以卓越的抗封锁能力与晚高峰稳定性著称。节点配备高速 IEPL/IPLC 物理专线与原生住宅 IP，秒开 YouTube 4K、Netflix 并且完美解锁 ChatGPT、Claude 等海外 AI 平台。入门年付套餐折合每月仅需 7.5 元，非常适合学生与长期轻度科学上网用户。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>老牌优质 IPLC 物理专线，晚高峰 4K 视频秒开无卡顿、延迟低</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>支持 Clash、v2rayN、小火箭等全平台客户端通用订阅一键导入</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>原生住宅 IP 资源丰富，顺利通过 ChatGPT 与各大流媒体验证</span>
+                </li>
+              </ul>
+
+              <!-- Pricing Plans Table -->
+              <div class="mt-8">
+                <div class="flex flex-wrap items-baseline justify-between gap-2">
+                  <div>
+                    <h3 class="font-display text-base font-semibold text-ink">套餐价格表 (老牌 IPLC 专线方案)</h3>
+                    <h4 class="mt-1 text-sm font-normal text-ink/70">低至 ¥7.5/月起，支持月付体验与多端共享</h4>
+                  </div>
+                  <span class="text-xs text-accent font-medium">实测方案与官方资费</span>
+                </div>
+                <div class="mt-3 overflow-x-auto rounded-lg border border-ink/10">
+                  <table class="w-full min-w-[620px] border-separate border-spacing-0 text-sm">
+                    <thead>
+                      <tr>
+                        <th class="sticky left-0 z-10 text-left border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">套餐名称</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">计费周期</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">价格</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">折合月均</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">每月流量</th>
+                        <th class="text-center border-b border-ink/10 bg-ink px-4 py-3 font-display font-semibold text-paper">适用说明与建议</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-accent/5">
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-accent/5">
+                          <span class="inline-flex items-center gap-1.5">
+                            入门年付
+                            <span class="rounded bg-accent px-1.5 py-0.5 text-[10px] text-paper">高性价比</span>
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥90.00/年 <span class="text-xs font-normal text-ink/60">(约¥7.50/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">50GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">个人常用</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">折合每月仅 ¥7.5，是老牌专线中门槛极低的选择</td>
+                      </tr>
+                      <tr >
+                        <th scope="row" class="sticky left-0 z-10 border-b border-ink/10 px-4 py-3 text-left font-medium text-ink bg-surface">
+                          <span class="inline-flex items-center gap-1.5">
+                            月付标准
+                          </span>
+                        </th>
+                        <td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">月付 / 季付 / 年付</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-bold text-center">¥18.00/月 <span class="text-xs font-normal text-ink/60">(¥18.00/月)</span></td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center font-mono">120GB/月</td><td class="border-b border-ink/10 px-4 py-3 text-accent font-semibold text-center">不限设备</td><td class="border-b border-ink/10 px-4 py-3 text-ink/80 text-center">不限制在线设备数，支持多人或多设备共享流量</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Quick Navigation Sticky Aside -->
+        <aside class="hidden lg:block">
+          <div class="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-lg border border-ink/10 bg-surface p-4">
+            <p class="px-2 text-xs font-semibold uppercase tracking-wide text-ink/70">
+              快速导航
+            </p>
+            <ul class="mt-2 space-y-1">
+              <li>
+                <a href="#item-1" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  1. 环球梯 (优质专线 No.1)
+                </a>
+              </li>
+              <li>
+                <a href="#item-2" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  2. 大佬云 (全IPLC·不限设备 No.2)
+                </a>
+              </li>
+              <li>
+                <a href="#item-3" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  3. 云界线 (全IPLC·不限设备 No.3)
+                </a>
+              </li>
+              <li>
+                <a href="#item-4" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  4. 榴莲云 (全IPLC·不限设备 No.4)
+                </a>
+              </li>
+              <li>
+                <a href="#item-5" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  5. 神行加速 (全IPLC·不限设备 No.5)
+                </a>
+              </li>
+              <li>
+                <a href="#item-6" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  6. 闪电鼠 (全线IEPL·不限设备 No.6)
+                </a>
+              </li>
+              <li>
+                <a href="#item-7" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  7. 瞬云 (ANYCAST动态路由 No.7)
+                </a>
+              </li>
+              <li>
+                <a href="#item-8" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  8. 极连云 (优质IPLC专线 No.8)
+                </a>
+              </li>
+              <li>
+                <a href="#item-9" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  9. 边缘节点 (中转加速高性价 No.9)
+                </a>
+              </li>
+              <li>
+                <a href="#item-10" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  10. 快狸快狸 (专属客户端专线 No.10)
+                </a>
+              </li>
+              <li>
+                <a href="#item-11" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  11. 可信云 (IEPL优质专线 No.11)
+                </a>
+              </li>
+              <li>
+                <a href="#item-12" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  12. 速界 (大流量高速架构 No.12)
+                </a>
+              </li>
+              <li>
+                <a href="#item-13" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  13. 云图机场 (金融级专线品质 No.13)
+                </a>
+              </li>
+              <li>
+                <a href="#item-14" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  14. 鲲鹏加速 (全站1.0倍率专线 No.14)
+                </a>
+              </li>
+              <li>
+                <a href="#item-15" class="block rounded-md px-2 py-1.5 text-sm font-medium text-ink transition-colors hover:bg-ink/5 hover:text-accent">
+                  15. 光年梯 (老牌IPLC专线 No.15)
+                </a>
+              </li>
+            </ul>
+
+            <div class="mt-6 border-t border-ink/10 pt-4">
+              <p class="px-2 text-xs font-semibold uppercase tracking-wide text-ink/70">
+                更多分类
+              </p>
+              <div class="mt-2 space-y-1">
+                <a href="./blog.html?cat=reviews" class="block rounded-md px-2 py-1 text-xs text-ink/70 hover:text-ink">
+                  • 专线深度横评
+                </a>
+                <a href="./blog.html?cat=tutorials" class="block rounded-md px-2 py-1 text-xs text-ink/70 hover:text-ink">
+                  • 客户端配置教程
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">综合榜单</a></li>
+            <li><a href="./rankings.html#item-2" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比排行</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./post.html" class="text-sm text-ink/70 transition-colors hover:text-ink">文章模板</a></li>
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

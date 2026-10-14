@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>机场跑路预警名单：这些机场目前存在高风险信号（持续更新）| 机场图鉴</title>
+  <meta name="description" content="整理目前被社区标注为「跑路预警」的机场/代理服务，含具体日期、风险信号和信息来源，帮你在续费或选新机场前多一层判断依据。持续更新，非最终定论。">
+  <link rel="canonical" href="https://jichangtujian.vip/airport-warnings.html">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="./assets/logo-mark.svg" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md bg-ink/5 px-3 py-2 text-sm font-medium text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+<main id="main-content" class="flex-1 scroll-mt-24"> <div class="mx-auto max-w-6xl px-6 pt-8"> <nav aria-label="面包屑" class="text-sm text-ink/70"> <ol class="flex flex-wrap items-center gap-1.5"> <li class="flex items-center gap-1.5">  <a href="./index.html" class="transition-colors hover:text-ink"> 首页 </a> </li><li class="flex items-center gap-1.5"> <span aria-hidden="true">›</span> <span class="text-ink/80" aria-current="page"> 机场跑路预警名单 </span> </li> </ol> </nav> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://jichangtujian.vip/"},{"@type":"ListItem","position":2,"name":"机场跑路预警名单"}]}</script> </div> <div class="mx-auto max-w-4xl px-6 py-12"> <div class="text-left"> <p class="font-display text-sm font-semibold tracking-wide text-accent">机场跑路预警</p> <h1 class="font-display mt-1 text-2xl font-semibold text-ink md:text-3xl">机场跑路预警名单：这些机场目前处于高风险状态</h1> <p class="mt-3 text-ink/70 max-w-2xl">这里说的「机场」，指的是科学上网用的代理节点订阅服务，不是真的飞机场。下面整理的是目前被多个独立社区渠道标注为「跑路预警」的名单——出现了节点异常、客服失联、官网更换等风险信号，但不代表每一家都已经被实锤「跑路」。名单会持续更新，建议别只看名字就下结论，判断标准见文末说明。</p> </div> <section class="mt-12"> <h2 class="font-display text-xl font-semibold text-ink md:text-2xl">目前收录的预警名单</h2> <p class="mt-3 max-w-2xl text-ink/70">
+每条都标了具体日期和信息来源，方便你自己核实，而不是只凭一个名字就下判断。
+</p> <div class="mt-6 space-y-4"> <div class="card p-5 md:p-6"> <div class="flex flex-wrap items-start justify-between gap-3"> <h3 class="font-display text-lg font-semibold text-ink">新云机场（XinYun）</h3> <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70"> <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;"> <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path> </svg> 跑路预警 </span> </div> <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2024-06-03 起</p> <p class="mt-3 text-sm leading-relaxed text-ink/75">社区名单将其列为与同一上游线路商相关的多家机场集体出问题事件之一，当时反馈节点异常、官方失联。截至目前未见后续的正式确认或恢复公告，状态长期停留在&quot;��警&quot;，也没有被更近期的跑路名单继续收录。</p> <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3"> <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：Paolujichang 跑路机场名单（GitHub） ↗
+</a><a href="https://www.jichangcha.com/airport-status/" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：机场查·机场预警状态查询 ↗
+</a> </div> </div><div class="card p-5 md:p-6"> <div class="flex flex-wrap items-start justify-between gap-3"> <h3 class="font-display text-lg font-semibold text-ink">蜂巢 / BHcloud（BH 专线版）</h3> <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70"> <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;"> <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path> </svg> 跑路预警 </span> </div> <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2024-07-11 起（问题约始于 2024-07-06）</p> <p class="mt-3 text-sm leading-relaxed text-ink/75">���名用户反馈全线节点自 7 月初起陆续失效、连接超时，工单长期无人回应；当时官网域名仍可访问，但客服和公告渠道均无说明。多个独立社区来源都将其列为高风险状态，但没有看到官方或第三方给出&quot;已彻底停止运营&quot;的最终确认。</p> <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3"> <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：Paolujichang 跑路机场名单（GitHub） ↗
+</a><a href="https://www.97z.net/posts/details/98" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：97 站长社区·风险解析帖 ↗
+</a> </div> </div><div class="card p-5 md:p-6"> <div class="flex flex-wrap items-start justify-between gap-3"> <h3 class="font-display text-lg font-semibold text-ink">ALLBLUE 加速器</h3> <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70"> <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;"> <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path> </svg> 跑路预警 </span> </div> <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2026-03 ~ 2026-04</p> <p class="mt-3 text-sm leading-relaxed text-ink/75">用户反馈节点长期无响应或高延迟，运营方最初以&quot;骨干网络遭攻击、正在维修&quot;解释，随后官网和客服入口一并消失。提交报告时运营方仍可联系上，因此仍属预警而非确认停运，但风险信号已经比较明显。</p> <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3"> <a href="https://github.com/limbopro/Paolujichang/issues/201" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：Paolujichang Issue #201（GitHub） ↗
+</a> </div> </div><div class="card p-5 md:p-6"> <div class="flex flex-wrap items-start justify-between gap-3"> <h3 class="font-display text-lg font-semibold text-ink">FAST-LINK</h3> <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70"> <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;"> <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path> </svg> 跑路预警 </span> </div> <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2026-03-25 ~ 2026-04-08</p> <p class="mt-3 text-sm leading-relaxed text-ink/75">订阅链接失效、无法访问常用站点，客服超过 48 小时未回应；运营方发布的&quot;维护公告&quot;被用户质疑只是拖延时间的说法。截至报告时官方并未正式宣布停止运营。</p> <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3"> <a href="https://github.com/limbopro/Paolujichang/issues/200" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：Paolujichang Issue #200（GitHub） ↗
+</a> </div> </div><div class="card p-5 md:p-6"> <div class="flex flex-wrap items-start justify-between gap-3"> <h3 class="font-display text-lg font-semibold text-ink">奈云机场（Naiyun / NyCloud）</h3> <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70"> <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;"> <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path> </svg> 争议中（口径不一致） </span> </div> <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2026-06-30 ~ 2026-07-02</p> <p class="mt-3 text-sm leading-relaxed text-ink/75">原官网 v2ny.com 于 2026 年 6 月底起出现无法访问的情况，运营方随后启用新域名并称&quot;由海外团队接手&quot;，但多名用户反馈旧账号数据丢失、登录异常。是否属于彻底跑路，第三方报道口径并不一致——有的信源标题直接写&quot;已确认跑路&quot;，但正文自己又写着&quot;官网可正常访问、节点运行正常&quot;，前后矛盾，建议持续关注而不要单看某一篇的标题下结论。</p> <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3"> <a href="https://mahu.blog/runjic/naiun/" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：第三方观察·Clash 测评站 ↗
+</a><a href="https://github.com/jdnei/naiyun" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">
+来源：jdnei/naiyun 官方地址（GitHub） ↗
+</a> </div> </div> 
+        <!-- DuangCloud -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">DuangCloud</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              已确认停运 / 跑路
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2024年底</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">曾拥有较大知名度与用户体量的专线机场之一。因上游机房突发封禁合规清理，叠加运营团队资金链断裂，主域名及备用域名随后全部无法解析，官方 Telegram 频道突然清空历史消息并关闭群组，大量年付用户未获任何退款或迁移善后方案。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang 跑路名单归档（GitHub） ↗</a>
+            <a href="https://github.com/limbopro/Paolujichang/issues" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：社区集中维权帖 ↗</a>
+          </div>
+        </div>
+
+        <!-- TabNet 熊猫云村 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">TabNet（熊猫云村）</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              已确认跑路
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2024-11 ~ 2024-12</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">此前主打低价大流量年付套餐，在各大论坛和学生群体中广泛传播。在连续数周以"骨干网络维护升级中"为由搪塞节点全线瘫痪后，官网彻底停止解析，TG 官方频道将全部订阅者移出并注销账号，确认弃盘跑路。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang 跑路机场名单（GitHub） ↗</a>
+          </div>
+        </div>
+
+        <!-- HyperCat -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">HyperCat</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              节点全线下线 / 失联
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2024-10 ~ 2024-12</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">全线节点在未发布任何维护公告的情况下集体超时红屏，用户端订阅接口拉取返回 404。社群多方信源反映管理团队内部爆发分歧，技术骨干失联，服务器未续费遭机房直接回收实例。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang Issue 社区反馈 ↗</a>
+          </div>
+        </div>
+
+        <!-- Linkeless -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">Linkeless</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              已确认停运
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2025-10 ~ 2025-12</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">官网无征兆无法解析，订阅链接彻底失效，客服系统积压逾两周未回复任何一条工单。无任何善后或数据备份渠道，被各第三方博客正式标记为彻底停止运营。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang 跑路名单 ↗</a>
+          </div>
+        </div>
+
+        <!-- FCCloud -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">FCCloud</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              跑路预警 / 无法访问
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2025-08 ~ 2025-11</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">用户反馈官网持续出现 502 Bad Gateway 错误，Telegram 官方交流群被开启全员永久禁言，管理人员不再回复工单，节点大面积丢包无法进行正常握手，已列入高危观察清单。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang/issues" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang Issue 记录（GitHub） ↗</a>
+          </div>
+        </div>
+
+        <!-- spcloud -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">spcloud</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              失联停服
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2025-06 ~ 2025-09</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">节点持续无法连接，管理团队最初发通告称“机房遭到大流量 DDoS 攻击”，但随后数月内再无任何恢复进展。官网注册充值接口被清空，目前已被社群判定为停止运营。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang 社区警示 ↗</a>
+          </div>
+        </div>
+
+        <!-- 水滴云 / 翼游机场 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">水滴云 / 翼游机场</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-accent/30 bg-accent/5 px-2.5 py-1 text-xs font-medium text-accent">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              高风险收割预警
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2025-12 ~ 2026-03</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">近期在多个社群渠道密集推销"买一年送一年"超级特惠及"终身免翻"套餐，短时间内吸引大量资金。随后主力节点接连故障掉线，工单回复周期从小时级拉长至数天，呈现极高风险的跑路前收割态势。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：社区多渠道交叉反馈 ↗</a>
+          </div>
+        </div>
+
+        <!-- TKV 机场 -->
+        <div class="card p-5 md:p-6">
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <h3 class="font-display text-lg font-semibold text-ink">TKV 机场</h3>
+            <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-ink/20 bg-ink/5 px-2.5 py-1 text-xs font-medium text-ink/70">
+              <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+                <path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a1 1 0 0 0 .86 1.5h18.64a1 1 0 0 0 .86-1.5L13.71 3.86a1 1 0 0 0-1.72 0Z"></path>
+              </svg>
+              跑路预警 / 节点异常
+            </span>
+          </div>
+          <p class="mt-1 text-xs font-medium text-ink/70">标注时间：2026-01 ~ 2026-04</p>
+          <p class="mt-3 text-sm leading-relaxed text-ink/75">节点大面积断连且频繁更替直连域名，官方公告前后口径自相矛盾。多名订阅者反馈购买后不到一周即无法连通任何服务器，工单被批量标记为已解决但未实际处理。</p>
+          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-1.5 border-t border-ink/10 pt-3">
+            <a href="https://github.com/limbopro/Paolujichang" target="_blank" rel="noopener" class="text-xs font-medium text-accent hover:underline">来源：Paolujichang Issue 追踪（GitHub） ↗</a>
+          </div>
+        </div>
+
+        </div> </section> <section class="mt-14 article-content max-w-none"> <h2>这份名单的局限性，务必看一眼</h2> <p>
+这份名单基于目前能查到的社区跑路追踪名单、GitHub 公开issue和论坛讨论整理，<strong>不是本站自己独立核实或调查的结论</strong>，也不构成对任何服务商的定性指控。几点需要说明：
+</p> <ul> <li><strong>"预警"不等于"实锤"。</strong>大部分来源本身也只标注到"预警"这一级，没有给出"已彻底停止运营"的最终确认——服务商完全有可能后续恢复正常，也可能真的消失，两种情况都发生过。</li> <li><strong>状态会变化，但名单更新有滞后。</strong>标注时间都写在每一条里，时间越久的条目，现状可能已经和当时不一样了，请以你自己核实的最新情况为准。</li> <li><strong>这份名单不是全部。</strong>机场行业新旧更替很快，没上榜不代表绝对安全，上了榜也不代表其他没上榜的就一定没问题。</li> <li><strong>不要只看标题下结论。</strong>我们在核实过程中就发现过标题写"已确认跑路"、正文却自相矛盾说"官网可正常访问"的案例——这类信源本身就不可靠，判断时最好交叉对比多个来源。</li> </ul> <h2>如果你正在用的机场上了这份名单，该怎么办</h2> <p>先别慌，也别急着下结论。可以按这个顺序排查：</p> <ul> <li>先自己确认官网、客户端、订阅链接是不是真的连不上，还是临时故障或者维护。</li> <li>看看官方的公告渠道（官网公告栏、Telegram 频道）有���有说明，多渠道核实好过只看一个来源。</li> <li>如果确实联系不上、长期没有任何回应，及时准备一个备用机场，别把所有希望都押在一家上。</li> <li>后续购买新机场时，优先选月付验证，别一上来就冲年付或者"终身"套餐。</li> </ul> <p>
+更详细的判断方法和征兆，可以看
+<a href="./faq.html#shutdown-risk">机场跑路怎么判断</a>
+这部分内容。如果想直接看我们长期跟踪测速和口碑的机场，可以前往
+<a href="./rankings.html">机场推荐</a>
+。
+</p> </section> </div>   </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据的软文。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场推荐</a></li>
+            <li><a href="./best-value.html" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比机场</a></li>
+            <li><a href="./coupons.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场优惠码</a></li>
+            <li><a href="./brands.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场库</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./faq.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+            <li><a href="./airport-warnings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">跑路预警</a></li>
+            <li><a href="./post.html" class="text-sm text-ink/70 transition-colors hover:text-ink">文章模板</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#privacy" class="text-sm text-ink/70 transition-colors hover:text-ink">隐私政策</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+        <p class="mt-2 text-xs text-ink/60">
+          声明：本站提供的内容仅供技术交流与学习参考。
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon-B8VNZ4i-.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>机场图鉴 | 现代化博客与评测框架</title>
+  <meta name="description" content="基于极简纸实质感设计的现代博客与评测框架，包含文章库、排行榜、评测卡片与自适应目录。">
+  <link rel="canonical" href="https://jichangtujian.vip/">
+  <link rel="stylesheet" crossorigin href="./assets/style-Cv953jjx.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iI2E4NTMyZiIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzYwIiBmb250LWZhbWlseT0iJ05vdG8gU2FucyBTQycsICdNaWNyb3NvZnQgWWFIZWknLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2Y3ZjVmMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Zu+PC90ZXh0Pgo8L3N2Zz4=" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1">
+
+    <!-- Hero Section -->
+    <section class="border-b border-ink/10 pb-16 pt-12 md:pb-24 md:pt-20">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+          <div>
+            <div class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs font-medium text-accent">
+              <span>干净 · 优雅 · 极速</span>
+            </div>
+            <h1 class="font-display mt-5 text-3xl font-bold tracking-tight text-ink md:text-5xl">
+              现代化内容与评测机场图鉴
+            </h1>
+            <p class="mt-4 text-base leading-relaxed text-ink/75 md:text-lg">
+              采用日式纸实质感色调与清晰易读的信息层级架构，支持深度长文评测、数据参数对比表、一键复制代码与自适应侧栏目录导航。
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="./blog.html" class="btn-primary">
+                浏览全部文章
+              </a>
+              <a href="./rankings.html" class="btn-secondary">
+                查看榜单示例
+              </a>
+            </div>
+
+            <!-- Tags list -->
+            <div class="mt-8 flex flex-wrap items-center gap-2 text-xs text-ink/60">
+              <span>快速探索：</span>
+              <a href="./blog.html?cat=reviews" class="rounded-md border border-ink/10 bg-surface px-2.5 py-1 hover:border-ink/30 hover:text-ink">评测</a>
+              <a href="./blog.html?cat=tutorials" class="rounded-md border border-ink/10 bg-surface px-2.5 py-1 hover:border-ink/30 hover:text-ink">教程</a>
+              <a href="./tools.html" class="rounded-md border border-ink/10 bg-surface px-2.5 py-1 hover:border-ink/30 hover:text-ink">工具</a>
+              <a href="./blog.html?cat=news" class="rounded-md border border-ink/10 bg-surface px-2.5 py-1 hover:border-ink/30 hover:text-ink">行业资讯</a>
+            </div>
+          </div>
+
+          <!-- Feature Highlight Card -->
+          <div class="card overflow-hidden p-6 md:p-8">
+            <div class="flex items-center justify-between border-b border-ink/10 pb-4">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-accent"></span>
+                <span class="font-semibold text-ink text-sm">框架核心亮点</span>
+              </div>
+              <span class="rounded bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">v1.0</span>
+            </div>
+            <ul class="mt-5 space-y-3.5 text-sm text-ink/80">
+              <li class="flex items-start gap-2.5">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span><strong>纯粹纸实质感</strong>：定制 Warm Paper 配色，视觉舒适护眼</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span><strong>完整排版体系</strong>：专为中文字体 Noto Sans SC 调优行高与间距</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span><strong>评测组件丰富</strong>：评测参数卡片、测速看板、服务解锁网格</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="mt-0.5 h-4 w-4 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span><strong>免依赖原生 JS</strong>：平滑滚动、目录高亮、分类检索、一键复制</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Articles Section -->
+    <section class="border-b border-ink/10 py-14">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-4">
+          <div>
+            <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">推荐文章</h2>
+            <p class="mt-1 text-sm text-ink/70">精选评测、使用指南与核心技术专题</p>
+          </div>
+          <a href="./blog.html" class="text-sm font-medium text-accent hover:underline">
+            查看全部文章 →
+          </a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+          <a href="./post-airport-selection-guide.html" class="card group flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-md">
+            <div class="flex flex-1 flex-col p-5">
+              <div class="flex items-center gap-2 text-xs text-ink/70">
+                <span class="rounded-full border border-accent/40 px-2.5 py-0.5 font-medium text-accent">深度评测</span>
+                <time datetime="2026-10-14">2026年10月14日</time>
+              </div>
+              <h3 class="font-display mt-3 text-lg font-semibold text-ink group-hover:text-accent leading-snug">
+                2026 机场选购终极避坑指南：IPLC专线、公网中转与直连协议深度横向测评
+              </h3>
+              <p class="mt-2 line-clamp-2 text-sm text-ink/70 leading-relaxed">
+                彻底剖析底层物理链路、协议架构、晚高峰丢包实测到超售倍率套路，全方位解析 IPLC 专线、IEPL 与 BGP 隧道中转的真实差距。
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#专线实测</span><span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#避坑指南</span><span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#机场选型</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="./post-clash-verge-rev-tutorial.html" class="card group flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-md">
+            <div class="flex flex-1 flex-col p-5">
+              <div class="flex items-center gap-2 text-xs text-ink/70">
+                <span class="rounded-full border border-accent/40 px-2.5 py-0.5 font-medium text-accent">客户端教程</span>
+                <time datetime="2026-10-13">2026年10月13日</time>
+              </div>
+              <h3 class="font-display mt-3 text-lg font-semibold text-ink group-hover:text-accent leading-snug">
+                Clash Verge Rev 2026 从零上手到进阶调优全指南：Tun模式、分流规则与防DNS泄露实战
+              </h3>
+              <p class="mt-2 line-clamp-2 text-sm text-ink/70 leading-relaxed">
+                涵盖 Mihomo Meta 内核架构、跨平台安装、订阅一键导入、Tun 虚拟网卡深度配置与防 DNS 泄露规则集编写，助你搭建极速稳定的分流网络。
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#ClashVerge</span><span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#Tun模式</span><span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#配置指南</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="./post-v2rayn-beginners-guide.html" class="card group flex flex-col overflow-hidden transition-all hover:-translate-y-1 hover:shadow-md">
+            <div class="flex flex-1 flex-col p-5">
+              <div class="flex items-center gap-2 text-xs text-ink/70">
+                <span class="rounded-full border border-accent/40 px-2.5 py-0.5 font-medium text-accent">客户端教程</span>
+                <time datetime="2026-10-12">2026年10月12日</time>
+              </div>
+              <h3 class="font-display mt-3 text-lg font-semibold text-ink group-hover:text-accent leading-snug">
+                v2rayN 2026 最新版极简上手教程：Xray内核配置、VLESS-Reality与智能路由全解析
+              </h3>
+              <p class="mt-2 line-clamp-2 text-sm text-ink/70 leading-relaxed">
+                手把手教你配置 Xray 内核、导入 VLESS-Reality 与 Hysteria 2 节点、设置智能路由分流，解决端口冲突与测速超时问题。
+              </p>
+              <div class="mt-4 flex flex-wrap gap-1.5">
+                <span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#v2rayN</span><span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#Xray内核</span><span class="rounded-full border border-ink/10 px-2 py-0.5 text-xs text-ink/70">#新手入门</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rankings Preview Showcase Section -->
+    <section class="border-b border-ink/10 py-14">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-4">
+          <div>
+            <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">排名前列精选展示</h2>
+            <p class="mt-1 text-sm text-ink/70">经典评测卡片组件展示，支持优惠码一键复制与多维度参数</p>
+          </div>
+          <a href="./rankings.html" class="text-sm font-medium text-accent hover:underline">
+            查看完整排行榜 →
+          </a>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <!-- Showcase Card 1: 环球梯 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent text-sm font-semibold text-paper">
+                  1
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">环球梯</h3>
+                    <span class="rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">综合榜首 No.1</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">精品专线接入 · 全原生节点 · 7折后低至 ¥5.60/月起 (月付 ¥14.70/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-1" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达环球梯官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                稳居榜首的优质精品专线网络，晚高峰稳定性强化。全原生节点覆盖，完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等常用 AI 工具。包含学生套餐（折后仅 ¥5.60/月）、月付轻享/畅游套餐与 365 天按量随行包。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="HQ66" aria-label="复制优惠码 HQ66">
+                    <span class="copy-code-text font-bold text-accent">HQ66</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高优先级精品网络接入，晚高峰 4K 视频秒开不卡顿</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>支持 Clash、v2rayN、小火箭等主流客户端一键导入与订阅</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 2: 大佬云 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/80 text-sm font-semibold text-paper">
+                  2
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">大佬云</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">IPLC 专线 No.2</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC专线接入 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥16.10/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-2" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达大佬云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC 专线低延迟直连，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不限速。最强优势是<strong>全系列套餐均不限制同时在线设备数量</strong>，多设备、全家或团队共享毫无压力。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="dly88" aria-label="复制优惠码 dly88">
+                    <span class="copy-code-text font-bold text-accent">dly88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC 专线，最高 2.5Gbps 峰值带宽，晚高峰流畅 4K 秒开</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>，原生 IP 完美解锁流媒体与主流 AI 工具</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 3: 云界线 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  3
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">云界线</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全IPLC专线 No.3</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥15.40/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-3" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达云界线官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC 专线低延迟直连，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，全原生 IP 完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等各类 AI 工具。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="yjx888" aria-label="复制优惠码 yjx888">
+                    <span class="copy-code-text font-bold text-accent">yjx888</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC 专线，最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不降速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>，原生 IP 完美解锁流媒体与主流 AI 工具</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 4: 榴莲云 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  4
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">榴莲云</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全IPLC专线 No.4</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥16.80/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-4" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达榴莲云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC 专线低延迟直连，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，全原生 IP 完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等各类 AI 工具。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="ll88" aria-label="复制优惠码 ll88">
+                    <span class="copy-code-text font-bold text-accent">ll88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC 专线，最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不降速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>，原生 IP 完美解锁流媒体与主流 AI 工具</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 5: 神行加速 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  5
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">神行加速</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全IPLC专线 No.5</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC/IEPL专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥16.10/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-5" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达神行加速官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全 IPLC / IEPL 专线架构与 VLESS 协议支持，低延迟直连，单节点最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，全原生 IP 完美解锁 Netflix、Disney+ 与 ChatGPT、Claude 等各类 AI 工具。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="sx0077" aria-label="复制优惠码 sx0077">
+                    <span class="copy-code-text font-bold text-accent">sx0077</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全 IPLC / IEPL 专线，最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不降速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>，原生 IP 完美解锁流媒体与主流 AI 工具</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 6: 闪电鼠 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  6
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">闪电鼠</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全线IEPL专线 No.6</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全线IEPL专线 · 不限设备同时在线 · 7折后低至 ¥5.60/月起 (月付 ¥15.40/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-6" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达闪电鼠官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                主打全线优质 IEPL 专线接入与智能优选路由，单节点峰值最高可达 2.5Gbps，全节点 1x 真实倍率晚高峰不限速。最突出的特色是<strong>全系列套餐均不限制同时在线客户端数量</strong>，电脑、手机、路由器通用自由连接，原生 IP 稳定解锁流媒体与各类主流 AI 工具。
+              </p>
+
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="sds88" aria-label="复制优惠码 sds88">
+                    <span class="copy-code-text font-bold text-accent">sds88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">7折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全线 IEPL 专线，最高 2.5Gbps 峰值带宽，全节点 1x 真实倍率晚高峰不降速</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span><strong>不限制设备数量</strong>，原生 IP 完美解锁流媒体与主流 AI 工具</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Showcase Card 7: 瞬云 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  7
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">瞬云</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">ANYCAST动态路由 No.7</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">ANYCAST高速直连专线 · 1.0倍率不限速 · 低至 ¥8.25/月起 (月付 ¥20.00/月)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-7" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://ddd.jichang.best/#/register?code=nldUZaYc" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达瞬云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                瞬云机场（Shunyun Airport）凭借特色的 ANYCAST（任播）动态路由加速技术与扎实的带宽吞吐表现脱颖而出。主打全站统一 1.0 倍率、不限速、高性价比，尤其适合流媒体高清追剧以及跨境电商、AI 工具等对网络稳定性要求极高的日常场景。晚高峰实测零丢包，秒开 YouTube 8K 与 Netflix 4K HDR。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>ANYCAST 任播加速架构与智能多入口专线，晚高峰 8K 视频秒开无缓冲</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全站节点 1.0 统一倍率，不限速，流量真实扣费绝无虚标</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 8: 极连云 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  8
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">极连云</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">优质IPLC专线 No.8</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全IPLC物理专线 · 不限制设备 · 8折后低至 ¥6.40/月起 (月付 ¥12.40/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-8" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://haozevpn.jlyvipaff.com/#/?code=jwCMOvQO" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达极连云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                极连云（JLY Cloud）是一家主打高性价比与高稳定性的物理内网专线服务商。在敏感时期或晚高峰网络拥堵中，凭借其优质的 IPLC 物理专线与合理的负载调度赢得了极佳口碑。全系套餐均不限制设备数量，提供超大带宽与全原生住宅 IP，完美解锁全球流媒体与主流 AI 平台。
+              </p>
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="JLY888" aria-label="复制优惠码 JLY888">
+                    <span class="copy-code-text font-bold text-accent">JLY888</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">8折优惠</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全物理 IPLC 内网专线，晚高峰超低延迟、零丢包抗封锁能力强</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全套餐不限制同时在线客户端数量，多设备与家庭共享无压力</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 9: 边缘节点 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  9
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">边缘节点</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">中转加速高性价 No.9</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">高速中转代理 · 不限制设备 · 年付低至 ¥9.00/月起 (月付 ¥25.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-9" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://wep.edgenovaaff.com/#/?code=mLLL6h6F" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达边缘节点官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                边缘节点（Edge Node）是一家专注于高性价比且节点覆盖全面的代理服务商，通过中转加速架构提供极为稳定的连接。全节点不限速且不限制设备数量，支持按年付享受折合低至每月 9 元的高性价比套餐，适合高清追剧、多终端设备共享与高频科学上网用户。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高速中转加速架构，覆盖全球主要国家与地区节点</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全系套餐不限速、不限制在线设备数，支持多终端同时使用</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 10: 快狸快狸 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  10
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">快狸快狸</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">专属客户端专线 No.10</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">极速专线 · 支持专属客户端 · 年付低至 ¥10.00/月起 (月付 ¥15.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-10" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://fanxiaobin.kuailiaff.com/#/?code=e0cAmK7F" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达快狸快狸官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                快狸（Kuaili）致力于提供极高性价比与专属一键客户端的专线服务，拥有丰富的全球节点与良好的解锁能力。新手用户无需复杂订阅配置，可直接使用官方客户端一键连接，同时全面兼容 Clash、Shadowrocket 等通用协议客户端。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>提供定制专属一键客户端，小白新手一键连接无门槛</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高速专线网络架构，全节点不限速不限制在线设备数</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 11: 可信云 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  11
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">可信云</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">IEPL优质专线 No.11</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">IEPL物理专线 · 不限制设备 · 年付低至 ¥8.00/月起 (月付 ¥15.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-11" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://everett7623.kosingaff.com/#/?code=sFKKfEYs" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达可信云官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                可信云是一家主打高性价比与高稳定性的 IEPL 专线机场。在敏感时期或晚高峰拔线潮中，凭借其优质的 IEPL 物理专线与合理的负载调度在行业中赢得了极佳口碑。覆盖全球 60+ 顶级专线节点，不限制设备数量且无限速，适合月付试用与长期主力订阅。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>优质 IEPL 物理专线，晚高峰网络平稳，抗封锁性能优异</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全套餐不限制设备数量且不设速率上限，适合多端共用</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 12: 速界 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  12
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">速界</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">大流量高速架构 No.12</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">高速节点架构 · 不限设备不限速 · 年付低至 ¥7.50/月起 (月付 ¥25.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-12" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://pygllc.speedworldaff.cc/#/?code=kcoensXG" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达速界官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                速界（Speed World）是一家专注于高速稳定代理服务的机场，线路吞吐表现出色，特别适合大流量下载和超清视频流媒体播放。节点架构不限速且不限制设备数量，提供从 50GB 年付到 250GB 超速版月付的多种规格，满足不同层级用户的使用需求。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>高速节点架构与大带宽储备，超清 4K 流媒体秒开流畅</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全系套餐不限速且不限制设备数量，支持多终端自由连接</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 13: 云图机场 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  13
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">云图机场</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">金融级专线品质 No.13</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">金融级专线传输 · 1倍率无暗扣 · 低至 ¥25.00/月起 (含150G高速流量)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-13" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://super.ytjcok.org/#/register?code=poKwFVtv" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达云图机场官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                云图机场是一家高品质的科学上网服务商，线路传输采用金融级专线，全站统一 1 倍率扣费绝无高倍率暗扣。晚高峰 24 小时保持极高稳定性，完美解锁主流流媒体及 AI 平台，支持原生 IP，并提供按量不限时套餐供轻度低频用户选择。
+              </p>
+              <!-- Coupon Code Badge -->
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  专属优惠码
+                  <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded-md border border-dashed border-ink/25 px-2 py-1 font-mono text-ink transition-colors hover:border-accent/50 hover:text-accent" data-code="yt88" aria-label="复制优惠码 yt88">
+                    <span class="copy-code-text font-bold text-accent">yt88</span>
+                    <svg class="copy-icon-copy h-3.5 w-3.5 shrink-0 text-ink/60 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                </span>
+                <span class="inline-flex items-center rounded-full border border-accent/30 bg-accent/5 px-3 py-1.5 text-sm text-ink/70">
+                  全场专属特惠 <strong class="ml-1 font-semibold text-accent">专属特惠优惠码</strong>
+                </span>
+              </div>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>金融级物理专线传输，晚高峰 24H 稳定不卡顿</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全站节点 1 倍率真实扣费，无暗扣，支持 5 台设备并发</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 14: 鲲鹏加速 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  14
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">鲲鹏加速</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">全站1.0倍率专线 No.14</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">全球原生节点 · 1元尝鲜试用 · 订阅低至 ¥12.00/月起 (含99G流量)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-14" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://kunpengjiasu.com/#/register?code=WPugVZUe" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达鲲鹏加速官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                鲲鹏加速是一家全站统一 1.0 倍率的高性价比专线服务商，拥有全球多国原生节点与冷门地区线路，绝无高倍暗扣。支持 1 元 1G 极低门槛上车测速试用，常规订阅套餐低至 12 元/月即享 99GB 流量与 5 台设备支持，晚高峰设有专属备用节点保障畅通。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>提供 1 元尝鲜试用套餐，低成本先测速体验满意再订阅</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>全站节点统一 1.0 倍率扣费，绝无暗扣，支持 5-8 台设备并发</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Showcase Card 15: 光年梯 -->
+          <div class="card overflow-hidden">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-ink/10 bg-surface p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-ink/70 text-sm font-semibold text-paper">
+                  15
+                </span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="font-display text-xl font-semibold text-ink">光年梯</h3>
+                    <span class="rounded-full border border-accent/30 bg-accent/5 px-2 py-0.5 text-xs font-medium text-accent">老牌IPLC专线 No.15</span>
+                  </div>
+                  <p class="mt-0.5 text-sm text-ink/70">老牌IPLC专线 · 极低门槛 · 年付折合仅 ¥7.50/月起 (月付 ¥18.00/月起)</p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <a href="./rankings.html#item-15" class="btn-secondary text-sm">
+                  查看各套餐方案 →
+                </a>
+                <a href="https://gnt001.gntvipaff.cc/#/?code=PQhPFDhO" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                  直达光年梯官网
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <p class="text-sm leading-relaxed text-ink/80">
+                光年梯是一家老牌稳定的高速 IPLC 专线机场，以卓越的抗封锁能力与晚高峰稳定性著称。节点配备高速 IEPL/IPLC 物理专线与原生住宅 IP，秒开 YouTube 4K、Netflix 并且完美解锁 ChatGPT、Claude 等海外 AI 平台。入门年付套餐折合每月仅需 7.5 元，非常适合学生与长期轻度科学上网用户。
+              </p>
+
+              <!-- Feature Checkmarks -->
+              <ul class="mt-5 space-y-2 text-sm text-ink/75">
+
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>老牌优质 IPLC 物理专线，晚高峰 4K 视频秒开无卡顿、延迟低</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span>支持 Clash、v2rayN、小火箭等全平台客户端通用订阅一键导入</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="border-b border-ink/10 py-14">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="text-center">
+          <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">常见问题解答</h2>
+          <p class="mt-2 text-sm text-ink/70">关于机场图鉴、评测维度与内容更新的常见疑问</p>
+        </div>
+
+        <div class="mt-8 space-y-3">
+          <details class="disclosure card group relative px-5 py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
+              <span>如何向博客中添加新的文章？</span>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              你可以直接复用 <code>post.html</code> 作为文章模板，修改对应的标题、面包屑、正文和目录链接；或通过静态网页生成器/构建工具自动渲染 Markdown 即可。
+            </p>
+          </details>
+
+          <details class="disclosure card group relative px-5 py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
+              <span>如何修改网站的主题色与字体？</span>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              在 <code>css/style.css</code> 开头定义了 <code>:root</code> 变量（如 <code>--color-paper</code>、<code>--color-accent</code> 等），直接修改对应的色值与字体引入即可全局生效。
+            </p>
+          </details>
+
+          <details class="disclosure card group relative px-5 py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
+              <span>框架是否支持移动端自适应？</span>
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </summary>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              完全支持。顶部导航栏在移动端自动折叠为原生无依赖的抽屉式下拉菜单，表格支持横向平滑滚动，文章排版与卡片网格均针对手机端进行了最佳视觉适配。
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="py-14">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="rounded-xl bg-ink px-6 py-12 text-center text-paper md:px-12 md:py-16">
+          <h2 class="font-display text-2xl font-semibold md:text-3xl">还没想好怎么选？先看排行榜</h2>
+          <p class="mx-auto mt-3 max-w-xl text-paper/70 text-sm md:text-base">
+            排行榜汇总了收录项目，按照综合实测指标与稳定性长期跟踪排序。
+          </p>
+          <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a href="./rankings.html" class="btn-primary">
+              前往排行榜清单
+            </a>
+            <a href="./blog.html" class="btn-secondary !text-paper !border-paper/30 hover:!border-paper/60 hover:!bg-paper/10">
+              浏览所有文章
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">综合榜单</a></li>
+            <li><a href="./rankings.html#value" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比排行</a></li>
+            <li><a href="./coupons.html" class="text-sm text-ink/70 transition-colors hover:text-ink">专属优惠码</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./post.html" class="text-sm text-ink/70 transition-colors hover:text-ink">文章模板</a></li>
+            <li><a href="./faq.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#privacy" class="text-sm text-ink/70 transition-colors hover:text-ink">隐私政策</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">免责声明</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+        <p class="mt-2 text-xs text-ink/60">
+          声明：本站提供的内容仅供技术交流与学习参考。
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

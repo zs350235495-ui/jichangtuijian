@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>Clash Verge 下载：官方渠道、安装包怎么选与常见故障 | 机场图鉴</title>
+  <meta name="description" content="Clash Verge（Clash Verge Rev）只通过 GitHub Release 发布。这里说清楚下载哪个安装包、x64 和 arm64 怎么选、fixed_webview2 是干什么的，以及 Clash for Windows 为什么不该再用。">
+  <link rel="canonical" href="https://jichangtujian.vip/clash-verge.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="Clash Verge 下载：官方渠道、安装包怎么选与常见故障 | 机场图鉴">
+  <meta property="og:description" content="Clash Verge（Clash Verge Rev）只通过 GitHub Release 发布。这里说清楚下载哪个安装包、x64 和 arm64 怎么选、fixed_webview2 是干什么的，以及 Clash for Windows 为什么不该再用。">
+  <meta property="og:url" content="https://jichangtujian.vip/downloads/clash-verge/">
+  <meta property="og:site_name" content="机场图鉴">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Clash Verge 下载：官方渠道、安装包怎么选与常见故障 | 机场图鉴",
+    "description": "Clash Verge（Clash Verge Rev）只通过 GitHub Release 发布。这里说清楚下载哪个安装包、x64 和 arm64 怎么选、fixed_webview2 是干什么的，以及 Clash for Windows 为什么不该再用。",
+    "inLanguage": "zh-CN",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "机场图鉴"
+    }
+  }
+  </script>
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-paper focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    跳到主要内容
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="./assets/logo-mark.svg" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md bg-ink/5 px-3 py-2 text-sm font-medium text-ink transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm font-medium text-accent bg-accent/5">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm font-medium text-accent bg-accent/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <!-- Breadcrumbs -->
+    <div class="mx-auto max-w-6xl px-6 pt-8">
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./downloads.html" class="transition-colors hover:text-ink">客户端下载</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80" aria-current="page">Clash Verge</span>
+          </li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "首页", "item": "./index.html"},
+          {"@type": "ListItem", "position": 2, "name": "客户端下载", "item": "./downloads.html"},
+          {"@type": "ListItem", "position": 3, "name": "Clash Verge"}
+        ]
+      }
+      </script>
+    </div>
+
+    <!-- Layout: Main Content Stream + Right Sticky TOC -->
+    <div class="mx-auto max-w-6xl px-6 py-10">
+      <div class="flex gap-12">
+
+        <!-- Left Column: Article Body -->
+        <article class="min-w-0 max-w-3xl flex-1 article-content">
+          <!-- Page Header -->
+          <div class="text-left">
+            <span class="rounded-full border border-accent/40 px-2.5 py-1 text-xs font-medium text-accent">
+              客户端下载
+            </span>
+            <h1 class="font-display mt-3 text-2xl font-semibold text-ink md:text-3xl lg:text-4xl">
+              Clash Verge 下载：官方渠道、安装包怎么选与常见故障
+            </h1>
+            <p class="mt-3 text-ink/70 max-w-2xl leading-relaxed">
+              Clash Verge Rev 只通过 GitHub Release 发布，没有第三方下载站。下面直接给出官方地址，再说清楚安装包怎么挑、装完不对劲怎么查。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/55 border-b border-ink/10 pb-6">
+              <span>信息核对于 2026年9月23日</span>
+              <span aria-hidden="true">·</span>
+              <span>预计阅读 5 分钟</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-accent font-medium">官方渠道直链</span>
+            </div>
+          </div>
+
+          <!-- Section 1: 官方下载地址 (Download Hero Card) -->
+          <div id="section-download" class="scroll-mt-24 mt-8">
+            <div class="card p-6 sm:p-7">
+              <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-600 animate-pulse" title="官方直链在线"></span>
+                    <h2 class="font-display text-lg font-semibold text-ink" style="margin:0;">官方下载地址</h2>
+                  </div>
+                  <p class="mt-2 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                    GitHub Release 是唯一的官方安装包来源。Windows 用户也可以用
+                    <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em]">winget</code> 或
+                    <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em]">scoop</code> 安装。
+                  </p>
+                </div>
+                <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-primary shrink-0 text-sm flex items-center gap-1.5">
+                  <span>前往 GitHub Release</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Terminal Command Box for Winget / Scoop -->
+              <div class="mt-6 rounded-lg border border-ink/10 bg-ink/[0.03] p-4">
+                <div class="flex items-center justify-between border-b border-ink/10 pb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-semibold text-ink/70 uppercase tracking-wider">命令行一键安装</span>
+                    <div class="flex rounded-md bg-ink/5 p-0.5 text-xs font-medium" id="terminal-tabs" role="tablist">
+                      <button type="button" class="tab-btn rounded px-2.5 py-1 text-ink bg-surface shadow-xs" data-tab="winget" role="tab" aria-selected="true">winget</button>
+                      <button type="button" class="tab-btn rounded px-2.5 py-1 text-ink/70 hover:text-ink" data-tab="scoop" role="tab" aria-selected="false">scoop</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- winget command -->
+                <div id="tab-winget" class="tab-panel mt-3 flex items-center justify-between gap-3 font-mono text-xs sm:text-sm">
+                  <div class="overflow-x-auto py-1 text-ink">
+                    <span class="text-ink/40 select-none">&gt; </span>winget install clash-verge-rev
+                  </div>
+                  <button type="button" class="copy-code shrink-0 inline-flex items-center gap-1 rounded bg-surface px-2.5 py-1 text-xs text-ink/80 border border-ink/10 hover:border-ink/30 transition-colors" data-code="winget install clash-verge-rev" aria-label="复制 winget 安装命令">
+                    <svg class="copy-icon-copy h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span class="copy-code-text">复制</span>
+                  </button>
+                </div>
+
+                <!-- scoop command -->
+                <div id="tab-scoop" class="tab-panel hidden mt-3 flex items-center justify-between gap-3 font-mono text-xs sm:text-sm">
+                  <div class="overflow-x-auto py-1 text-ink">
+                    <span class="text-ink/40 select-none">&gt; </span>scoop bucket add extras; scoop install clash-verge-rev
+                  </div>
+                  <button type="button" class="copy-code shrink-0 inline-flex items-center gap-1 rounded bg-surface px-2.5 py-1 text-xs text-ink/80 border border-ink/10 hover:border-ink/30 transition-colors" data-code="scoop bucket add extras; scoop install clash-verge-rev" aria-label="复制 scoop 安装命令">
+                    <svg class="copy-icon-copy h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3.5 w-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span class="copy-code-text">复制</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Official Links Footer -->
+              <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-ink/10 pt-4 text-sm">
+                <a href="https://github.com/clash-verge-rev/clash-verge-rev" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-accent/80 flex items-center gap-1">
+                  <span>项目仓库</span>
+                  <svg viewBox="0 0 24 24" class="h-3 w-3 inline" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"></path>
+                  </svg>
+                </a>
+                <a href="https://www.clashverge.dev/" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-accent/80 flex items-center gap-1">
+                  <span>官方文档（www.clashverge.dev）</span>
+                  <svg viewBox="0 0 24 24" class="h-3 w-3 inline" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"></path>
+                  </svg>
+                </a>
+                <span class="text-ink/55 text-xs">本页信息核对于 2026年9月23日</span>
+              </div>
+            </div>
+
+            <p class="mt-4 text-sm leading-relaxed text-ink/70">
+              这里不写具体版本号。版本几周就会变，而 Release 页面永远是最新的那个——看到别处标着某个固定版本号的「最新版下载」，基本可以判断那页已经很久没更新了。
+            </p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/70">
+              另外有件事值得先确认：客户端本身不含节点，装完还需要一份 Clash 格式的订阅才能真正用起来。手上还没有的话，可以先翻一下<a href="./rankings.html" class="text-accent underline underline-offset-2 hover:text-accent/80">机场推荐排行榜</a>，那里按线路类型和实测速度排过序。这一步的细节放在<a href="#section-after-install" class="text-accent underline underline-offset-2 hover:text-accent/80">文章后面</a>说。
+            </p>
+          </div>
+
+          <!-- Section 2: 推荐替代方案 (Off-ramp Card) -->
+          <div id="section-alternative" class="scroll-mt-24 mt-12">
+            <aside class="card border-accent/30 bg-accent/5 p-6 sm:p-7">
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 rounded-full bg-accent/15 p-1 text-accent">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4M12 8h.01"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-display text-lg font-semibold text-ink" style="margin:0;">嫌麻烦？其实可以不用 Clash</h2>
+                  <p class="mt-2 text-sm leading-relaxed text-ink/75" style="margin-bottom:0;">
+                    现在不少机场直接提供专属客户端：下载 App、登录就能连，不用装 Clash Verge，也不用找订阅链接，和用主流 VPN 一样。排行榜上每家都标了「使用方式」，想省事就挑标着专属客户端的那种。
+                  </p>
+                  <div class="mt-4">
+                    <a href="./rankings.html" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                      <span>看看不用配订阅的机场</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Section 3: 安装包怎么选 (Package Selection Guide) -->
+          <div id="section-package" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">安装包怎么选</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+                Release 页面一次会列出十几个文件，绝大多数人只需要其中一个。
+              </p>
+            </div>
+
+            <!-- Package Selection Table -->
+            <div class="mt-6 overflow-x-auto rounded-lg border border-ink/10 bg-surface">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr class="border-b border-ink/15 text-left bg-ink/[0.02]">
+                    <th class="py-3 px-4 font-semibold text-ink">系统</th>
+                    <th class="py-3 px-4 font-semibold text-ink">最低版本</th>
+                    <th class="py-3 px-4 font-semibold text-ink">架构</th>
+                    <th class="py-3 px-4 font-semibold text-ink">推荐文件格式</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/10">
+                  <!-- Windows -->
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3.5 px-4 font-medium text-ink flex items-center gap-2">
+                      <span class="rounded bg-sky-100 px-1.5 py-0.5 text-xs text-sky-800 font-normal">Windows</span>
+                    </td>
+                    <td class="py-3.5 px-4 text-ink/75">Windows 10 / 11</td>
+                    <td class="py-3.5 px-4 text-ink/75">x64、arm64</td>
+                    <td class="py-3.5 px-4 font-mono text-[0.85em] text-accent font-medium">-setup.exe</td>
+                  </tr>
+                  <tr class="bg-ink/[0.01]">
+                    <td colspan="4" class="py-2 px-4 text-xs leading-relaxed text-ink/60 border-b border-ink/10">
+                      💡 提示：没有 32 位（x86）安装包。绝大多数人要的是 <strong>x64</strong>。
+                    </td>
+                  </tr>
+
+                  <!-- macOS -->
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3.5 px-4 font-medium text-ink flex items-center gap-2">
+                      <span class="rounded bg-neutral-200 px-1.5 py-0.5 text-xs text-neutral-800 font-normal">macOS</span>
+                    </td>
+                    <td class="py-3.5 px-4 text-ink/75">macOS 12 及以上</td>
+                    <td class="py-3.5 px-4 text-ink/75">Intel（x64）、Apple 芯片（aarch64）</td>
+                    <td class="py-3.5 px-4 font-mono text-[0.85em] text-accent font-medium">.dmg / .app.tar.gz</td>
+                  </tr>
+                  <tr class="bg-ink/[0.01]">
+                    <td colspan="4" class="py-2 px-4 text-xs leading-relaxed text-ink/60 border-b border-ink/10">
+                      💡 提示：macOS 11 需要自己替换 go124 构建的内核，不建议折腾。
+                    </td>
+                  </tr>
+
+                  <!-- Linux -->
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3.5 px-4 font-medium text-ink flex items-center gap-2">
+                      <span class="rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-900 font-normal">Linux</span>
+                    </td>
+                    <td class="py-3.5 px-4 text-ink/75">Debian 12+ / Ubuntu 22.04+ / Fedora 36+ / RHEL 9+</td>
+                    <td class="py-3.5 px-4 text-ink/75">amd64、arm64、armhf</td>
+                    <td class="py-3.5 px-4 font-mono text-[0.85em] text-accent font-medium">.deb / .rpm</td>
+                  </tr>
+                  <tr class="bg-ink/[0.01]">
+                    <td colspan="4" class="py-2 px-4 text-xs leading-relaxed text-ink/60">
+                      💡 提示：Ubuntu 20.04 依赖链很麻烦，官方建议直接升级系统。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- fixed_webview2 Explanation Card -->
+            <div class="card mt-6 p-5 sm:p-6 border-l-4 border-l-accent">
+              <h3 class="font-display font-semibold text-ink text-base" style="margin:0;">带 fixed_webview2 的那个要不要下？</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink/75" style="margin-bottom:0;">
+                Windows 的安装包是成对出现的，比如
+                <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] text-ink">_x64-setup.exe</code>
+                和
+                <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] text-ink">_x64_fixed_webview2-setup.exe</code>。
+                后者把 WebView2 运行时打包了进去，体积更大。<strong>默认选普通版本就行</strong>；只有系统里缺 WebView2、装不上，或者装完打开是一片空白的时候，才需要换成 fixed 版本。
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 4: 版本区别与历史 (Version Distinction) -->
+          <div id="section-differences" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">
+                Clash Verge、Verge Rev、Clash for Windows 有什么区别
+              </h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+                这几个名字现在指向的项目状态完全不同，而且多数第三方教程还没跟上。
+              </p>
+            </div>
+
+            <div class="mt-6 space-y-3">
+              <!-- Item 1: Clash 内核 -->
+              <div class="card flex flex-col gap-2 p-5 sm:flex-row sm:items-baseline sm:gap-5">
+                <div class="flex shrink-0 items-center justify-between sm:justify-start gap-3 sm:w-64">
+                  <span class="font-display font-semibold text-ink">Clash（原始内核）</span>
+                  <span class="rounded-full px-2 py-0.5 text-xs font-medium bg-red-100 text-red-700">已删除</span>
+                </div>
+                <p class="flex-1 text-sm leading-relaxed text-ink/75" style="margin:0;">仓库 Dreamacro/clash 已经不存在，也没有归档。</p>
+              </div>
+
+              <!-- Item 2: CFW -->
+              <div class="card flex flex-col gap-2 p-5 sm:flex-row sm:items-baseline sm:gap-5">
+                <div class="flex shrink-0 items-center justify-between sm:justify-start gap-3 sm:w-64">
+                  <span class="font-display font-semibold text-ink">Clash for Windows（CFW）</span>
+                  <span class="rounded-full px-2 py-0.5 text-xs font-medium bg-red-100 text-red-700">已删除</span>
+                </div>
+                <p class="flex-1 text-sm leading-relaxed text-ink/75" style="margin:0;">作者于 2023 年 11 月 2 日删库，官方安装包已经无从获取。</p>
+              </div>
+
+              <!-- Item 3: Clash Verge (原版) -->
+              <div class="card flex flex-col gap-2 p-5 sm:flex-row sm:items-baseline sm:gap-5">
+                <div class="flex shrink-0 items-center justify-between sm:justify-start gap-3 sm:w-64">
+                  <span class="font-display font-semibold text-ink">Clash Verge（原版）</span>
+                  <span class="rounded-full px-2 py-0.5 text-xs font-medium bg-ink/10 text-ink/70">已归档</span>
+                </div>
+                <p class="flex-1 text-sm leading-relaxed text-ink/75" style="margin:0;">2023 年 11 月归档，只读状态，最后一次提交停在那时。</p>
+              </div>
+
+              <!-- Item 4: Clash Verge Rev -->
+              <div class="card flex flex-col gap-2 p-5 sm:flex-row sm:items-baseline sm:gap-5 border-accent/40 bg-accent/[0.02]">
+                <div class="flex shrink-0 items-center justify-between sm:justify-start gap-3 sm:w-64">
+                  <span class="font-display font-semibold text-ink">Clash Verge Rev</span>
+                  <span class="rounded-full px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-800">维护中</span>
+                </div>
+                <p class="flex-1 text-sm leading-relaxed text-ink/75" style="margin:0;">原版的继任者，目前仍在高频更新，就是现在大家说的「Clash Verge」。</p>
+              </div>
+
+              <!-- Item 5: mihomo 内核 -->
+              <div class="card flex flex-col gap-2 p-5 sm:flex-row sm:items-baseline sm:gap-5">
+                <div class="flex shrink-0 items-center justify-between sm:justify-start gap-3 sm:w-64">
+                  <span class="font-display font-semibold text-ink">mihomo（原 Clash.Meta）</span>
+                  <span class="rounded-full px-2.5 py-0.5 text-xs font-semibold bg-emerald-100 text-emerald-800">维护中</span>
+                </div>
+                <p class="flex-1 text-sm leading-relaxed text-ink/75" style="margin:0;">现在几乎所有 Clash 系客户端内置的内核，Clash Verge Rev 也用它。</p>
+              </div>
+            </div>
+
+            <p class="mt-5 text-sm leading-relaxed text-ink/70">
+              所以搜索时打的
+              <span class="font-medium text-ink bg-ink/5 px-1 py-0.5 rounded">Clash Verge</span>、
+              <span class="font-medium text-ink bg-ink/5 px-1 py-0.5 rounded">clashverge</span>、
+              <span class="font-medium text-ink bg-ink/5 px-1 py-0.5 rounded">Clash Verge Rev</span>
+              指的都是同一个还在维护的项目，只是写法不同，不用纠结。
+            </p>
+          </div>
+
+          <!-- Section 5: CFW 安全风险提示 (Warning Card) -->
+          <div id="section-cfw-warning" class="scroll-mt-24 mt-14">
+            <div class="card border-accent/40 bg-accent/[0.04] p-6 sm:p-7">
+              <div class="flex items-center gap-2.5">
+                <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+                <h2 class="font-display text-lg font-semibold text-ink" style="margin:0;">还在用 Clash for Windows 的话</h2>
+              </div>
+              <p class="mt-3 text-sm leading-relaxed text-ink/80">
+                作者在 2023 年 11 月 2 日把整个仓库删了，代码和 Release 一起没了，官方安装包现在无从获取。网上还能下到的版本，全部来自第三方镜像。
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-ink/80">
+                问题不在于镜像本身，而在于<strong class="font-semibold text-ink">原版已经不存在，没有任何办法比对这些文件有没有被动过手脚</strong>。代理客户端经手的是你全部的上下行流量，一个被改过的构建从外观上看不出任何区别。这比「它不支持新协议」是强得多的一个不用它的理由。
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-ink/80" style="margin-bottom:0;">
+                另外一个实际差异：CFW 的内核会忽略系统 hosts 文件，而 Clash Verge Rev 用的 mihomo 会读。所以有些人从 CFW 换过来之后会发现部分网站打不开，原因往往是 Watt Toolkit（原 Steam++）这类改 hosts 的工具在起作用。
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 6: 常见故障排查 (Troubleshooting) -->
+          <div id="section-troubleshooting" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">装完不对劲？先看这些</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">按出问题的系统分组，内容整理自项目自己的 FAQ 文档。</p>
+            </div>
+
+            <!-- Interactive Search & Platform Filter -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+              <!-- Filter Buttons -->
+              <div class="flex flex-wrap gap-1.5" id="trouble-filters">
+                <button type="button" class="trouble-filter-btn rounded-full bg-accent px-3 py-1 text-xs font-medium text-paper" data-os="all">全部 (15)</button>
+                <button type="button" class="trouble-filter-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="windows">Windows (6)</button>
+                <button type="button" class="trouble-filter-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="macos">macOS (3)</button>
+                <button type="button" class="trouble-filter-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="linux">Linux (2)</button>
+                <button type="button" class="trouble-filter-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="common">通用 (4)</button>
+              </div>
+
+              <!-- Keyword Search Input -->
+              <div class="relative w-full sm:w-64 shrink-0">
+                <input type="text" id="trouble-search" placeholder="搜索症状（如 7897, TUN, 401...）" class="w-full rounded-md border border-ink/15 bg-surface px-3 py-1.5 pl-8 text-xs text-ink placeholder:text-ink/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent">
+                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/40 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Issues List -->
+            <div class="mt-6 space-y-8" id="trouble-list">
+
+              <!-- Windows Group -->
+              <div class="trouble-group" data-group="windows">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  Windows
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">提示「这个应用无法在你的电脑上运行」</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">下错了架构。官方说法是 99.99% 的情况都是这个原因，绝大多数人应该下 <strong class="text-ink">x64</strong> 而不是 arm64。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">能启动，但只有托盘图标，点了没反应</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">WebView2 被卸载或禁用了。重新装一个，或者改用带 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">fixed_webview2</code> 的安装包。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">装到一半崩溃</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">国产杀毒软件（360、金山毒霸之类）拦截了服务模式的安装步骤。安装时可先暂时退出防护软件。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">关掉软件之后整台电脑都上不了网</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">上次退出得不干净，系统代理还开着。到「设置 → 网络和 Internet → 代理」把「使用代理服务器」手动关掉即可恢复。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">微软商店（UWP）应用走不了代理</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">UWP 沙盒默认禁止回环连接。在软件设置里的「UWP 工具（Loopback）」中勾选对应应用再保存。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">开了 TUN 之后网络直接断了</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">虚拟网卡太多，网段和规则撞了。把电脑中用不上的虚拟网卡（旧 VPN 残留、虚拟机网卡）删掉。</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- macOS Group -->
+              <div class="trouble-group" data-group="macos">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  macOS
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 trouble-item" data-os="macos">
+                    <p class="font-medium text-ink">提示「安装包已损坏」</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">旧版本还开着就装新版本，两个都被弄坏了。先彻底卸载退出干净再重装。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="macos">
+                    <p class="font-medium text-ink">系统代理开关点了没用</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">缺少管理员权限。到「系统设置 → 安全性与隐私 → 高级」里关掉「需要管理员密码才能修改系统偏好设置」。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="macos">
+                    <p class="font-medium text-ink">开 TUN 之后系统 DNS 被改了</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">这是设计如此，不是故障。TUN 接管不了局域网方向的 DNS，所以会换成公共 DNS，关掉 TUN 就会恢复。</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Linux Group -->
+              <div class="trouble-group" data-group="linux">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  Linux
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 trouble-item" data-os="linux">
+                    <p class="font-medium text-ink">想在没有桌面环境的机器上跑</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">做不到，它本身就是个 WebView 图形界面。这种无桌面的纯命令行场景直接用 mihomo 命令行即可。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="linux">
+                    <p class="font-medium text-ink">Wayland 下报 GBM / framebuffer 错误</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">上游渲染器问题，NVIDIA + Wayland 组合尤其常见。启动前加环境变量 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">WEBKIT_DISABLE_DMABUF_RENDERER=1</code> 试试。</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 通用 Group -->
+              <div class="trouble-group" data-group="common">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  通用排查
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 trouble-item" data-os="common">
+                    <p class="font-medium text-ink">代理开着，但部分网站打不开</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">要么 7897 端口被别的程序占了，要么某个「游戏加速器」改过系统 hosts 文件导致冲突。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="common">
+                    <p class="font-medium text-ink">在 Clash for Windows 里正常，换过来就不行</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">CFW 的内核会忽略系统 hosts 文件，而 mihomo 会读。Watt Toolkit（原 Steam++）这类改 hosts 的工具就会和它冲突。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="common">
+                    <p class="font-medium text-ink">导入订阅提示 401</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">本地配置目录脏了。清空本地配置目录之后重启客户端再重新导入订阅。</p>
+                  </div>
+                  <div class="card p-5 trouble-item" data-os="common">
+                    <p class="font-medium text-ink">导入订阅提示证书无效</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">对端证书不被信任。软件里有「允许无效证书」的开关，但那等于放弃了这一层校验，建议先确认订阅本身是否安全可靠。</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Port Info Callout -->
+            <div class="mt-6 rounded-lg border border-ink/10 bg-surface p-4 text-sm leading-relaxed text-ink/70">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span>默认的本地代理端口是 </span>
+                  <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] font-semibold text-ink">7897</code>
+                  <button type="button" class="copy-code inline-block text-xs text-accent underline ml-1" data-code="7897" aria-label="复制端口 7897">复制</button>
+                  <span>，外部控制端口是 </span>
+                  <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] font-semibold text-ink">9097</code>
+                  <button type="button" class="copy-code inline-block text-xs text-accent underline ml-1" data-code="9097" aria-label="复制端口 9097">复制</button>
+                  <span>。排查端口冲突的时候用得上。</span>
+                </div>
+                <a href="https://www.clashverge.dev/" target="_blank" rel="noopener noreferrer" class="shrink-0 text-accent text-xs underline underline-offset-2 hover:text-accent/80">
+                  查看官方完整故障清单 →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: 装好了，然后呢 (Next Steps - Subscription) -->
+          <div id="section-after-install" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">装好了，然后呢</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">客户端本身不含节点，这一步是很多人卡住的地方。</p>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-ink/75">
+              Clash Verge Rev 是个工具，它不提供任何节点。装完之后你还需要一份 Clash 格式的订阅链接，把它导入进去、选一个节点连上，才算真正能用。订阅要么来自机场服务，要么是自己搭的节点——自建要租服务器、自己配置和维护，大多数人图省事会直接买一份订阅，我们整理的<a href="./rankings.html" class="text-accent underline underline-offset-2 hover:text-accent/80">机场推荐排行榜</a>把在用的几家按线路、实测速度和性价比排了序，可以对照着挑。挑的时候留意每张卡片上的「使用方式」一栏：标着专属客户端的机场走的是自家 App，不发订阅链接，用不上 Clash Verge。
+            </p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/75">
+              还需要注意的是，Clash 系客户端只认 Clash 格式的订阅，sing-box 或 v2ray 的链接直接导入是不行的；部分机场还会根据 User-Agent 判断该返回哪种格式的配置。
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="./rankings.html" class="btn-primary text-sm">看机场推荐排行榜 →</a>
+              <a href="./downloads.html" class="btn-secondary text-sm">其他平台的客户端 →</a>
+            </div>
+          </div>
+
+          <!-- Section 8: 常见问题 (FAQ Accordions) -->
+          <div id="section-faq" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">Clash Verge 常见问题</h2>
+            </div>
+            <div class="mt-6 space-y-3">
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>Clash Verge 和 Clash Verge Rev 是一个东西吗？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  日常说的「Clash Verge」基本都指 Clash Verge Rev。原版 Clash Verge 已经在 2023 年 11 月归档不再维护，现在还在更新的是 Rev 这个继任项目，所以实际使用中不存在歧义，只是大家打字习惯不同。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>Clash Verge 官网是哪个？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  文档站是 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">www.clashverge.dev</code>，注意前面的 www 不能省。但安装包不在文档站上——官方明确说明只通过 GitHub Release 发布，Windows 上另外可以用 WinGet 和 Scoop 安装。除此之外的「官网下载」页面都不是官方渠道。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>Clash for Windows 还能用吗？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  作者已经在 2023 年 11 月把仓库整个删掉了，官方安装包无从获取。现在网上能找到的都是第三方镜像，而原版已经不存在，也就没办法比对这些镜像有没有被改过。代理客户端经手你全部的网络流量，这个风险不值得冒，建议直接换 Clash Verge Rev。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>下载哪个安装包？x64 还是 arm64？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  绝大多数 Windows 电脑要的是 <strong>x64</strong>。arm64 只适用于骁龙这类 ARM 芯片的设备。官方 FAQ 里说，「这个应用无法在你的电脑上运行」这个报错有 99.99% 是架构下错了。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>fixed_webview2 版本是干什么的？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  它把 WebView2 运行时一起打包进去了，体积更大。只有在系统缺少 WebView2、装不上，或者装完打开是空白面板的时候才需要它，正常情况下选普通版本就行。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>Clash Verge 装好之后就能上网了吗？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  不能。客户端只是个工具，本身不提供节点，你还需要一份订阅链接——可以来自机场服务，也可以是自建节点。把订阅导入之后选一个节点连上才算完成。
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Bottom Related Navigation -->
+          <div class="mt-14 border-t border-ink/10 pt-8">
+            <div class="rounded-xl border border-ink/10 bg-surface p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-ink" style="margin:0;">需要其他操作系统的翻墙客户端？</h3>
+                  <p class="mt-1.5 text-sm text-ink/70" style="margin-bottom:0;">我们整理了全平台主流客户端（iOS 小火箭、Android FlClash、Windows v2rayN 等）的官方安全下载汇总。</p>
+                </div>
+                <a href="./downloads.html" class="btn-primary shrink-0 text-sm">
+                  浏览全平台客户端汇总 →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Right Column: Sticky Table of Contents -->
+        <nav aria-label="文章目录" class="hidden lg:sticky lg:top-24 lg:block lg:h-fit lg:max-h-[calc(100vh-7rem)] lg:w-60 lg:shrink-0 lg:self-start lg:overflow-y-auto lg:rounded-lg lg:border lg:border-ink/10 lg:bg-surface lg:p-4">
+          <p class="px-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
+            本页目录
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li>
+              <a href="#section-download" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                1. 官方下载地址
+              </a>
+            </li>
+            <li>
+              <a href="#section-alternative" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                2. 嫌麻烦？专属客户端
+              </a>
+            </li>
+            <li>
+              <a href="#section-package" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                3. 安装包怎么选
+              </a>
+            </li>
+            <li>
+              <a href="#section-differences" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                4. 版本区别与历史
+              </a>
+            </li>
+            <li>
+              <a href="#section-cfw-warning" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                5. CFW 为什么不该用
+              </a>
+            </li>
+            <li>
+              <a href="#section-troubleshooting" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                6. 装完不对劲？先看这些
+              </a>
+            </li>
+            <li>
+              <a href="#section-after-install" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                7. 装好了，然后呢
+              </a>
+            </li>
+            <li>
+              <a href="#section-faq" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                8. 常见问题 (FAQ)
+              </a>
+            </li>
+          </ul>
+
+          <div class="mt-6 border-t border-ink/10 pt-4 px-2">
+            <span class="text-xs text-ink/50 block font-medium">快捷资源</span>
+            <div class="mt-2 space-y-1.5 text-xs">
+              <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases/latest" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline block">
+                GitHub 官方最新发布 ↗
+              </a>
+              <a href="./rankings.html" class="text-ink/70 hover:text-ink block">
+                机场订阅排行榜 ↗
+              </a>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Clash Verge Rev",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11, macOS 12, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "downloadUrl": "https://github.com/clash-verge-rev/clash-verge-rev/releases/latest",
+      "softwareHelp": "https://www.clashverge.dev/",
+      "isAccessibleForFree": true
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Clash Verge 和 Clash Verge Rev 是一个东西吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "日常说的「Clash Verge」基本都指 Clash Verge Rev。原版 Clash Verge 已经在 2023 年 11 月归档不再维护，现在还在更新的是 Rev 这个继任项目，所以实际使用中不存在歧义，只是大家打字习惯不同。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Clash Verge 官网是哪个？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "文档站是 www.clashverge.dev，注意前面的 www 不能省。但安装包不在文档站上——官方明确说明只通过 GitHub Release 发布，Windows 上另外可以用 WinGet 和 Scoop 安装。除此之外的「官网下载」页面都不是官方渠道。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Clash for Windows 还能用吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "作者已经在 2023 年 11 月把仓库整个删掉了，官方安装包无从获取。现在网上能找到的都是第三方镜像，而原版已经不存在，也就没办法比对这些镜像有没有被改过。代理客户端经手你全部的网络流量，这个风险不值得冒，建议直接换 Clash Verge Rev。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "下载哪个安装包？x64 还是 arm64？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "绝大多数 Windows 电脑要的是 x64。arm64 只适用于骁龙这类 ARM 芯片的设备。官方 FAQ 里说，「这个应用无法在你的电脑上运行」这个报错有 99.99% 是架构下错了。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "fixed_webview2 版本是干什么的？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "它把 WebView2 运行时一起打包进去了，体积更大。只有在系统缺少 WebView2、装不上，或者装完打开是空白面板的时候才需要它，正常情况下选普通版本就行。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Clash Verge 装好之后就能上网了吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不能。客户端只是个工具，本身不提供节点，你还需要一份订阅链接——可以来自机场服务，也可以是自建节点。把订阅导入之后选一个节点连上才算完成。"
+          }
+        }
+      ]
+    }
+    </script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据的软文。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">机场</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场推荐</a></li>
+            <li><a href="./best-value.html" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比机场</a></li>
+            <li><a href="./coupons.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场优惠码</a></li>
+            <li><a href="./brands.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场库</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./downloads.html" class="text-sm text-ink/70 transition-colors hover:text-ink">客户端下载</a></li>
+            <li><a href="./clash-verge.html" class="text-sm text-ink/70 transition-colors hover:text-ink">Clash Verge 下载</a></li>
+            <li><a href="./faq.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#privacy" class="text-sm text-ink/70 transition-colors hover:text-ink">隐私政策</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+        <p class="mt-2 text-xs text-ink/50">
+          本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" id="back-to-top" aria-label="回到顶部" class="fixed bottom-6 right-6 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-colors hover:border-ink/30 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" style="display: none;">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+      <path d="M12 19V5M5 12l7-7 7 7"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" type="module"></script>
+  <script type="module">
+    // Interactive Tab Switcher for Winget / Scoop
+    const tabBtns = document.querySelectorAll('#terminal-tabs .tab-btn');
+    const tabPanels = {
+      winget: document.getElementById('tab-winget'),
+      scoop: document.getElementById('tab-scoop')
+    };
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        tabBtns.forEach(b => {
+          const active = b === btn;
+          b.setAttribute('aria-selected', String(active));
+          b.classList.toggle('bg-surface', active);
+          b.classList.toggle('text-ink', active);
+          b.classList.toggle('shadow-xs', active);
+          b.classList.toggle('text-ink/70', !active);
+        });
+        Object.keys(tabPanels).forEach(key => {
+          if (tabPanels[key]) {
+            tabPanels[key].classList.toggle('hidden', key !== tab);
+          }
+        });
+      });
+    });
+
+    // Interactive Troubleshooting Filter & Search
+    const troubleFilters = document.querySelectorAll('.trouble-filter-btn');
+    const troubleGroups = document.querySelectorAll('.trouble-group');
+    const troubleItems = document.querySelectorAll('.trouble-item');
+    const troubleSearch = document.getElementById('trouble-search');
+    let currentOs = 'all';
+    let searchQuery = '';
+
+    function filterTrouble() {
+      troubleGroups.forEach(group => {
+        const groupOs = group.dataset.group;
+        const items = group.querySelectorAll('.trouble-item');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const itemOs = item.dataset.os;
+          const matchOs = currentOs === 'all' || currentOs === itemOs;
+          const matchSearch = !searchQuery || item.textContent.toLowerCase().includes(searchQuery);
+
+          if (matchOs && matchSearch) {
+            item.style.display = '';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        group.style.display = visibleCount > 0 ? '' : 'none';
+      });
+    }
+
+    troubleFilters.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentOs = btn.dataset.os;
+        troubleFilters.forEach(b => {
+          const active = b === btn;
+          b.classList.toggle('bg-accent', active);
+          b.classList.toggle('text-paper', active);
+          b.classList.toggle('border-ink/15', !active);
+          b.classList.toggle('text-ink/70', !active);
+        });
+        filterTrouble();
+      });
+    });
+
+    if (troubleSearch) {
+      troubleSearch.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        filterTrouble();
+      });
+    }
+  </script>
+</body>
+</html>

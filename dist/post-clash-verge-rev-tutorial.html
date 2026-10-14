@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon-B8VNZ4i-.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>Clash Verge Rev 2026 从零上手到进阶调优全指南：Tun模式、分流规则与防DNS泄露实战 | 机场图鉴</title>
+  <meta name="description" content="2026 最新 Clash Verge Rev 完整图文教程：涵盖 Mihomo Meta 内核架构、跨平台安装、订阅一键导入、Tun 虚拟网卡深度配置与防 DNS 泄露规则集编写，助你搭建极速稳定的分流网络。">
+  <link rel="canonical" href="https://jichangtujian.vip/post-clash-verge-rev-tutorial.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Clash Verge Rev 2026 从零上手到进阶调优全指南：Tun模式、分流规则与防DNS泄露实战",
+    "description": "2026 最新 Clash Verge Rev 完整图文教程：涵盖 Mihomo Meta 内核架构、跨平台安装、订阅一键导入、Tun 虚拟网卡深度配置与防 DNS 泄露规则集编写，助你搭建极速稳定的分流网络。",
+    "inLanguage": "zh-CN",
+    "datePublished": "2026-10-13T08:00:00+08:00",
+    "dateModified": "2026-10-14T08:00:00+08:00",
+    "author": {
+      "@type": "Organization",
+      "name": "机场图鉴编辑部",
+      "url": "https://jichangtujian.vip/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "机场图鉴",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://jichangtujian.vip/assets/logo-mark.svg"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首页",
+        "item": "./index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "博客",
+        "item": "./blog.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "客户端教程",
+        "item": "./blog.html?cat=client-tutorials"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Clash Verge Rev 2026 从零上手到进阶调优全指南：Tun模式、分流规则与防DNS泄露实战"
+      }
+    ]
+  }
+  </script>
+  <script type="module" crossorigin src="./assets/main-DQ4Rs_No.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/style-Cv953jjx.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-paper focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    跳到主要内容
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iI2E4NTMyZiIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzYwIiBmb250LWZhbWlseT0iJ05vdG8gU2FucyBTQycsICdNaWNyb3NvZnQgWWFIZWknLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2Y3ZjVmMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Zu+PC90ZXh0Pgo8L3N2Zz4=" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink font-semibold border-b-2 border-accent transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" aria-current="page">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-semibold text-accent bg-accent/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html" class="transition-colors hover:text-ink">博客</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html?cat=client-tutorials" class="transition-colors hover:text-ink">客户端教程</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80 truncate max-w-xs md:max-w-md" aria-current="page">Clash Verge Rev 2026 从零上手到进阶调优全指南：Tun模式、分流规则与防DNS泄露实战</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Layout: Main Article + Right Sticky TOC -->
+      <div class="mt-8 flex gap-12">
+
+        <!-- Left Column: Article -->
+        <article class="min-w-0 max-w-3xl flex-1">
+          <!-- Category Badge -->
+          <span class="rounded-full border border-accent/40 px-2.5 py-1 text-xs font-medium text-accent">
+            客户端教程
+          </span>
+
+          <!-- Article Title -->
+          <h1 class="font-display mt-4 text-3xl font-semibold text-ink md:text-4xl leading-tight">
+            Clash Verge Rev 2026 从零上手到进阶调优全指南：Tun模式、分流规则与防DNS泄露实战
+          </h1>
+
+          <!-- Meta Bar -->
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+            <a href="./about.html" class="hover:text-ink hover:underline font-medium">机场图鉴编辑部</a>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-10-13">发布于 2026年10月13日</time>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-10-14">更新于 2026年10月14日</time>
+            <span aria-hidden="true">·</span>
+            <span>预计阅读 14 分钟 (3400 字)</span>
+          </div>
+
+          <!-- Tags List -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#ClashVerge</a>
+<a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#客户端教程</a>
+<a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#Tun模式</a>
+<a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#分流规则</a>
+<a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#DNS防泄漏</a>
+          </div>
+
+          <!-- Notice Callout Box -->
+          <div class="mt-6 mb-8 rounded-lg border border-accent/30 bg-accent/5 px-4 py-3.5 text-sm text-ink/80 leading-relaxed">
+            <div class="flex items-start gap-2">
+              <svg class="h-4 w-4 mt-0.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>
+                <strong>核心摘要：</strong>本文详细讲解 Clash Verge Rev 开源客户端的最新 2026 配置规范，从小白零门槛订阅导入到资深网工的 Tun 模式全局接管与规则集编写，提供直接可用的配置代码段。
+              </span>
+            </div>
+          </div>
+
+          <!-- Article Prose Body -->
+          <div class="article-content mt-8 text-ink/85 leading-relaxed text-base space-y-6">
+            
+    <h2 id="section-1" class="font-display text-2xl font-semibold text-ink pt-2">一、Clash Verge Rev 核心架构与演进背景</h2>
+    <p>
+      在传统 Clash for Windows 与 Clash Premium 核心停止维护后，开源社区在开源内核 Mihomo（原 Clash.Meta）的基础之上，迅速孕育了新一代现代代理客户端——<strong>Clash Verge Rev</strong>。相较于过往基于 Electron 框架的老旧客户端，Clash Verge Rev 在跨平台内存占用、多策略组可视化拖拽、新一代传输协议（如 Hysteria 2、VLESS-Reality、TUIC v5、Shadow-TLS）的原生支持上，展现出了划时代的优势。
+    </p>
+    <p>
+      许多用户在使用代理工具时，经常遇到类似困惑：“为什么浏览器能翻墙，但在 Windows 终端跑 <code>git clone</code>、登录游戏平台（Steam/EA）、或者打开微信海外版时却走不了代理？”其根源在于<strong>系统代理（System Proxy）仅能拦截主动声明遵从 HTTP/HTTPS 代理设置的应用程序</strong>，而大量桌面软件直接使用底层 TCP/UDP Socket 通信。Clash Verge Rev 的 Tun（虚拟网卡）模式正是解决这一痛点的终极武器。
+    </p>
+
+    <h2 id="section-2" class="font-display text-2xl font-semibold text-ink pt-6">二、跨平台安装与基础环境准备</h2>
+    <p>
+      Clash Verge Rev 支持 Windows 10/11、macOS（Intel 及 Apple Silicon M1/M2/M3/M4）以及主流 Linux 发行版。
+    </p>
+    <ul class="space-y-2 list-disc pl-5">
+      <li><strong>Windows 用户：</strong>推荐直接下载 64 位安装包 <code>Clash.Verge_x64-setup.exe</code>，安装时建议勾选“为所有用户安装”以确保虚拟网卡驱动（Wintun）拥有完整系统权限。若无需安装也可选择绿色便携免安装版。</li>
+      <li><strong>macOS 用户：</strong>M 系列芯片请下载带有 <code>aarch64.dmg</code> 后缀的包，Intel 芯片下载 <code>x64.dmg</code>。首次打开若提示“无法验证开发者”，在系统偏好设置 → 安全性与隐私中点击“仍要打开”即可。</li>
+      <li><strong>官方安全下载入口：</strong>切勿轻信搜索引擎前排推广的第三方破解包。官方安全分发与各系统版本下载可直接前往本站专门整理的 <a href="./clash-verge.html" class="text-accent underline font-medium">Clash Verge 下载专题页</a>。</li>
+    </ul>
+
+    <h2 id="section-3" class="font-display text-2xl font-semibold text-ink pt-6">三、订阅链接导入与配置定时自动更新</h2>
+    <p>
+      从机场后台获取订阅后，将其导入 Clash Verge Rev 仅需简单四步：
+    </p>
+    <ol class="space-y-2 list-decimal pl-5">
+      <li>打开 Clash Verge Rev，点击左侧导航栏的<strong>「订阅 (Profiles)」</strong>。</li>
+      <li>在上方输入框中粘贴你的专属机场订阅链接，并给该配置起一个易于识别的名称（如“环球梯-专线主力”）。</li>
+      <li>点击右侧的<strong>「保存 (Save)」</strong>按钮，客户端会自动从云端拉取完整的节点列表与规则集。</li>
+      <li><strong>关键调优：</strong>在拉取成功的配置卡片上右键，选择“编辑配置 (Edit Info)”，将更新间隔（Update Interval）设置为 <code>1440</code> 分钟（即 24 小时自动更新一次），确保机场节点 IP 变更或入口调度时能够自动同步。</li>
+    </ol>
+
+    <h2 id="section-4" class="font-display text-2xl font-semibold text-ink pt-6">四、Tun 虚拟网卡模式深度实战与排坑</h2>
+    <p>
+      Tun 模式会在操作系统内部虚拟出一张专用的网络适配器，直接在操作系统内核层拦截所有进出网络数据包，实现全网真正的“全局透明接管”。
+    </p>
+    <p>
+      <strong>开启步骤：</strong>
+    </p>
+    <ul class="space-y-2 list-disc pl-5">
+      <li>进入左侧<strong>「设置 (Settings)」</strong>面板。</li>
+      <li>找到<strong>「服务模式 (Service Mode)」</strong>，点击右侧安装齿轮图标进行安装（Windows 会弹出 UAC 提权提示，确认允许）。安装成功后左侧状态灯变为绿色活跃状态。</li>
+      <li>回到设置页，将<strong>「Tun 模式」</strong>开关开启。此时无论命令行终端、游戏客户端还是第三方工具，都将无条件根据规则智能分流。</li>
+    </ul>
+
+    <div class="my-6 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 text-xs md:text-sm text-ink/80 leading-relaxed">
+      <strong class="font-semibold text-amber-600">Tun 模式与系统代理共存避坑要点：</strong>
+      开启 Tun 模式后，建议<strong>关闭传统的「系统代理」开关</strong>，避免双重代理环路造成本地 CPU 占用异常升高与端口冲突。此外，如果使用部分特定公司内网 VPN（如 EasyConnect），建议在 Tun 排除网段中添加公司的内部私网 IP 段（如 <code>10.0.0.0/8</code>）。
+    </div>
+
+    <h2 id="section-5" class="font-display text-2xl font-semibold text-ink pt-6">五、智能分流策略组与防 DNS 污染优化</h2>
+    <p>
+      为了保证国内网站秒开、不浪费机场流量，同时保障国外学术与流媒体自动走最优专线，我们需要合理的 DNS 与分流策略。
+    </p>
+    <p>
+      以下为推荐在 Clash Verge Rev 中生效的 <code>dns</code> 核心优化代码段（可在设置 → 扩展配置或预处理脚本中加入）：
+    </p>
+
+    <div class="my-4 overflow-hidden rounded-lg border border-ink/15 bg-ink text-paper text-xs">
+      <div class="flex items-center justify-between border-b border-paper/10 bg-paper/5 px-4 py-2">
+        <span class="font-mono text-paper/70">dns-config-sample.yaml</span>
+        <button type="button" class="copy-code text-paper/70 hover:text-paper" data-code="dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN">复制代码</button>
+      </div>
+      <pre class="p-4 overflow-x-auto font-mono leading-relaxed"><code>dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN</code></pre>
+    </div>
+
+    <p>
+      <strong>核心优势剖析：</strong>
+      采用 <code>fake-ip</code> 增强模式后，本地客户端无需等待远端 DNS 解析结果即可迅速建立 TCP 连接，握手延迟立降 80ms 以上；国内域名直接使用阿里 DNS（223.5.5.5）和腾讯 DNSPod 解析，彻底杜绝 CDN 解析漂移导致国内网速变慢的问题。
+    </p>
+
+    <h2 id="section-6" class="font-display text-2xl font-semibold text-ink pt-6">六、常见连接报错与排错速查表</h2>
+    <div class="my-6 overflow-x-auto rounded-lg border border-ink/10">
+      <table class="w-full border-collapse text-left text-sm">
+        <thead>
+          <tr class="border-b border-ink/10 bg-surface">
+            <th class="px-4 py-3 font-semibold text-ink">常见现象/报错</th>
+            <th class="px-4 py-3 font-semibold text-ink">根本原因分析</th>
+            <th class="px-4 py-3 font-semibold text-ink">推荐解决步骤</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-ink/10">
+          <tr class="hover:bg-ink/[0.02]">
+            <td class="px-4 py-3 font-medium text-ink">节点测速全部超时红灯</td>
+            <td class="px-4 py-3 text-ink/80">机场订阅过期、域名被阻断，或电脑系统时间误差超过 60 秒</td>
+            <td class="px-4 py-3 text-ink/80">在 Windows 设置中同步系统时间；右键订阅卡片手动刷新订阅</td>
+          </tr>
+          <tr class="hover:bg-ink/[0.02]">
+            <td class="px-4 py-3 font-medium text-ink">Tun 模式开启后无法上网</td>
+            <td class="px-4 py-3 text-ink/80">旧虚拟网卡残留、杀毒软件拦截驱动、或与其他 VPN 适配器冲突</td>
+            <td class="px-4 py-3 text-ink/80">在设备管理器卸载 Wintun 适配器，关闭火绒等杀软后重新安装服务模式</td>
+          </tr>
+          <tr class="hover:bg-ink/[0.02]">
+            <td class="px-4 py-3 font-medium text-ink">ChatGPT 提示 1020 拒绝访问</td>
+            <td class="px-4 py-3 text-ink/80">当前所选节点的 IP 欺诈分过高，被 OpenAI Cloudflare 盾拦截</td>
+            <td class="px-4 py-3 text-ink/80">切换至美国/日本原生住宅节点，并在浏览器中清除该站点 Cookie</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      配置好客户端之后，最关键的依然是后方专线节点本身的稳定性与质量。如果你尚未配置称心的机场，建议搭配阅读本站的 <a href="./rankings.html" class="text-accent underline font-medium">2026 稳定机场排行榜</a>，享受低延迟与零丢包的纯净体验。
+    </p>
+  
+          </div>
+
+          <!-- Article Footer CTA Section -->
+          <section class="mt-14 rounded-xl border border-ink/10 bg-surface/80 p-8 text-center">
+            <p class="font-display text-xs font-semibold uppercase tracking-wider text-accent">选型与省钱指南</p>
+            <h3 class="font-display mt-2 text-xl font-semibold md:text-2xl text-ink">还没想好怎么挑？先看实测榜单与优惠码</h3>
+            <p class="mx-auto mt-2 max-w-lg text-ink/70 text-sm">
+              我们用真实宽带长期采样，排除了超售卡顿与虚假倍率，提供严选的专线机场与专属折扣。
+            </p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+              <a href="./rankings.html" class="btn-primary text-sm !px-5 !py-2.5">
+                查看综合实测榜单
+              </a>
+              <a href="./best-value.html" class="inline-flex items-center justify-center rounded-md border border-ink/20 bg-surface px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent">
+                性价比排行榜
+              </a>
+              <a href="./coupons.html" class="inline-flex items-center justify-center rounded-md border border-ink/20 bg-surface px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-accent hover:text-accent">
+                领独家 7 折优惠码
+              </a>
+            </div>
+          </section>
+
+          <!-- Prev / Next Navigation -->
+          <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 pt-6 text-sm">
+            <a href="./post-airport-selection-guide.html" class="flex items-center gap-2 text-ink/70 hover:text-ink">
+              <span>← 上一篇：2026 机场选购终极避坑指南</span>
+            </a>
+            <a href="./post-v2rayn-beginners-guide.html" class="flex items-center gap-2 text-ink/70 hover:text-ink">
+              <span>下一篇：v2rayN 2026 最新版极简上手教程 →</span>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Right Column: Sticky Table of Contents -->
+        <nav aria-label="文章目录" class="hidden lg:sticky lg:top-24 lg:block lg:h-fit lg:max-h-[calc(100vh-7rem)] lg:w-64 lg:shrink-0 lg:self-start lg:overflow-y-auto lg:rounded-lg lg:border lg:border-ink/10 lg:bg-surface lg:p-4">
+          <p class="px-2 text-xs font-semibold uppercase tracking-wide text-ink/70">
+            本文目录
+          </p>
+          <ul class="mt-2 space-y-1">
+            
+              <li>
+                <a href="#section-1" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                  一、Clash Verge Rev 核心架构与演进背景
+                </a>
+              </li>
+            
+              <li>
+                <a href="#section-2" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                  二、跨平台安装与基础环境准备
+                </a>
+              </li>
+            
+              <li>
+                <a href="#section-3" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                  三、订阅链接导入与配置定时自动更新
+                </a>
+              </li>
+            
+              <li>
+                <a href="#section-4" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                  四、Tun 虚拟网卡模式深度实战与排坑
+                </a>
+              </li>
+            
+              <li>
+                <a href="#section-5" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                  五、智能分流策略组与防 DNS 污染优化
+                </a>
+              </li>
+            
+              <li>
+                <a href="#section-6" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                  六、常见连接报错与排错速查表
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </main>
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm font-medium text-accent">全部博客</a></li>
+            <li><a href="./topics.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场专题</a></li>
+            <li><a href="./compare.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场对比</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">综合榜单</a></li>
+            <li><a href="./best-value.html" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比排行</a></li>
+            <li><a href="./coupons.html" class="text-sm text-ink/70 transition-colors hover:text-ink">专属优惠码</a></li>
+            <li><a href="./brands.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场库</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./downloads.html" class="text-sm text-ink/70 transition-colors hover:text-ink">客户端下载</a></li>
+            <li><a href="./clash-verge.html" class="text-sm text-ink/70 transition-colors hover:text-ink">Clash Verge</a></li>
+            <li><a href="./v2rayn.html" class="text-sm text-ink/70 transition-colors hover:text-ink">v2rayN</a></li>
+            <li><a href="./tools.html" class="text-sm text-ink/70 transition-colors hover:text-ink">检测工具箱</a></li>
+            <li><a href="./faq.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#privacy" class="text-sm text-ink/70 transition-colors hover:text-ink">隐私政策</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+        <p class="mt-2 text-xs text-ink/60">
+          声明：本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

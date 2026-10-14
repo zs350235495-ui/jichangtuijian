@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon-B8VNZ4i-.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>v2rayN 下载：没有官网，只认 GitHub（附校验方法）| 机场图鉴</title>
+  <meta name="description" content="v2rayN 从来没有官方网站，所有「v2rayN 官网」都是第三方页面。这里给出唯一的官方下载入口、怎么用 GPG 签名验证文件没被替换，以及 Windows / macOS 常见报错怎么解决。">
+  <link rel="canonical" href="https://jichangtujian.vip/v2rayn.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="v2rayN 下载：没有官网，只认 GitHub（附校验方法）| 机场图鉴">
+  <meta property="og:description" content="v2rayN 从来没有官方网站，所有「v2rayN 官网」都是第三方页面。这里给出唯一的官方下载入口、怎么用 GPG 签名验证文件没被替换，以及 Windows / macOS 常见报错怎么解决。">
+  <meta property="og:url" content="https://jichangtujian.vip/downloads/v2rayn/">
+  <meta property="og:site_name" content="机场图鉴">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "v2rayN 下载：没有官网，只认 GitHub（附校验方法）| 机场图鉴",
+    "description": "v2rayN 从来没有官方网站，所有「v2rayN 官网」都是第三方页面。这里给出唯一的官方下载入口、怎么用 GPG 签名验证文件没被替换，以及 Windows / macOS 常见报错怎么解决。",
+    "inLanguage": "zh-CN",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "机场图鉴"
+    }
+  }
+  </script>
+  <script type="module" crossorigin src="./assets/v2rayn-CVla4L_r.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/main-DQ4Rs_No.js">
+  <link rel="stylesheet" crossorigin href="./assets/style-Cv953jjx.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-paper focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    跳到主要内容
+  </a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iI2E4NTMyZiIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzYwIiBmb250LWZhbWlseT0iJ05vdG8gU2FucyBTQycsICdNaWNyb3NvZnQgWWFIZWknLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2Y3ZjVmMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Zu+PC90ZXh0Pgo8L3N2Zz4=" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md bg-ink/5 px-3 py-2 text-sm font-medium text-ink transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm font-medium text-accent bg-accent/5">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm font-medium text-accent bg-accent/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <!-- Breadcrumbs -->
+    <div class="mx-auto max-w-6xl px-6 pt-8">
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./downloads.html" class="transition-colors hover:text-ink">客户端下载</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80" aria-current="page">v2rayN</span>
+          </li>
+        </ol>
+      </nav>
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "首页", "item": "./index.html"},
+          {"@type": "ListItem", "position": 2, "name": "客户端下载", "item": "./downloads.html"},
+          {"@type": "ListItem", "position": 3, "name": "v2rayN"}
+        ]
+      }
+      </script>
+    </div>
+
+    <!-- Layout: Main Content Stream + Right Sticky TOC -->
+    <div class="mx-auto max-w-6xl px-6 py-10">
+      <div class="flex gap-12">
+
+        <!-- Left Column: Article Body -->
+        <article class="min-w-0 max-w-3xl flex-1 article-content">
+          <!-- Page Header -->
+          <div class="text-left">
+            <span class="rounded-full border border-accent/40 px-2.5 py-1 text-xs font-medium text-accent">
+              客户端下载
+            </span>
+            <h1 class="font-display mt-3 text-2xl font-semibold text-ink md:text-3xl lg:text-4xl">
+              v2rayN 下载：没有官网，只认 GitHub（附校验方法）
+            </h1>
+            <p class="mt-3 text-ink/70 max-w-2xl leading-relaxed">
+              v2rayN 没有官方网站，唯一的官方下载入口就是 GitHub Release。下面给出地址，再说清楚下哪个文件、怎么确认文件没被换过、以及装完报错怎么查。
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/55 border-b border-ink/10 pb-6">
+              <span>信息核对于 2026年9月23日</span>
+              <span aria-hidden="true">·</span>
+              <span>预计阅读 5 分钟</span>
+              <span aria-hidden="true">·</span>
+              <span class="text-accent font-medium">官方渠道直链</span>
+              <span aria-hidden="true">·</span>
+              <span class="rounded bg-accent/10 px-1.5 py-0.5 text-xs text-accent">GPG 校验</span>
+            </div>
+          </div>
+
+          <!-- Section 1: 官方下载地址 (Download Hero Card) -->
+          <div id="section-download" class="scroll-mt-24 mt-8">
+            <div class="card p-6 sm:p-7">
+              <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="inline-block h-2.5 w-2.5 rounded-full bg-emerald-600 animate-pulse" title="官方直链在线"></span>
+                    <h2 class="font-display text-lg font-semibold text-ink" style="margin:0;">官方下载地址</h2>
+                  </div>
+                  <p class="mt-2 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                    仓库是 <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] text-ink font-semibold">2dust/v2rayN</code>，除此之外没有任何官方发布渠道。
+                  </p>
+                </div>
+                <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="noopener noreferrer" class="btn-primary shrink-0 text-sm flex items-center gap-1.5">
+                  <span>前往 GitHub Release</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Official Links Footer -->
+              <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-ink/10 pt-4 text-sm">
+                <a href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-accent/80 flex items-center gap-1">
+                  <span>项目仓库</span>
+                  <svg viewBox="0 0 24 24" class="h-3 w-3 inline" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"></path>
+                  </svg>
+                </a>
+                <a href="https://github.com/2dust/v2rayN/wiki" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-accent/80 flex items-center gap-1">
+                  <span>官方 Wiki / FAQ</span>
+                  <svg viewBox="0 0 24 24" class="h-3 w-3 inline" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"></path>
+                  </svg>
+                </a>
+                <span class="text-ink/55 text-xs">本页信息核对于 2026年9月23日</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: 「官网」防坑辨析 (Fake Site Warning Card) -->
+          <div id="section-fake-sites" class="scroll-mt-24 mt-8">
+            <div class="card border-accent/40 bg-accent/[0.04] p-6 sm:p-7">
+              <div class="flex items-center gap-2.5">
+                <svg viewBox="0 0 24 24" class="h-5 w-5 text-accent shrink-0" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+                <h2 class="font-display text-lg font-semibold text-ink" style="margin:0;">「v2rayN 官网」这个搜索本身就是个坑</h2>
+              </div>
+              <p class="mt-3 text-sm leading-relaxed text-ink/80">
+                <strong class="text-ink">v2rayN 从来没有做过官方网站</strong>。它只有一个 GitHub 仓库，发布也只走 Release 页面。所以当你搜「v2rayN 官网」并点进某个看起来很正式的下载站时，那一定不是官方的——因为官方根本不存在这么一个页面。
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-ink/80">
+                这类第三方站点未必都有恶意，但代理客户端经手的是你全部的上下行流量，装上一个被改过的版本，从外观上完全看不出来。判断方法很简单：
+                <span class="inline-block mt-1 font-mono text-sm font-semibold text-accent bg-accent/10 px-2 py-0.5 rounded">
+                  地址栏不是 github.com/2dust/v2rayN 就别下
+                </span>
+              </p>
+              <p class="mt-3 text-sm leading-relaxed text-ink/80" style="margin-bottom:0;">
+                这里同样不写具体版本号——版本几周就会变，Release 页面永远是最新的那个。另外，客户端本身不含节点，装完还需要一份订阅才能用；手上还没有的话可以先看<a href="./rankings.html" class="text-accent underline underline-offset-2 hover:text-accent/80 font-medium">机场推荐排行榜</a>，细节放在<a href="#section-after-install" class="text-accent underline underline-offset-2 hover:text-accent/80 font-medium">文章后面</a>说。
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 3: 推荐替代方案 (Off-ramp Card) -->
+          <div id="section-alternative" class="scroll-mt-24 mt-12">
+            <aside class="card border-accent/30 bg-accent/5 p-6 sm:p-7">
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 rounded-full bg-accent/15 p-1 text-accent">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4M12 8h.01"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-display text-lg font-semibold text-ink" style="margin:0;">嫌麻烦？其实可以不用 v2rayN</h2>
+                  <p class="mt-2 text-sm leading-relaxed text-ink/75" style="margin-bottom:0;">
+                    现在不少机场直接提供专属客户端：下载 App、登录就能连，不用装 v2rayN，也不用找订阅链接，和用主流 VPN 一样。排行榜上每家都标了「使用方式」，想省事就挑标着专属客户端的那种。
+                  </p>
+                  <div class="mt-4">
+                    <a href="./rankings.html" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                      <span>看看不用配订阅的机场</span>
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Section 4: 下载哪个文件 (Package Selection Table) -->
+          <div id="section-package" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">下载哪个文件</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+                Release 页面文件不少，绝大多数人只需要其中一个。
+              </p>
+            </div>
+
+            <!-- Platform Table -->
+            <div class="mt-6 overflow-x-auto rounded-lg border border-ink/10 bg-surface">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr class="border-b border-ink/15 text-left bg-ink/[0.02]">
+                    <th class="py-3 px-4 font-semibold text-ink">系统</th>
+                    <th class="py-3 px-4 font-semibold text-ink">最低版本</th>
+                    <th class="py-3 px-4 font-semibold text-ink">架构</th>
+                    <th class="py-3 px-4 font-semibold text-ink">格式</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/10">
+                  <!-- Windows -->
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3.5 px-4 font-medium text-ink flex items-center gap-2">
+                      <span class="rounded bg-sky-100 px-1.5 py-0.5 text-xs text-sky-800 font-normal">Windows</span>
+                    </td>
+                    <td class="py-3.5 px-4 text-ink/75">Windows 10 及以上</td>
+                    <td class="py-3.5 px-4 text-ink/75">x64、x86、arm64</td>
+                    <td class="py-3.5 px-4 font-mono text-[0.85em] text-accent font-medium">.zip</td>
+                  </tr>
+                  <tr class="bg-ink/[0.01]">
+                    <td colspan="4" class="py-2 px-4 text-xs leading-relaxed text-ink/60 border-b border-ink/10">
+                      💡 提示：普通 zip 是 <strong>WPF 界面</strong>，带 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">-desktop</code> 的是 <strong>Avalonia 界面</strong>，功能完全一样，挑顺眼的就行。
+                    </td>
+                  </tr>
+
+                  <!-- macOS -->
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3.5 px-4 font-medium text-ink flex items-center gap-2">
+                      <span class="rounded bg-neutral-200 px-1.5 py-0.5 text-xs text-neutral-800 font-normal">macOS</span>
+                    </td>
+                    <td class="py-3.5 px-4 text-ink/75">macOS 13.6 及以上</td>
+                    <td class="py-3.5 px-4 text-ink/75">x64、arm64</td>
+                    <td class="py-3.5 px-4 font-mono text-[0.85em] text-accent font-medium">.dmg</td>
+                  </tr>
+                  <tr class="bg-ink/[0.01]">
+                    <td colspan="4" class="py-2 px-4 text-xs leading-relaxed text-ink/60 border-b border-ink/10">
+                      💡 提示：dmg 没有官方开发者签名，第一次打开会提示「已损坏」，解决办法见下面的常见故障（执行一行终端命令即可绕过）。
+                    </td>
+                  </tr>
+
+                  <!-- Linux -->
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3.5 px-4 font-medium text-ink flex items-center gap-2">
+                      <span class="rounded bg-amber-100 px-1.5 py-0.5 text-xs text-amber-900 font-normal">Linux</span>
+                    </td>
+                    <td class="py-3.5 px-4 text-ink/75">Debian 12+ / Ubuntu 22.04+ / Fedora 36+ / RHEL 9+</td>
+                    <td class="py-3.5 px-4 text-ink/75">x64、arm64、riscv64、loong64</td>
+                    <td class="py-3.5 px-4 font-mono text-[0.85em] text-accent font-medium">.deb / .rpm / .zip</td>
+                  </tr>
+                  <tr class="bg-ink/[0.01]">
+                    <td colspan="4" class="py-2 px-4 text-xs leading-relaxed text-ink/60">
+                      💡 提示：架构覆盖比大多数客户端都全，riscv64 和龙芯（loong64）都有现成包。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Portable App Explanation Card -->
+            <div class="card mt-6 p-5 sm:p-6 border-l-4 border-l-accent">
+              <h3 class="font-display font-semibold text-ink text-base" style="margin:0;">它是绿色版，不用安装</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink/75">
+                Windows 和 Linux 的 zip 解压出来直接运行就行，配置和数据都留在同一个文件夹里，卸载就是删文件夹。顺带一个实用技巧：<strong>把整个文件夹复制一份、改掉里面的监听端口，就能同时跑两个互不干扰的实例</strong>。
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-ink/75" style="margin-bottom:0;">
+                路径建议用<strong>纯英文、不带空格</strong>，也别放进需要管理员权限才能写入的目录（如 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">C:\Program Files</code>）——官方 FAQ 里的报错有相当一部分都是这个原因。
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 5: GPG 签名校验方法 (Verification Guide) -->
+          <div id="section-verification" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">怎么确认下载的文件没被换过</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">
+                v2rayN 给每个发行文件都做了签名，这在同类客户端里并不常见。
+              </p>
+            </div>
+
+            <p class="mt-5 text-sm leading-relaxed text-ink/75">
+              Release 页面上每个安装包旁边都有一个同名的
+              <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] font-semibold text-ink">.sig</code>
+              文件，公钥
+              <code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em] font-semibold text-ink">v2rayN-public-key.asc</code>
+              也放在同一页。项目把理由写得很直白：<strong>防止镜像站、运营商和 CDN 在传输过程中掉包</strong>。
+            </p>
+
+            <p class="mt-3 text-sm leading-relaxed text-ink/75">
+              对大多数人来说，只要是从 GitHub 原地址下载的就够了。但如果你因为网络原因用了某个镜像站，那这一步就很值得做——把安装包、<code class="rounded bg-ink/5 px-1.5 py-0.5 font-mono text-[0.85em]">.sig</code> 和公钥都下下来，导入公钥之后校验一次，几十秒的事，能确认拿到的就是作者发布的那个文件。
+            </p>
+
+            <!-- GPG Steps Terminal Code Card -->
+            <div class="mt-6 rounded-lg border border-ink/10 bg-ink p-5 text-paper">
+              <div class="flex items-center justify-between border-b border-paper/10 pb-3 text-xs text-paper/60">
+                <span class="font-mono uppercase tracking-wider">GPG 校验操作指南（终端 / 命令行）</span>
+                <span class="rounded bg-paper/10 px-2 py-0.5 text-[10px] text-paper/80">Bash / PowerShell</span>
+              </div>
+
+              <!-- Step 1 -->
+              <div class="mt-4">
+                <div class="flex items-center justify-between">
+                  <p class="text-xs text-paper/70 font-sans">第 1 步：导入作者官方公钥</p>
+                  <button type="button" class="copy-code inline-flex items-center gap-1 text-[11px] text-accent-light hover:text-paper transition-colors" data-code="gpg --import v2rayN-public-key.asc" aria-label="复制代码">
+                    <svg class="copy-icon-copy h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3 w-3 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span class="copy-code-text">复制</span>
+                  </button>
+                </div>
+                <pre class="mt-1.5 rounded bg-black/40 p-2.5 font-mono text-xs text-paper/90 overflow-x-auto"><code>gpg --import v2rayN-public-key.asc</code></pre>
+              </div>
+
+              <!-- Step 2 -->
+              <div class="mt-4">
+                <div class="flex items-center justify-between">
+                  <p class="text-xs text-paper/70 font-sans">第 2 步：验证安装包签名与完整性</p>
+                  <button type="button" class="copy-code inline-flex items-center gap-1 text-[11px] text-accent-light hover:text-paper transition-colors" data-code="gpg --verify v2rayN-windows-64.zip.sig v2rayN-windows-64.zip" aria-label="复制代码">
+                    <svg class="copy-icon-copy h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-3 w-3 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span class="copy-code-text">复制</span>
+                  </button>
+                </div>
+                <pre class="mt-1.5 rounded bg-black/40 p-2.5 font-mono text-xs text-paper/90 overflow-x-auto"><code>gpg --verify v2rayN-windows-64.zip.sig v2rayN-windows-64.zip</code></pre>
+              </div>
+
+              <div class="mt-3 text-[11px] text-paper/50 leading-relaxed">
+                输出显示「<span class="text-emerald-400 font-mono">Good signature from ...</span>」即证明压缩包完全属于作者本人原版构建，未被中间人篡改。
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6: v2rayN 和 v2rayNG 是两个东西 -->
+          <div id="section-vs-v2rayng" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">v2rayN 和 v2rayNG 是两个东西</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">同一个作者，名字只差一个字母，装错了会白折腾。</p>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <!-- v2rayN -->
+              <div class="card p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-display text-lg font-semibold text-ink" style="margin:0;">v2rayN</h3>
+                    <span class="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">桌面端</span>
+                  </div>
+                  <p class="mt-3 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                    支持 <strong>Windows / macOS / Linux</strong>。发行包里自带 <strong>Xray、sing-box、mihomo</strong> 三个内核，功能大而全。
+                  </p>
+                </div>
+                <div class="mt-5 border-t border-ink/10 pt-4">
+                  <a href="https://github.com/2dust/v2rayN" target="_blank" rel="noopener noreferrer" class="text-accent text-sm font-medium hover:underline inline-flex items-center gap-1">
+                    <span>前往 2dust/v2rayN 仓库</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- v2rayNG -->
+              <div class="card p-5 sm:p-6 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <h3 class="font-display text-lg font-semibold text-ink" style="margin:0;">v2rayNG</h3>
+                    <span class="rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-semibold text-emerald-800">安卓端</span>
+                  </div>
+                  <p class="mt-3 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                    专为 <strong>Android 安卓设备</strong> 设计。仓库和安装包都是独立的 APK 文件，内置的是 <strong>Xray 和 v2fly</strong> 内核。
+                  </p>
+                </div>
+                <div class="mt-5 border-t border-ink/10 pt-4">
+                  <a href="https://github.com/2dust/v2rayNG" target="_blank" rel="noopener noreferrer" class="text-accent text-sm font-medium hover:underline inline-flex items-center gap-1">
+                    <span>前往 2dust/v2rayNG 仓库</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 7: 它为什么能兼容那么多协议 (Protocol Matrix) -->
+          <div id="section-protocols" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">它为什么能兼容那么多协议</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">关键不在界面，在于发行包里带了几个内核。</p>
+            </div>
+
+            <p class="mt-5 text-sm leading-relaxed text-ink/75">
+              能不能连上某个节点，取决于内核支不支持那个协议，和客户端界面没什么关系。v2rayN 的发行包里同时带了三个主流内核，所以下面这张表它基本全覆盖：
+            </p>
+
+            <!-- Protocol Comparison Table -->
+            <div class="mt-6 overflow-x-auto rounded-lg border border-ink/10 bg-surface">
+              <table class="w-full border-collapse text-sm">
+                <thead>
+                  <tr class="border-b border-ink/15 text-left bg-ink/[0.02]">
+                    <th class="py-3 px-4 font-semibold text-ink">协议类型</th>
+                    <th class="py-3 px-4 text-center font-semibold text-ink">Xray 内核</th>
+                    <th class="py-3 px-4 text-center font-semibold text-ink">sing-box 内核</th>
+                    <th class="py-3 px-4 text-center font-semibold text-ink">mihomo 内核</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/10">
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3 px-4 text-ink/80 font-medium">VMess / Shadowsocks / Trojan</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                  </tr>
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3 px-4 text-ink/80 font-medium">VLESS</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                  </tr>
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3 px-4 text-ink/80 font-medium">REALITY</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                  </tr>
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3 px-4 text-ink/80 font-medium">Hysteria 2</td>
+                    <td class="py-3 px-4 text-center text-ink/30 font-medium">—</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                  </tr>
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="py-3 px-4 text-ink/80 font-medium">TUIC</td>
+                    <td class="py-3 px-4 text-center text-ink/30 font-medium">—</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                    <td class="py-3 px-4 text-center text-accent font-semibold">✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p class="mt-4 text-sm leading-relaxed text-ink/70">
+              💡 <strong>Hysteria 2</strong> 和 <strong>TUIC</strong> 这两个 Xray 内核本身不支持，靠 sing-box 和 mihomo 补上。所以如果你的机场给的是这类新型高吞吐节点，用 v2rayN 通常不用额外折腾，切换核心即可无缝连接。
+            </p>
+          </div>
+
+          <!-- Section 8: 常见报错与故障排查 (Troubleshooting) -->
+          <div id="section-troubleshooting" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">装完不对劲？先看这些</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">内容整理自项目自己的 Wiki FAQ。</p>
+            </div>
+
+            <!-- Interactive Search & Platform Filter -->
+            <div class="mt-6 flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
+              <!-- Filter Buttons -->
+              <div class="flex flex-wrap gap-1.5" id="v2-trouble-filters">
+                <button type="button" class="v2-trouble-btn rounded-full bg-accent px-3 py-1 text-xs font-medium text-paper" data-os="all">全部 (6)</button>
+                <button type="button" class="v2-trouble-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="windows">Windows</button>
+                <button type="button" class="v2-trouble-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="macos">macOS</button>
+                <button type="button" class="v2-trouble-btn rounded-full border border-ink/15 px-3 py-1 text-xs text-ink/70 hover:text-ink hover:border-ink/30 transition-colors" data-os="common">通用</button>
+              </div>
+
+              <!-- Keyword Search Input -->
+              <div class="relative w-full sm:w-64 shrink-0">
+                <input type="text" id="v2-trouble-search" placeholder="搜索症状（如 损坏, guiLogs, 端口...）" class="w-full rounded-md border border-ink/15 bg-surface px-3 py-1.5 pl-8 text-xs text-ink placeholder:text-ink/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent">
+                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/40 absolute left-2.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.35-4.35"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Issues List -->
+            <div class="mt-6 space-y-6" id="v2-trouble-list">
+
+              <!-- Windows Group -->
+              <div class="v2-trouble-group" data-group="windows">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  Windows
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 v2-trouble-item" data-os="windows">
+                    <p class="font-medium text-ink">系统代理只有 HTTP，没有 SOCKS</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                      这是 Windows 操作系统本身的机制限制，其全局系统代理设置只支持 HTTP 协议，原生不支持 SOCKS5。如果某个特殊程序需要走 SOCKS5 代理，需要在该程序自身的网络连接设置中单独填写本地 SOCKS 端口。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- macOS Group -->
+              <div class="v2-trouble-group" data-group="macos">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  macOS
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 v2-trouble-item" data-os="macos">
+                    <div class="flex items-start justify-between gap-3">
+                      <div>
+                        <p class="font-medium text-ink">提示「应用已损坏，无法打开」</p>
+                        <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                          不是真的安装包损坏，而是 dmg 安装包没有购买苹果官方开发者证书签名，被系统安全机制 Gatekeeper 拦截。在 Mac 终端中运行以下命令移除拦截属性即可正常打开：
+                        </p>
+                      </div>
+                    </div>
+                    <div class="mt-3 flex items-center justify-between gap-3 rounded bg-ink/[0.04] p-2.5 font-mono text-xs text-ink border border-ink/10">
+                      <span class="overflow-x-auto">xattr -cr /Applications/v2rayN.app</span>
+                      <button type="button" class="copy-code shrink-0 inline-flex items-center gap-1 rounded bg-surface px-2.5 py-1 text-xs text-ink/80 border border-ink/10 hover:border-ink/30 transition-colors" data-code="xattr -cr /Applications/v2rayN.app" aria-label="复制代码">
+                        <svg class="copy-icon-copy h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                          <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                        </svg>
+                        <svg class="copy-icon-check hidden h-3.5 w-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M20 6 9 17l-5-5"></path>
+                        </svg>
+                        <span class="copy-code-text">复制</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="card p-5 v2-trouble-item" data-os="macos">
+                    <p class="font-medium text-ink">自动设置系统代理没反应，也不报错</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                      macOS 上这个功能是通过内部调用系统脚本实现的，调用失败时图形界面上看不出直接报错，建议前往程序目录下的 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">guiLogs</code> 文件夹查看具体排错日志。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 通用 Group -->
+              <div class="v2-trouble-group" data-group="common">
+                <p class="font-display text-xs font-bold uppercase tracking-wider text-ink/50 mb-3 flex items-center gap-1.5">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-accent"></span>
+                  通用排查
+                </p>
+                <div class="space-y-3">
+                  <div class="card p-5 v2-trouble-item" data-os="common">
+                    <p class="font-medium text-ink">测速或测延迟时提示「核心启动失败」</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                      通常是配置参数有语法错误、当前使用的核心版本不再支持这份配置，或者本地监听端口被别的程序占了——装了 VMware / VirtualBox 虚拟机的机器特别容易遇到端口冲突。在设置中把日志级别调成 Debug 再看一次会清晰很多。
+                    </p>
+                  </div>
+
+                  <div class="card p-5 v2-trouble-item" data-os="common">
+                    <p class="font-medium text-ink">不知道去哪看日志</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                      日志分为两个地方：界面、设置、测速相关的问题查看软件目录下的 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">guiLogs</code> 文件夹；节点连接、握手和数据传输问题直接看主界面下方的信息栏输出。
+                    </p>
+                  </div>
+
+                  <div class="card p-5 v2-trouble-item" data-os="common">
+                    <p class="font-medium text-ink">装在中文路径或者 Program Files 里之后各种报错</p>
+                    <p class="mt-1.5 text-sm leading-relaxed text-ink/75" style="margin:0;">
+                      官方强烈建议存放路径采用<strong>纯英文、不带空格</strong>，更不要放在需要额外管理员权限才能写入的目录。它是绿色便携版，放哪里都能直接跑，建议移动至 D 盘或用户个人文档根目录下解压使用。
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Win 7 Alert -->
+            <div class="mt-6 rounded-lg border border-ink/10 bg-surface p-4 text-sm leading-relaxed text-ink/70">
+              <p style="margin:0;">
+                更完整的故障排查清单可参考 <a href="https://github.com/2dust/v2rayN/wiki" target="_blank" rel="noopener noreferrer" class="text-accent underline underline-offset-2 hover:text-accent/80 font-medium">官方 Wiki 知识库</a>。另外，针对 <strong>Windows 7</strong> 用户，官方的说法是「理论上可行」，但需要自己往 bin 目录里手动放特制内核，且重度依赖 .NET 8 运行库——不建议为了旧系统折腾，换台机器或升级到 Windows 10/11 更省心。
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 9: 装好了，然后呢 (Next Steps) -->
+          <div id="section-after-install" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">装好了，然后呢</h2>
+              <p class="mt-2 text-sm text-ink/70 leading-relaxed">客户端本身不含节点，这一步是很多人卡住的地方。</p>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-ink/75">
+              v2rayN 只是个壳加几个内核，它不提供任何节点。装完之后你还需要一份订阅链接，导入进去、选一个节点连上才算能用。订阅要么来自机场服务，要么是自己搭的节点——自建要租服务器、自己配置和维护，大多数人图省事会直接买一份订阅，我们整理的<a href="./rankings.html" class="text-accent underline underline-offset-2 hover:text-accent/80">机场推荐排行榜</a>把在用的几家按线路、实测速度和性价比排了序，可以对照着挑。挑的时候留意每张卡片上的「使用方式」一栏：标着专属客户端的机场走的是自家 App，不发订阅链接，用不上 v2rayN。
+            </p>
+            <p class="mt-3 text-sm leading-relaxed text-ink/75">
+              v2rayN 对订阅格式的兼容性比 Clash 系客户端宽松一些，v2ray / vmess 这类原始格式链接也能直接吃。如果你更习惯基于分流策略组与规则体系的管理方式，也可以参考我们整理的 <a href="./clash-verge.html" class="text-accent underline underline-offset-2 hover:text-accent/80 font-medium">Clash Verge 下载与安装指南</a>。
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="./rankings.html" class="btn-primary text-sm">看机场推荐排行榜 →</a>
+              <a href="./downloads.html" class="btn-secondary text-sm">其他平台的客户端 →</a>
+            </div>
+          </div>
+
+          <!-- Section 10: 常见问题 (FAQ Accordions) -->
+          <div id="section-faq" class="scroll-mt-24 mt-14">
+            <div class="text-left">
+              <h2 class="font-display text-2xl font-semibold text-ink md:text-3xl">v2rayN 常见问题</h2>
+            </div>
+            <div class="mt-6 space-y-3">
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>v2rayN 官网是哪个？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  没有官网。v2rayN 只有 GitHub 仓库和 Release 页面，项目本身从来没有做过官方网站。所以搜索结果里任何自称「v2rayN 官网」的页面都是第三方做的，下载前请务必确认地址是 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">github.com/2dust/v2rayN</code>。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>v2rayN 下载哪个文件？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  Windows 用户绝大多数下 x64 的 zip 就行。普通 zip 用的是 WPF 界面，带 -desktop 的用 Avalonia 界面，两者功能完全一样，只是界面框架不同。macOS 选对应芯片的 dmg，Linux 有 deb、rpm 和 zip 三种。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>v2rayN 需要安装吗？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  不需要。它是绿色便携版，解压出来直接运行就能用，数据也存在同一个文件夹里。想同时跑多个实例，把整个文件夹复制一份、改掉监听端口就可以。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>v2rayN 和 v2rayNG 有什么区别？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  是同一个作者的两个项目：v2rayN 是桌面版，跑在 Windows、macOS 和 Linux 上；v2rayNG 是安卓版。名字只差一个字母，但仓库和安装包都是分开的，别下错。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>macOS 上提示「应用已损坏」怎么办？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  这不是文件坏了，而是 dmg 没有做签名，被系统的 Gatekeeper 拦住了。在终端里执行 <code class="rounded bg-ink/5 px-1 py-0.5 font-mono text-[0.85em]">xattr -cr /Applications/v2rayN.app</code>，然后重新打开就可以了。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center gap-4 font-medium text-ink justify-between">
+                  <span>v2rayN 支持 Hysteria 2 和 TUIC 吗？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70" style="margin-bottom:0;">
+                  支持。这两个协议 Xray 内核本身不支持，但 v2rayN 的发行包里同时带了 Xray、sing-box 和 mihomo 三个内核，缺的那部分由后两个补上，所以常见协议基本都能覆盖。
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <!-- Bottom Related Navigation -->
+          <div class="mt-14 border-t border-ink/10 pt-8">
+            <div class="rounded-xl border border-ink/10 bg-surface p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-ink" style="margin:0;">更喜欢 Clash 的规则体系与分流界面？</h3>
+                  <p class="mt-1.5 text-sm text-ink/70" style="margin-bottom:0;">Clash Verge Rev 是目前最主流的桌面客户端，提供规则分组可视化与更简洁的日常操作体验。</p>
+                </div>
+                <a href="./clash-verge.html" class="btn-primary shrink-0 text-sm">
+                  阅读 Clash Verge 指南 →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Right Column: Sticky Table of Contents -->
+        <nav aria-label="文章目录" class="hidden lg:sticky lg:top-24 lg:block lg:h-fit lg:max-h-[calc(100vh-7rem)] lg:w-60 lg:shrink-0 lg:self-start lg:overflow-y-auto lg:rounded-lg lg:border lg:border-ink/10 lg:bg-surface lg:p-4">
+          <p class="px-2 text-xs font-semibold uppercase tracking-wider text-ink/50">
+            本页目录
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li>
+              <a href="#section-download" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                1. 官方下载地址
+              </a>
+            </li>
+            <li>
+              <a href="#section-fake-sites" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                2. 「官网」搜索防坑
+              </a>
+            </li>
+            <li>
+              <a href="#section-alternative" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                3. 嫌麻烦？专属客户端
+              </a>
+            </li>
+            <li>
+              <a href="#section-package" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                4. 下载哪个文件
+              </a>
+            </li>
+            <li>
+              <a href="#section-verification" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                5. GPG 签名防掉包校验
+              </a>
+            </li>
+            <li>
+              <a href="#section-vs-v2rayng" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                6. v2rayN vs v2rayNG
+              </a>
+            </li>
+            <li>
+              <a href="#section-protocols" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                7. 多内核与协议兼容
+              </a>
+            </li>
+            <li>
+              <a href="#section-troubleshooting" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                8. 装完不对劲？先看这些
+              </a>
+            </li>
+            <li>
+              <a href="#section-after-install" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                9. 装好了，然后呢
+              </a>
+            </li>
+            <li>
+              <a href="#section-faq" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                10. 常见问题 (FAQ)
+              </a>
+            </li>
+          </ul>
+
+          <div class="mt-6 border-t border-ink/10 pt-4 px-2">
+            <span class="text-xs text-ink/50 block font-medium">快捷资源</span>
+            <div class="mt-2 space-y-1.5 text-xs">
+              <a href="https://github.com/2dust/v2rayN/releases/latest" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline block">
+                GitHub 官方最新发布 ↗
+              </a>
+              <a href="./rankings.html" class="text-ink/70 hover:text-ink block">
+                机场订阅排行榜 ↗
+              </a>
+              <a href="./clash-verge.html" class="text-ink/70 hover:text-ink block">
+                Clash Verge 指南 ↗
+              </a>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "v2rayN",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, macOS 13.6, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "downloadUrl": "https://github.com/2dust/v2rayN/releases/latest",
+      "softwareHelp": "https://github.com/2dust/v2rayN/wiki",
+      "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "isAccessibleForFree": true
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "v2rayN 官网是哪个？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "没有官网。v2rayN 只有 GitHub 仓库和 Release 页面，项目本身从来没有做过官方网站。所以搜索结果里任何自称「v2rayN 官网」的页面都是第三方做的，下载前请务必确认地址是 github.com/2dust/v2rayN。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "v2rayN 下载哪个文件？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Windows 用户绝大多数下 x64 的 zip 就行。普通 zip 用的是 WPF 界面，带 -desktop 的用 Avalonia 界面，两者功能完全一样，只是界面框架不同。macOS 选对应芯片的 dmg，Linux 有 deb、rpm 和 zip 三种。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "v2rayN 需要安装吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。它是绿色便携版，解压出来直接运行就能用，数据也存在同一个文件夹里。想同时跑多个实例，把整个文件夹复制一份、改掉监听端口就可以。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "v2rayN 和 v2rayNG 有什么区别？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "是同一个作者的两个项目：v2rayN 是桌面版，跑在 Windows、macOS 和 Linux 上；v2rayNG 是安卓版。名字只差一个字母，但仓库和安装包都是分开的，别下错。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "macOS 上提示「应用已损坏」怎么办？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "这不是文件坏了，而是 dmg 没有做签名，被系统的 Gatekeeper 拦住了。在终端里执行 xattr -cr /Applications/v2rayN.app，然后重新打开就可以了。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "v2rayN 支持 Hysteria 2 和 TUIC 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "支持。这两个协议 Xray 内核本身不支持，但 v2rayN 的发行包里同时带了 Xray、sing-box 和 mihomo 三个内核，缺的那部分由后两个补上，所以常见协议基本都能覆盖。"
+          }
+        }
+      ]
+    }
+    </script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            机场推荐不迷信最低价：一分钱一分货，我们用真实测速和长期跟踪，帮你挑到稳定、好用、值得续费的机场。好的地方我们会说好，容易踩坑的地方也不藏着掖着，不写没有根据的软文。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">机场</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场推荐</a></li>
+            <li><a href="./best-value.html" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比机场</a></li>
+            <li><a href="./coupons.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场优惠码</a></li>
+            <li><a href="./brands.html" class="text-sm text-ink/70 transition-colors hover:text-ink">机场库</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./downloads.html" class="text-sm text-ink/70 transition-colors hover:text-ink">客户端下载</a></li>
+            <li><a href="./clash-verge.html" class="text-sm text-ink/70 transition-colors hover:text-ink">Clash Verge 下载</a></li>
+            <li><a href="./v2rayn.html" class="text-sm text-ink/70 transition-colors hover:text-ink">v2rayN 下载</a></li>
+            <li><a href="./faq.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#privacy" class="text-sm text-ink/70 transition-colors hover:text-ink">隐私政策</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+        <p class="mt-2 text-xs text-ink/50">
+          本站为联盟营销网站，通过站内链接完成的符合条件的购买，我们可能获得一定佣金，不会增加您的购买成本。
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" id="back-to-top" aria-label="回到顶部" class="fixed bottom-6 right-6 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-colors hover:border-ink/30 hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" style="display: none;">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+      <path d="M12 19V5M5 12l7-7 7 7"></path>
+    </svg>
+  </button>
+
+</body>
+</html>

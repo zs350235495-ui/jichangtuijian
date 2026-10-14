@@ -1,0 +1,5 @@
+# Robots.txt for jichangtujian.vip
+User-agent: *
+Allow: /
+
+Sitemap: https://jichangtujian.vip/sitemap.xml

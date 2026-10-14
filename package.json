@@ -1,0 +1,13 @@
+{
+  "name": "jichang-tujian",
+  "version": "1.0.0",
+  "description": "机场图鉴 - 现代化机场推荐、评测与知识库博客",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  }
+}

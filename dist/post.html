@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon-B8VNZ4i-.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>文章标题示例：专线网络服务深度横向评测与选型指南 | 机场图鉴</title>
+  <meta name="description" content="包含框架支持的所有典型排版元素（代码块、参数表、测速看板、支持矩阵、折叠问答等），专为技术博客与评测文章设计。">
+  <link rel="canonical" href="https://jichangtujian.vip/post.html">
+  <link rel="stylesheet" crossorigin href="./assets/style-Cv953jjx.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iI2E4NTMyZiIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzYwIiBmb250LWZhbWlseT0iJ05vdG8gU2FucyBTQycsICdNaWNyb3NvZnQgWWFIZWknLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2Y3ZjVmMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Zu+PC90ZXh0Pgo8L3N2Zz4=" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html" class="transition-colors hover:text-ink">博客</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html?cat=reviews" class="transition-colors hover:text-ink">评测</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80 truncate max-w-xs md:max-w-md" aria-current="page">文章标题示例：专线网络服务深度横向评测与选型指南</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Layout: Main Article + Right Sticky TOC -->
+      <div class="mt-8 flex gap-12">
+
+        <!-- Left Column: Article -->
+        <article class="min-w-0 max-w-3xl flex-1">
+          <!-- Category Badge -->
+          <span class="rounded-full border border-accent/40 px-2.5 py-1 text-xs font-medium text-accent">
+            深度评测
+          </span>
+
+          <!-- Article Title -->
+          <h1 class="font-display mt-4 text-3xl font-semibold text-ink md:text-4xl">
+            文章标题示例：专线网络服务深度横向评测与选型指南
+          </h1>
+
+          <!-- Meta Bar -->
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+            <a href="./about.html" class="hover:text-ink hover:underline font-medium">编辑部</a>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-10-14">发布于 2026年10月14日</time>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-10-14">更新于 2026年10月14日</time>
+            <span aria-hidden="true">·</span>
+            <span>预计阅读 6 分钟</span>
+          </div>
+
+          <!-- Tags List -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#专线评测</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#网络架构</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#配置指南</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#性能实测</a>
+          </div>
+
+          <!-- Notice Callout Box -->
+          <div class="mt-6 mb-8 rounded-lg border border-accent/30 bg-accent/5 px-4 py-3.5 text-sm text-ink/80 leading-relaxed">
+            <div class="flex items-start gap-2">
+              <svg class="h-4 w-4 mt-0.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>
+                <strong>提示：</strong>本页面为博客文章的标准排版展示模板，内置了标题排版、引用块、对比数据表格、代码块及一键复制、实测性能看板、服务解锁网格和常见问题折叠组件，方便快速写作新文章。
+              </span>
+            </div>
+          </div>
+
+          <!-- Article Prose Body -->
+          <div class="article-content mt-8">
+
+            <h2 id="section-intro">一、概述与核心定位</h2>
+            <p>
+              在网络服务选型过程中，稳定性和低延迟始终是技术团队与重度使用者的第一诉求。普通公网线路在晚高峰时段容易受到骨干网拥塞与丢包波动的干扰，而专线（如 IPLC、IEPL 等内网专用通道）通过点对点跨国链路直连，能够带来几乎零抖动的网络体验。
+            </p>
+            <p>
+              通过对连续 30 天的网络监控和各时段吞吐量测试，我们整理出了这套标准评测与对比框架，从多个技术维度评估服务的真实交付能力。
+            </p>
+
+            <blockquote class="my-6 border-l-4 border-accent pl-4 italic text-ink/75">
+              “真正的稳定性不需要跑分图上的瞬时极值，而是在晚高峰的任意时刻，都能像呼吸一样自然稳定地响应每一个请求。”
+            </blockquote>
+
+            <h2 id="section-architecture">二、架构设计与方案对比</h2>
+            <p>
+              不同架构在成本、峰值速率和抗干扰能力方面有着明显差异。以下为核心技术指标横向对比：
+            </p>
+
+            <!-- Comparison Table -->
+            <div class="my-6 overflow-x-auto rounded-lg border border-ink/10">
+              <table class="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr class="border-b border-ink/10 bg-surface">
+                    <th class="px-4 py-3 font-semibold text-ink">方案类别</th>
+                    <th class="px-4 py-3 font-semibold text-ink">线路类型</th>
+                    <th class="px-4 py-3 font-semibold text-ink">高峰期延迟波动</th>
+                    <th class="px-4 py-3 font-semibold text-ink">丢包率表现</th>
+                    <th class="px-4 py-3 font-semibold text-ink">月均成本参考</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/10">
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="px-4 py-3 font-medium text-ink">内网专线方案 A</td>
+                    <td class="px-4 py-3 text-ink/80">点对点 IPLC</td>
+                    <td class="px-4 py-3 text-accent font-medium">&lt; 3ms (极稳)</td>
+                    <td class="px-4 py-3 text-accent font-medium">&lt; 0.1%</td>
+                    <td class="px-4 py-3 text-ink/80">约 ¥35 / 月起</td>
+                  </tr>
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="px-4 py-3 font-medium text-ink">优质中转方案 B</td>
+                    <td class="px-4 py-3 text-ink/80">BGP 入口多线中转</td>
+                    <td class="px-4 py-3 text-ink/80">15 ~ 30ms</td>
+                    <td class="px-4 py-3 text-ink/80">&lt; 1.5%</td>
+                    <td class="px-4 py-3 text-ink/80">约 ¥18 / 月起</td>
+                  </tr>
+                  <tr class="hover:bg-ink/[0.02]">
+                    <td class="px-4 py-3 font-medium text-ink">基础直连方案 C</td>
+                    <td class="px-4 py-3 text-ink/80">常规公共互联网</td>
+                    <td class="px-4 py-3 text-ink/60">50 ~ 120ms (波动明显)</td>
+                    <td class="px-4 py-3 text-ink/60">3% ~ 8%</td>
+                    <td class="px-4 py-3 text-ink/80">约 ¥8 / 月起</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>关键考量要点包括：</p>
+            <ul>
+              <li><strong>协议握手延迟：</strong>轻量级加密协议相较于传统包装协议能减少 20ms 以上的首包往返开销。</li>
+              <li><strong>出口原生 IP 池：</strong>决定了 AI 服务（如 ChatGPT、Claude）与流媒体平台的解锁纯净度。</li>
+              <li><strong>多入口冗余：</strong>当华南或华东入口网络波动时，支持自动负载切换。</li>
+            </ul>
+
+            <h2 id="section-code">三、自动化配置与代码示例</h2>
+            <p>
+              为了实现规则的自动化分流，可以在客户端或网关层配置如下规则脚本：
+            </p>
+
+            <!-- Code block with copy button -->
+            <div class="code-block-wrapper">
+              <div class="code-block-header">
+                <span class="font-mono text-xs">config.yaml</span>
+                <button type="button" class="copy-code group inline-flex items-center gap-1.5 rounded border border-paper/20 px-2 py-0.5 text-xs text-paper/80 transition-colors hover:border-accent hover:text-accent" data-code="rules:&#10;  - DOMAIN-SUFFIX,openai.com,DIRECT-AI&#10;  - DOMAIN-SUFFIX,anthropic.com,DIRECT-AI&#10;  - DOMAIN-KEYWORD,github,PROXY-FAST&#10;  - GEOIP,CN,DIRECT&#10;  - MATCH,PROXY-DEFAULT" aria-label="复制代码">
+                  <span class="copy-code-text">复制</span>
+                  <svg class="copy-icon-copy h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                  </svg>
+                  <svg class="copy-icon-check hidden h-3.5 w-3.5 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                </button>
+              </div>
+              <pre class="m-0 rounded-none bg-ink p-4 font-mono text-xs leading-relaxed text-paper/90 overflow-x-auto"><code>rules:
+  - DOMAIN-SUFFIX,openai.com,DIRECT-AI
+  - DOMAIN-SUFFIX,anthropic.com,DIRECT-AI
+  - DOMAIN-KEYWORD,github,PROXY-FAST
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY-DEFAULT</code></pre>
+            </div>
+
+            <h2 id="section-speed">四、实测速度与网络延迟看板</h2>
+            <p>
+              以下为在千兆对称光纤环境下，晚 21:00 晚高峰时段对各主要区域节点的实测抽样：
+            </p>
+
+            <!-- Dark Speed Test Report Card -->
+            <div class="my-6 overflow-hidden rounded-lg bg-ink text-paper">
+              <div class="flex items-center justify-between border-b border-paper/10 px-5 py-3">
+                <p class="font-display text-sm font-semibold">节点晚高峰性能实测汇总</p>
+                <span class="text-xs text-paper/60">2026年10月 实测采样</span>
+              </div>
+              <div class="divide-y divide-paper/5">
+                <div class="flex items-center justify-between px-5 py-3 text-sm">
+                  <span class="text-paper/80">香港 专线节点 01</span>
+                  <span class="flex gap-4 text-paper font-mono">
+                    <span class="text-accent-light">延迟 24ms</span>
+                    <span>下行 580Mbps</span>
+                  </span>
+                </div>
+                <div class="flex items-center justify-between px-5 py-3 text-sm">
+                  <span class="text-paper/80">新加坡 专线节点 01</span>
+                  <span class="flex gap-4 text-paper font-mono">
+                    <span class="text-accent-light">延迟 48ms</span>
+                    <span>下行 460Mbps</span>
+                  </span>
+                </div>
+                <div class="flex items-center justify-between px-5 py-3 text-sm">
+                  <span class="text-paper/80">日本 专线节点 01</span>
+                  <span class="flex gap-4 text-paper font-mono">
+                    <span class="text-accent-light">延迟 52ms</span>
+                    <span>下行 320Mbps</span>
+                  </span>
+                </div>
+                <div class="flex items-center justify-between px-5 py-3 text-sm">
+                  <span class="text-paper/80">美国 专线节点 01</span>
+                  <span class="flex gap-4 text-paper font-mono">
+                    <span class="text-paper/60">延迟 138ms</span>
+                    <span>下行 180Mbps</span>
+                  </span>
+                </div>
+              </div>
+              <div class="border-t border-paper/10 px-5 py-3">
+                <p class="text-xs text-paper/60 leading-relaxed">
+                  测试说明：所有数据均在晚高峰时段采集，受本地运营商物理距离影响，不同地区实际延迟可能有微小偏差。
+                </p>
+              </div>
+            </div>
+
+            <h2 id="section-matrix">五、功能与服务支持矩阵</h2>
+            <p>
+              节点对主流 AI 工具与流媒体服务平台的解锁状态分布如下：
+            </p>
+
+            <!-- Unlock Matrix Card -->
+            <div class="my-6 overflow-hidden rounded-lg bg-ink text-paper">
+              <div class="flex items-center justify-between border-b border-paper/10 px-5 py-3">
+                <p class="font-display text-sm font-semibold">服务支持矩阵状态</p>
+                <span class="text-xs text-paper/60">全节点支持</span>
+              </div>
+              <div class="grid grid-cols-1 gap-px bg-paper/5 sm:grid-cols-3">
+                <div class="flex items-center gap-3 bg-ink px-5 py-4">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-accent-light" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <div class="min-w-0">
+                    <p class="truncate text-sm font-medium text-paper">ChatGPT Web / API</p>
+                    <p class="text-xs text-accent-light">完全支持</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 bg-ink px-5 py-4">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-accent-light" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <div class="min-w-0">
+                    <p class="truncate text-sm font-medium text-paper">Claude 3.5 Sonnet</p>
+                    <p class="text-xs text-accent-light">完全支持</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 bg-ink px-5 py-4">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-paper/60" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  <div class="min-w-0">
+                    <p class="truncate text-sm font-medium text-paper">Gemini Advanced</p>
+                    <p class="text-xs text-paper/60">美日节点推荐</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="section-evaluation">六、适用人群与优缺点总结</h2>
+            <p>综合各项测试指标，本方案的优劣势清晰明朗：</p>
+
+            <!-- Pros & Cons Grid -->
+            <div class="my-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div class="rounded-lg border border-accent/30 bg-accent/5 p-5">
+                <p class="font-semibold text-accent text-sm">主要优势</p>
+                <ul class="mt-3 space-y-2 text-sm text-ink/80">
+                  <li class="flex items-start gap-2">
+                    <span class="text-accent">✓</span>
+                    <span>全天候低延迟，高峰期无掉速现象</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-accent">✓</span>
+                    <span>主流 AI 工具解锁率高，IP 干净</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-accent">✓</span>
+                    <span>提供全平台客户端，免除配置门槛</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="rounded-lg border border-ink/15 bg-surface p-5">
+                <p class="font-semibold text-ink/70 text-sm">需要留意之处</p>
+                <ul class="mt-3 space-y-2 text-sm text-ink/70">
+                  <li class="flex items-start gap-2">
+                    <span class="text-ink/40">•</span>
+                    <span>单价相对普通中转套餐略高</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-ink/40">•</span>
+                    <span>轻量偶发上网用户性价比不明显</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Promotion CTA Box -->
+            <div class="my-8 rounded-lg border border-accent/30 bg-surface p-6">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <h3 class="font-display text-lg font-semibold text-ink">专属优惠信息</h3>
+                  <p class="mt-1 text-sm text-ink/70">
+                    使用专属折扣码享受立减优惠，适合长期高频使用的用户。
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <button type="button" class="copy-code group inline-flex items-center gap-2 rounded-md border border-dashed border-accent/40 bg-accent/5 px-3 py-2 font-mono text-sm font-medium text-accent hover:border-accent hover:bg-accent/10" data-code="SPECIAL2026" aria-label="复制优惠码 SPECIAL2026">
+                    <span class="copy-code-text">SPECIAL2026</span>
+                    <svg class="copy-icon-copy h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect>
+                      <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                    </svg>
+                    <svg class="copy-icon-check hidden h-4 w-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </button>
+                  <a href="#" class="btn-primary text-sm">前往官方网站</a>
+                </div>
+              </div>
+            </div>
+
+            <h2 id="section-faq">七、常见问题解答 (FAQ)</h2>
+            <div class="my-6 space-y-3">
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
+                  <span>专线与普通中转的核心技术差异是什么？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70">
+                  专线使用的是运营商跨国机房之间的独享链路，数据不经过公共互联网公网路由，抗拥塞与抗干扰能力极强；而普通中转使用的是公网服务器转发，遇到公网骨干波动时容易发生抖动。
+                </p>
+              </details>
+
+              <details class="disclosure card group relative px-5 py-4">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">
+                  <span>如何确认客户端是否成功连接了原生 IP 节点？</span>
+                  <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-ink/70">
+                  可通过 IP 数据库检测网站（如 ipinfo.io 等）查看当前节点的 ASN 分配组织与原生广播属性，或直接打开流媒体及 AI 服务网页测试是否正常识别区域。
+                </p>
+              </details>
+            </div>
+
+          </div>
+
+          <!-- Bottom CTA Box in Article -->
+          <section class="mt-14 rounded-xl bg-ink px-6 py-10 text-center text-paper md:px-10 md:py-12">
+            <h3 class="font-display text-xl font-semibold md:text-2xl">还没想好怎么选？先看排行榜</h3>
+            <p class="mx-auto mt-2 max-w-lg text-paper/70 text-sm">
+              排行榜汇总了全部收录方案，按综合实测评分与稳定性长期跟踪排序。
+            </p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+              <a href="./rankings.html" class="btn-primary">
+                前往完整排行榜
+              </a>
+              <a href="./blog.html" class="btn-secondary !text-paper !border-paper/30 hover:!border-paper/60 hover:!bg-paper/10">
+                返回文章列表
+              </a>
+            </div>
+          </section>
+
+          <!-- Prev / Next Navigation -->
+          <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 pt-6 text-sm">
+            <a href="./blog.html" class="flex items-center gap-2 text-ink/70 hover:text-ink">
+              <span>← 上一篇：网络排错工具使用技巧</span>
+            </a>
+            <a href="./blog.html" class="flex items-center gap-2 text-ink/70 hover:text-ink">
+              <span>下一篇：客户端分流进阶设置指南 →</span>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Right Column: Sticky Table of Contents -->
+        <nav aria-label="文章目录" class="hidden lg:sticky lg:top-24 lg:block lg:h-fit lg:max-h-[calc(100vh-7rem)] lg:w-60 lg:shrink-0 lg:self-start lg:overflow-y-auto lg:rounded-lg lg:border lg:border-ink/10 lg:bg-surface lg:p-4">
+          <p class="px-2 text-xs font-semibold uppercase tracking-wide text-ink/70">
+            本文目录
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li>
+              <a href="#section-intro" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                一、概述与核心定位
+              </a>
+            </li>
+            <li>
+              <a href="#section-architecture" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                二、架构设计与方案对比
+              </a>
+            </li>
+            <li>
+              <a href="#section-code" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                三、自动化配置与代码示例
+              </a>
+            </li>
+            <li>
+              <a href="#section-speed" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                四、实测速度与网络延迟看板
+              </a>
+            </li>
+            <li>
+              <a href="#section-matrix" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                五、功能与服务支持矩阵
+              </a>
+            </li>
+            <li>
+              <a href="#section-evaluation" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                六、适用人群与优缺点总结
+              </a>
+            </li>
+            <li>
+              <a href="#section-faq" class="toc-link block truncate rounded-md px-2 py-1.5 text-sm leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                七、常见问题解答 (FAQ)
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">综合榜单</a></li>
+            <li><a href="./rankings.html#value" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比排行</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./post.html" class="text-sm text-ink/70 transition-colors hover:text-ink">文章模板</a></li>
+            <li><a href="./faq.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
