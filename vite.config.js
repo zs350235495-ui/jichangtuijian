@@ -8,7 +8,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         blog: resolve(__dirname, 'blog.html'),
-                post: resolve(__dirname, 'post.html'),
+        article: resolve(__dirname, 'article.html'),
+        post: resolve(__dirname, 'post.html'),
         postAirportGuide: resolve(__dirname, 'post-airport-selection-guide.html'),
         postClashVerge: resolve(__dirname, 'post-clash-verge-rev-tutorial.html'),
         postV2rayn: resolve(__dirname, 'post-v2rayn-beginners-guide.html'),

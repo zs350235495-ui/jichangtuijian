@@ -155,9 +155,63 @@ document.addEventListener('DOMContentLoaded', () => {
         filterArticles();
       });
     }
+
+    // Initialize from URL search parameters (?cat=... or ?category=..., ?q=... or ?search=...)
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      let catParam = urlParams.get('cat') || urlParams.get('category');
+      if (catParam === 'tutorials') catParam = 'client-tutorials';
+      if (catParam) {
+        const matchedBtn = filterButtons.find((b) => b.dataset.category === catParam);
+        if (matchedBtn) {
+          currentCategory = catParam;
+          filterButtons.forEach((b) => {
+            b.classList.remove(...activeClasses, ...inactiveClasses);
+            b.classList.add(...(b === matchedBtn ? activeClasses : inactiveClasses));
+          });
+        }
+      }
+      const queryParam = urlParams.get('q') || urlParams.get('search');
+      if (queryParam && searchInput) {
+        searchQuery = queryParam.trim().toLowerCase();
+        searchInput.value = queryParam;
+      }
+    } catch (err) {
+      // safe fallback
+    }
+
+    filterArticles();
   }
 
-  // 5. Table of Contents & Category Jump Scrollspy
+  // 5. Graceful compatibility redirection for post.html?post=...
+  if (window.location.pathname.endsWith('post.html') || window.location.pathname.endsWith('/post')) {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const postSlug = params.get('post') || params.get('id') || params.get('name');
+      if (postSlug) {
+        const cleanSlug = postSlug.toLowerCase().replace(/^post-/, '').replace(/\.html$/, '').trim();
+        const validSlugs = {
+          'airport-selection-guide': './post-airport-selection-guide.html',
+          'clash-verge-rev-tutorial': './post-clash-verge-rev-tutorial.html',
+          'v2rayn-beginners-guide': './post-v2rayn-beginners-guide.html',
+          'shadowrocket-ios-setup': './post-shadowrocket-ios-setup.html',
+          'airport-shutdown-warning-signals': './post-airport-shutdown-warning-signals.html',
+          'streaming-unlock-guide': './post-streaming-unlock-guide.html',
+          'chatgpt-claude-ai-nodes': './post-chatgpt-claude-ai-nodes.html',
+          'cross-border-ecommerce-network': './post-cross-border-ecommerce-network.html',
+          'soft-router-openclash-setup': './post-soft-router-openclash-setup.html',
+          'network-latency-packet-loss-troubleshooting': './post-network-latency-packet-loss-troubleshooting.html'
+        };
+        if (validSlugs[cleanSlug]) {
+          window.location.replace(validSlugs[cleanSlug]);
+        }
+      }
+    } catch (err) {
+      // safe fallback
+    }
+  }
+
+  // 6. Table of Contents & Category Jump Scrollspy
   const tocNav = document.querySelector('nav[aria-label="文章目录"], nav[aria-label="FAQ 分类跳转"]');
   if (tocNav) {
     const targets = Array.from(document.querySelectorAll('.article-content h2[id], .article-content h3[id], section[id]'));
