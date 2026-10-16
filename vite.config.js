@@ -10,6 +10,7 @@ export default defineConfig({
         blog: resolve(__dirname, 'blog.html'),
         article: resolve(__dirname, 'article.html'),
         post: resolve(__dirname, 'post.html'),
+        postRoutingGuide: resolve(__dirname, 'post-rule-based-routing-anti-pollution-guide.html'),
         postAirportGuide: resolve(__dirname, 'post-airport-selection-guide.html'),
         postClashVerge: resolve(__dirname, 'post-clash-verge-rev-tutorial.html'),
         postV2rayn: resolve(__dirname, 'post-v2rayn-beginners-guide.html'),

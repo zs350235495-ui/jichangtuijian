@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (postSlug) {
         const cleanSlug = postSlug.toLowerCase().replace(/^post-/, '').replace(/\.html$/, '').trim();
         const validSlugs = {
+          'rule-based-routing-anti-pollution-guide': './post-rule-based-routing-anti-pollution-guide.html',
           'airport-selection-guide': './post-airport-selection-guide.html',
           'clash-verge-rev-tutorial': './post-clash-verge-rev-tutorial.html',
           'v2rayn-beginners-guide': './post-v2rayn-beginners-guide.html',

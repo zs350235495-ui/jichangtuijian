@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>2026 规则分流与防污染终极指南：GeoIP/Geosite 深度优化、隐私广告拦截与分流防穿透实战 | 机场图鉴</title>
+  <meta name="description" content="深入解析 2026 规则分流引擎底层架构！详解 DOMAIN、GEOSITE、IP-CIDR 与 GEOIP 优先级机制与规则覆盖根因，横向测评主流分流规则集，实战网银直连、AI 专线与广告拦截配置，攻克 no-resolve 与 Fake-IP 防穿透抗污染。">
+  <link rel="canonical" href="https://jichangtujian.vip/post-rule-based-routing-anti-pollution-guide.html">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="./assets/logo-mark.svg" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm font-semibold text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>TG 客服</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-semibold text-accent bg-accent/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html" class="transition-colors hover:text-ink">博客</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html?cat=client-tutorials" class="transition-colors hover:text-ink">客户端教程</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80 truncate max-w-xs md:max-w-md" aria-current="page">2026 规则分流与防污染终极指南：GeoIP/Geosite 深度优化、隐私广告拦截与分流防穿透实战</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Layout: Main Article + Right Sticky TOC -->
+      <div class="mt-8 flex gap-12">
+
+        <!-- Left Column: Article -->
+        <article class="min-w-0 max-w-3xl flex-1">
+          <!-- Category Badge -->
+          <span class="rounded-full border border-accent/40 px-2.5 py-1 text-xs font-medium text-accent">
+            技术进阶
+          </span>
+
+          <!-- Article Title -->
+          <h1 class="font-display mt-4 text-3xl font-semibold text-ink md:text-4xl leading-tight">
+            2026 规则分流与防污染终极指南：GeoIP/Geosite 深度优化、隐私广告拦截与分流防穿透实战
+          </h1>
+
+          <!-- Meta Bar -->
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+            <a href="./about.html" class="hover:text-ink hover:underline font-medium">机场图鉴技术组</a>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-10-16">发布于 2026年10月16日</time>
+            <span aria-hidden="true">·</span>
+            <span>预计阅读 16 分钟 (4200 字)</span>
+          </div>
+
+          <!-- Tags List -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#网络分流</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#Mihomo</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#Fake-IP</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#GeoIP</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#Geosite</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#DNS防污染</a>
+          </div>
+
+          <!-- Notice Callout Box -->
+          <div class="mt-6 mb-8 rounded-lg border border-accent/30 bg-accent/5 px-4 py-3.5 text-sm text-ink/80 leading-relaxed">
+            <div class="flex items-start gap-2">
+              <svg class="h-4 w-4 mt-0.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>
+                <strong>核心导读：</strong>在多协议与现代化网络网关架构（如 Mihomo / Clash Meta、Sing-box 等）中，分流引擎是流量调度的控制中枢。本文深入拆解规则匹配状态机与短路求值机理，剖析规则覆盖冲突原因，并给出网银白名单、AI 专线与广告黑洞的四层漏斗模型，彻底解决 <code>no-resolve</code> 与 Fake-IP 联动防穿透难题。
+              </span>
+            </div>
+          </div>
+
+          <!-- Article Prose Body -->
+          <div class="article-content mt-8 text-ink/85 leading-relaxed text-base space-y-6">
+            
+            <h2 id="section-1" class="font-display text-2xl font-semibold text-ink pt-2">一、规则分流引擎底层原理剖析</h2>
+            <p>
+              现代分流内核的本质是一个具备<strong>短路求值（Short-circuit Evaluation）</strong>特性的多阶段 ACL 判定引擎。数据包或应用层代理请求进入引擎后，依次经历元数据提取、域名级快速匹配、DNS 决策分支、IP 级拓扑匹配与全局保底收敛五个阶段。
+            </p>
+            <p>
+              规则匹配严格遵循<strong>从上至下、首次命中即终止（First-match-wins）</strong>原则。不同规则类型的语义粒度决定了它们在链路中的最佳编排位置：
+            </p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li><strong><code>DOMAIN</code>（完全匹配）：</strong>哈希表常数级 <code>O(1)</code> 查找，用于特定子域名的精准覆盖（如将 <code>api.twitter.com</code> 与主站分离路由）。</li>
+              <li><strong><code>DOMAIN-SUFFIX</code>（后缀树匹配）：</strong>域名倒序字典树（Trie / Radix Tree），覆盖整站顶级域及各级子域（如 <code>apple.com</code> 覆盖 <code>cdn.apple.com</code>）。</li>
+              <li><strong><code>GEOSITE</code>（域名规则集组合）：</strong>预先编译的高密度域名集合。分流内核在初始化时将其展开并构建进统一的前缀/后缀查找树。</li>
+              <li><strong><code>IP-CIDR</code> / <code>IP-CIDR6</code>（网段匹配）：</strong>二叉字典树（Patricia Trie）最长前缀匹配，用于划分私有网段（LAN）、内网回环与专用节点。</li>
+              <li><strong><code>GEOIP</code>（地理位置 IP 库）：</strong>基于区间树或多阶基数树索引二分查找，用于国家级/大区级大粗粒度流量归属。</li>
+              <li><strong><code>MATCH</code> / <code>FINAL</code>（保底终结者）：</strong>无条件通配，未被前面任何规则捕获的流量统一收敛至此。</li>
+            </ul>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-3">规则覆盖冲突导致走错线路的根本原因</h3>
+            <p>
+              在实践中，“规则覆盖冲突”通常由以下三类根因造成：
+            </p>
+            <ol class="space-y-2 list-decimal pl-5">
+              <li><strong>父子规则声明顺序倒置：</strong>若将较宽泛的 <code>DOMAIN-SUFFIX,google.com,Proxy-A</code> 写在 <code>DOMAIN,mail.google.com,Proxy-B</code> 之前，短路求值会导致专为邮件定制的 Proxy-B 永远无法被执行。</li>
+              <li><strong>DNS 反查污染引发的 IP 规则早熟：</strong>若域名规则未命中，且配置了 <code>GEOIP,CN,DIRECT</code> 但<strong>未添加防穿透参数</strong>，内核会强行启动本地 DNS 解析该域名。如果解析出被污染的海外 IP，就会瞬间被后续的 <code>GEOIP,CN</code> 误判为直连，造成连接重置。</li>
+              <li><strong>GEOSITE 内置属性标记（Attribute tag）被忽略：</strong>例如 <code>geosite:google@cn</code> 与 <code>geosite:google</code>，若盲目将宽泛集合置顶，其内部包含的少量境内边缘资源将被错误抓往海外节点。</li>
+            </ol>
+
+            <h2 id="section-2" class="font-display text-2xl font-semibold text-ink pt-6">二、传统纯 IP 库 vs 现代 Geosite/GeoIP (MMDB/Dat/SRS)</h2>
+            <p>
+              在早期网络网关中，大多采用纯 IP 列表进行物理边界划分。但进入 Anycast 与 CDN 普及时代，传统纯 IP 方案已完全无法适应动态漂移的网络拓扑。
+            </p>
+
+            <!-- Comparison Table -->
+            <div class="my-6 overflow-x-auto rounded-lg border border-ink/10">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-surface text-ink/70">
+                  <tr class="border-b border-ink/10">
+                    <th class="p-3">对比维度</th>
+                    <th class="p-3">传统纯 IP 库</th>
+                    <th class="p-3">GeoIP (MMDB 格式)</th>
+                    <th class="p-3">Geosite/GeoIP (.dat 格式)</th>
+                    <th class="p-3">现代二进制集 (.mrs / .srs)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/5">
+                  <tr>
+                    <td class="p-3 font-medium">底层数据结构</td>
+                    <td class="p-3 text-ink/70">线性数组 / 简易 Hash</td>
+                    <td class="p-3 text-ink/70">紧凑型 Radix Tree (基数树)</td>
+                    <td class="p-3 text-ink/70">序列化 Protobuf 字典树</td>
+                    <td class="p-3 font-semibold text-accent">Roaring Bitmaps + Radix Tree</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">内存占用</td>
+                    <td class="p-3 text-ink/70">极高（动辄 30-50MB）</td>
+                    <td class="p-3 text-ink/70">中等（10MB ~ 25MB）</td>
+                    <td class="p-3 text-ink/70">较低（按需解压加载）</td>
+                    <td class="p-3 font-semibold text-accent">极低（&lt; 5MB，零内存复制）</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">查询时间复杂度</td>
+                    <td class="p-3 text-ink/70">O(N) 线性膨胀</td>
+                    <td class="p-3 text-ink/70">O(W) 固定深度基数树</td>
+                    <td class="p-3 text-ink/70">O(k) 字符串多叉查找</td>
+                    <td class="p-3 font-semibold text-accent">O(1) ~ O(log N) 硬件位运算加速</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">SNI / 域名感知</td>
+                    <td class="p-3 text-rose-600 font-medium">完全不支持</td>
+                    <td class="p-3 text-rose-600 font-medium">完全不支持</td>
+                    <td class="p-3 text-ink/70">原生支持（子域与属性）</td>
+                    <td class="p-3 font-semibold text-accent">原生支持全元数据（域名/IP/进程）</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">更新与维护机制</td>
+                    <td class="p-3 text-ink/70">离线粗粒度手工维护</td>
+                    <td class="p-3 text-ink/70">商业机构定期维护</td>
+                    <td class="p-3 text-ink/70">开源社区自治，分类精细</td>
+                    <td class="p-3 font-semibold text-accent">全自动 CI/CD 日更，热重载</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="section-3" class="font-display text-2xl font-semibold text-ink pt-6">三、核心分流策略架构与场景化落地 (四层漏斗模型)</h2>
+            <p>
+              企业级与极客级分流系统的黄金法则是：<strong>白名单优先隔离风险，黑名单尽早丢弃杂讯，高价值业务专线独享，不可信流量兜底可控。</strong>
+            </p>
+
+            <h3 class="font-display text-lg font-semibold text-ink pt-2">1. 极速直连层（Direct 白名单）</h3>
+            <p>
+              <strong>痛点：</strong>国内网银（工行、招行、支付宝）、政务系统与本地大厂若误走海外代理，将触发异地登录风控拦截、微信支付强制二次认证，甚至导致银行卡账户受限。<br>
+              <strong>策略：</strong>优先将局域网段（<code>private</code>）、国内核心域名集合（<code>geosite:cn</code>）、网银金融（<code>geosite:bank-cn</code>）置于规则顶部直接 <code>DIRECT</code>。
+            </p>
+
+            <h3 class="font-display text-lg font-semibold text-ink pt-2">2. 隐私黑洞层（REJECT 快速拦截）</h3>
+            <p>
+              <strong>痛点：</strong>各类客户端开屏广告、埋点追踪（Crashlytics、Adjust、Umeng）、遥测采集上报，无谓消耗宝贵的代理流量与带宽，更增加隐私指纹泄露风险。<br>
+              <strong>策略：</strong>白名单之后紧跟 <code>geosite:category-ads-all</code>，采用 <code>REJECT</code>（发送 TCP RST 或 UDP ICMP Port Unreachable）静默丢弃。
+            </p>
+
+            <h3 class="font-display text-lg font-semibold text-ink pt-2">3. 业务专线定向层（Target Policy Routing）</h3>
+            <p>
+              <strong>海外 AI 算力集群（OpenAI / Anthropic / Gemini）：</strong>对机房 IP 实施严格的风控打分，普通数据中心 IP 容易导致 1020 拦截或封号。必须将 <code>geosite:openai</code>、<code>geosite:anthropic</code> 锁定至专用的<strong>原生住宅 ISP 洁净节点组</strong>。<br>
+              <strong>全球流媒体（Netflix / Disney+ / YouTube Premium）：</strong>要求支持跨国版权检验与大带宽并发，定向调度至自动测速选优的流媒体专属线路池。
+            </p>
+
+            <h3 class="font-display text-lg font-semibold text-ink pt-2">4. 兜底防护层（FINAL / MATCH 收敛）</h3>
+            <p>
+              域名与前置 IP 规则均未命中时，使用带 <code>no-resolve</code> 参数的 <code>GEOIP,CN,DIRECT,no-resolve</code> 捕获境内纯 IP 直连；末尾严格使用 <code>MATCH,Final-Fallback</code> 收尾，<strong>严禁将 MATCH 设为 DIRECT</strong>，防止未收录的敏感境外连接以明文裸奔方式发起直连。
+            </p>
+
+            <h2 id="section-4" class="font-display text-2xl font-semibold text-ink pt-6">四、主流开源规则集横向横评与技术选型</h2>
+            <div class="my-6 overflow-x-auto rounded-lg border border-ink/10">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-surface text-ink/70">
+                  <tr class="border-b border-ink/10">
+                    <th class="p-3">规则集项目</th>
+                    <th class="p-3">维护状态</th>
+                    <th class="p-3">细分粒度</th>
+                    <th class="p-3">更新频率</th>
+                    <th class="p-3">性能损耗</th>
+                    <th class="p-3">推荐适用场景</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/5">
+                  <tr>
+                    <td class="p-3 font-medium">MetaCubeX / meta-rules-dat</td>
+                    <td class="p-3 text-emerald-600 font-medium">官方原厂驱动</td>
+                    <td class="p-3 text-ink/70">极精细 (支持 AI/流媒体拆分)</td>
+                    <td class="p-3 text-ink/70">日更</td>
+                    <td class="p-3 font-semibold text-accent">极低 (.mrs 二进制)</td>
+                    <td class="p-3 text-ink/80"><strong>Mihomo / Clash Meta 首选全场景方案</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">Loyalsoldier / v2ray-rules-dat</td>
+                    <td class="p-3 text-emerald-600 font-medium">经典长期维护</td>
+                    <td class="p-3 text-ink/70">中等 (聚焦 gfw / direct / cn)</td>
+                    <td class="p-3 text-ink/70">周更</td>
+                    <td class="p-3 text-ink/70">低</td>
+                    <td class="p-3 text-ink/80">轻量路由器、资源受限设备</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">blackmatrix7 / ios_rule_script</td>
+                    <td class="p-3 text-ink/70">高度活跃</td>
+                    <td class="p-3 text-ink/70">极致微细分 (应用级拆解)</td>
+                    <td class="p-3 text-ink/70">高频日更</td>
+                    <td class="p-3 text-ink/70">中等 (规则数庞大需裁剪)</td>
+                    <td class="p-3 text-ink/80">极客全自动化定制分流、Surge</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">SagerNet / sing-geosite</td>
+                    <td class="p-3 text-emerald-600 font-medium">Sing-box 原生生态</td>
+                    <td class="p-3 text-ink/70">高 (针对出站动作深度优化)</td>
+                    <td class="p-3 text-ink/70">日更</td>
+                    <td class="p-3 font-semibold text-accent">极低 (.srs 二进制)</td>
+                    <td class="p-3 text-ink/80"><strong>Sing-box 生产环境与高性能网关</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">privacy-protection-tools / anti-AD</td>
+                    <td class="p-3 text-ink/70">专精于隐私</td>
+                    <td class="p-3 text-ink/70">专精于广告、追踪与劫持</td>
+                    <td class="p-3 text-ink/70">日更</td>
+                    <td class="p-3 text-ink/70">中等</td>
+                    <td class="p-3 text-ink/80">安全拦截补充规则置于黑洞层</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="section-5" class="font-display text-2xl font-semibold text-ink pt-6">五、分流防穿透与 DNS 防污染实战 (no-resolve 与 Fake-IP)</h2>
+            <p>
+              <strong>规则穿透是如何发生的？</strong>当一个应用发起连接（例如访问未包含在前置域名规则中的 <code>blocked-example.com</code>），分流引擎遍历到后续的 IP 规则链（如 <code>GEOIP,CN,DIRECT</code>）：
+            </p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li>分流内核为了判断该域名所属国家的 IP 归属，<strong>被迫调用本地 DNS 向公网发起解析请求</strong>；</li>
+              <li>本地明文 DNS 报文飞入公网，瞬间触发 GFW 深度包检测与 DNS 投毒污染（返回错误的国外 IP 或保留地址）；</li>
+              <li>获取污染 IP 后，内核甚至可能误命中国内 IP 规则直接转为直连，造成连接被 RST 重置，同时你的出口 IP 在阻断审计日志中暴露。</li>
+            </ul>
+
+            <div class="my-6 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 text-xs md:text-sm text-ink/80 leading-relaxed">
+              <strong class="font-semibold text-amber-600">防穿透黄金铁律：</strong>
+              在分流规则语法中，<code>no-resolve</code> 指令明确要求引擎：“如果进入本条规则时入站请求仍然是域名格式，<strong>严禁触发 DNS 解析尝试获取真实 IP</strong>，直接视作本条规则未命中并立即跳往下一条规则！”以此切断本地明文解析链。
+            </div>
+
+            <h2 id="section-6" class="font-display text-2xl font-semibold text-ink pt-6">六、生产级配置模板代码 (Mihomo / Clash Meta)</h2>
+            <p>
+              以下为完整的生产级配置代码段，融合了 Fake-IP 虚拟池、Nameserver Policy 策略分流与四层漏斗规则链：
+            </p>
+
+            <div class="my-4 overflow-hidden rounded-lg border border-ink/15 bg-ink text-paper text-xs">
+              <div class="flex items-center justify-between border-b border-paper/10 bg-paper/5 px-4 py-2">
+                <span class="font-mono text-paper/70">routing-production-sample.yaml</span>
+                <button type="button" class="copy-code text-paper/70 hover:text-paper" data-code="dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.0/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - 'time.*.com'
+    - '+.pool.ntp.org'
+  nameserver-policy:
+    'geosite:cn,bank-cn,apple':
+      - https://223.5.5.5/dns-query#h3=true
+      - https://doh.pub/dns-query
+  nameserver:
+    - https://223.5.5.5/dns-query
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+
+rule-providers:
+  reject-ads:
+    type: http
+    behavior: domain
+    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs'
+    path: ./rules/reject-ads.mrs
+    interval: 86400
+    format: mrs
+
+  special-ai:
+    type: http
+    behavior: domain
+    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.mrs'
+    path: ./rules/special-ai.mrs
+    interval: 86400
+    format: mrs
+
+rules:
+  # 第一层：广告与隐私黑洞拦截
+  - RULE-SET,reject-ads,REJECT
+  - GEOSITE,private,DIRECT
+  - GEOIP,private,DIRECT,no-resolve
+
+  # 第二层：关键直连白名单 (国内生态/网银/游戏)
+  - GEOSITE,bank-cn,DIRECT
+  - GEOSITE,apple@cn,DIRECT
+  - GEOSITE,cn,DIRECT
+
+  # 第三层：高价值业务与专线定向分流
+  - RULE-SET,special-ai,AI-Dedicated
+  - GEOSITE,google-gemini,AI-Dedicated
+  - GEOSITE,netflix,Streaming-Global
+  - GEOSITE,disney,Streaming-Global
+  - GEOSITE,github,AUTO-FALLBACK
+  - GEOSITE,gfw,AUTO-FALLBACK
+
+  # 第四层：防穿透安全收敛层
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,Final-Fallback">复制代码</button>
+              </div>
+              <pre class="p-4 overflow-x-auto font-mono leading-relaxed"><code>dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.0/16
+  fake-ip-filter:
+    - '*.lan'
+    - '*.local'
+    - 'time.*.com'
+    - '+.pool.ntp.org'
+  nameserver-policy:
+    'geosite:cn,bank-cn,apple':
+      - https://223.5.5.5/dns-query#h3=true
+      - https://doh.pub/dns-query
+  nameserver:
+    - https://223.5.5.5/dns-query
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
+
+rule-providers:
+  reject-ads:
+    type: http
+    behavior: domain
+    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs'
+    path: ./rules/reject-ads.mrs
+    interval: 86400
+    format: mrs
+
+  special-ai:
+    type: http
+    behavior: domain
+    url: 'https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.mrs'
+    path: ./rules/special-ai.mrs
+    interval: 86400
+    format: mrs
+
+rules:
+  # 第一层：广告与隐私黑洞拦截
+  - RULE-SET,reject-ads,REJECT
+  - GEOSITE,private,DIRECT
+  - GEOIP,private,DIRECT,no-resolve
+
+  # 第二层：关键直连白名单 (国内生态/网银/游戏)
+  - GEOSITE,bank-cn,DIRECT
+  - GEOSITE,apple@cn,DIRECT
+  - GEOSITE,cn,DIRECT
+
+  # 第三层：高价值业务与专线定向分流
+  - RULE-SET,special-ai,AI-Dedicated
+  - GEOSITE,google-gemini,AI-Dedicated
+  - GEOSITE,netflix,Streaming-Global
+  - GEOSITE,disney,Streaming-Global
+  - GEOSITE,github,AUTO-FALLBACK
+  - GEOSITE,gfw,AUTO-FALLBACK
+
+  # 第四层：防穿透安全收敛层
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,Final-Fallback</code></pre>
+            </div>
+
+            <h2 id="section-7" class="font-display text-2xl font-semibold text-ink pt-6">七、避坑指南与架构调优</h2>
+            <div class="my-6 rounded-lg border border-red-500/20 bg-red-500/5 p-4 text-xs md:text-sm text-ink/80 leading-relaxed">
+              <strong class="font-semibold text-red-600">核心避坑要点：</strong>
+              <ul class="mt-2 space-y-1.5 list-disc pl-5">
+                <li><strong>严禁在第一条规则前添加过于宽泛的通配规则：</strong>诸如 <code>DOMAIN-KEYWORD,google</code> 这类粗暴规则若置顶，不仅导致访问 <code>google.cn</code> 强制绕路，还会打破后续子域名的精细编排。</li>
+                <li><strong><code>no-resolve</code> 滥用预警：</strong><code>no-resolve</code> 仅适用于防穿透阶段的非核心 IP 兜底规则。如果误将局域网私有网段规则写为 <code>IP-CIDR,192.168.0.0/16,DIRECT,no-resolve</code>，当以域名访问路由器后台时该规则将被跳过，导致路由器管理后台被甩往海外代理。</li>
+                <li><strong>透明网关环境务必开启 UDP 环路拦截：</strong>若在 OpenWrt 部署 TProxy / TUN 模式，务必为 DNS 监听端口设置反环路规则，防止 DNS 请求被自身的 iptables/nftables 捕获进而形成无限死循环。</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Prev / Next Navigation -->
+          <div class="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 pt-6 text-sm">
+            <a href="./post-clash-verge-rev-tutorial.html" class="flex items-center gap-2 text-ink/70 hover:text-ink">
+              <span>← 上一篇：Clash Verge Rev 2026 从零上手到进阶调优全指南</span>
+            </a>
+            <a href="./post-airport-selection-guide.html" class="flex items-center gap-2 text-ink/70 hover:text-ink">
+              <span>下一篇：2026 机场选购终极避坑指南 →</span>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Right Column: Sticky Table of Contents -->
+        <nav aria-label="文章目录" class="hidden lg:sticky lg:top-24 lg:block lg:h-fit lg:max-h-[calc(100vh-7rem)] lg:w-64 lg:shrink-0 lg:self-start lg:overflow-y-auto lg:rounded-lg lg:border lg:border-ink/10 lg:bg-surface lg:p-4">
+          <p class="px-2 text-xs font-semibold uppercase tracking-wide text-ink/70">
+            本文目录
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li>
+              <a href="#section-1" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                一、规则分流引擎底层原理剖析
+              </a>
+            </li>
+            <li>
+              <a href="#section-2" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                二、传统纯 IP 库 vs 现代 Geosite/GeoIP
+              </a>
+            </li>
+            <li>
+              <a href="#section-3" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                三、核心分流策略架构与场景化落地
+              </a>
+            </li>
+            <li>
+              <a href="#section-4" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                四、主流开源规则集横向横评
+              </a>
+            </li>
+            <li>
+              <a href="#section-5" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                五、分流防穿透与 DNS 防污染实战
+              </a>
+            </li>
+            <li>
+              <a href="#section-6" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                六、生产级配置模板代码
+              </a>
+            </li>
+            <li>
+              <a href="#section-7" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                七、避坑指南与架构调优
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
+          </p>
+          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>点击跳转 Telegram 客服</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=client-tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">综合榜单</a></li>
+            <li><a href="./best-value.html" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比排行</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./post.html" class="text-sm text-ink/70 transition-colors hover:text-ink">文章模板</a></li>
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
