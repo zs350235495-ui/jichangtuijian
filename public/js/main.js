@@ -191,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (postSlug) {
         const cleanSlug = postSlug.toLowerCase().replace(/^post-/, '').replace(/\.html$/, '').trim();
         const validSlugs = {
+          'network-nodes-direct-relay-iplc-guide': './post-network-nodes-direct-relay-iplc-guide.html',
           'rule-based-routing-anti-pollution-guide': './post-rule-based-routing-anti-pollution-guide.html',
           'airport-selection-guide': './post-airport-selection-guide.html',
           'clash-verge-rev-tutorial': './post-clash-verge-rev-tutorial.html',
