@@ -27,6 +27,7 @@
 
 ## 核心技术专题与实战研报
 
+- [2026 跨境网络传输协议与骨干专线拓扑全景图鉴](https://jichangtujian.vip/network-protocol-topology-handbook-2026): 深入解析公网直连BGP与IPLC/IEPL内网专线物理拓扑极限，横向评测主流传输协议抗丢包与多路复用调度模型，发布服务商SLA实测基准矩阵与选型决策树。
 - [底层链路全景图鉴：直连、中转隧道与 IPLC/IEPL 专线全景对比](https://jichangtujian.vip/post-network-nodes-direct-relay-iplc-guide.html): 深入解析三大网络架构物理走向与 QoS 整形机制。
 - [全平台规则分流与防污染指南](https://jichangtujian.vip/post-rule-based-routing-anti-pollution-guide.html): 白名单、GeoIP 与 DNS 防投毒分流配置，避免专线流量浪费。
 - [AI 平台高纯净度节点选型](https://jichangtujian.vip/post-chatgpt-claude-ai-nodes.html): 规避 403 阻断与 IP 关联风控的纯净落地选型。
