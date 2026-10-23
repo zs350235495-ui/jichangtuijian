@@ -35,7 +35,8 @@ export default defineConfig({
         compare: resolve(__dirname, 'compare.html'),
         coupons: resolve(__dirname, 'coupons.html'),
         brands: resolve(__dirname, 'brands.html'),
-        sitemap: resolve(__dirname, 'sitemap.html')
+        sitemap: resolve(__dirname, 'sitemap.html'),
+        notFound: resolve(__dirname, '404.html')
       }
     }
   }

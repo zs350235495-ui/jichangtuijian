@@ -3,12 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon-B8VNZ4i-.svg">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
   <meta name="theme-color" content="#a8532f">
   <title>机场图鉴 | 现代化博客与评测框架</title>
   <meta name="description" content="基于极简纸实质感设计的现代博客与评测框架，包含文章库、排行榜、评测卡片与自适应目录。">
   <link rel="canonical" href="https://jichangtujian.vip/">
-  <link rel="stylesheet" crossorigin href="./assets/style-Cv953jjx.css">
+  <link rel="preload" href="./css/style.css" as="style">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Social Graph Meta Tags -->
+  <meta property="og:title" content="机场图鉴 | 现代化博客与评测框架">
+  <meta property="og:description" content="基于极简纸实质感设计的现代博客与评测框架，包含文章库、排行榜、评测卡片与自适应目录。">
+  <meta property="og:url" content="https://jichangtujian.vip/">
+  <meta property="og:image" content="https://jichangtujian.vip/assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="机场图鉴 | 现代化博客与评测框架">
+  <meta name="twitter:description" content="基于极简纸实质感设计的现代博客与评测框架，包含文章库、排行榜、评测卡片与自适应目录。">
+  <meta name="twitter:image" content="https://jichangtujian.vip/assets/logo.png">
+  <!-- Schema.org E-E-A-T Entity Graph -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jichangtujian.vip/#website",
+      "url": "https://jichangtujian.vip/",
+      "name": "机场图鉴",
+      "description": "基于极简纸实质感设计的现代博客与评测框架，包含文章库、排行榜、评测卡片与自适应目录。",
+      "inLanguage": "zh-CN",
+      "publisher": {
+        "@id": "https://jichangtujian.vip/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://jichangtujian.vip/#organization",
+      "name": "机场图鉴评测智库",
+      "url": "https://jichangtujian.vip/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://jichangtujian.vip/assets/logo-mark.svg",
+        "width": 512,
+        "height": 512
+      },
+      "description": "独立客观的全球跨境网络链路评测机构，建立五维网络健康度模型，定期发布底层物理链路审计与节点实测数据。"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jichangtujian.vip/#auditor",
+      "name": "网络测试巡检员",
+      "jobTitle": "资深网络架构评测工程师 (Senior Network Infrastructure Auditor)",
+      "worksFor": {
+        "@id": "https://jichangtujian.vip/#organization"
+      },
+      "description": "专注全球 BGP 多线接入、跨国海缆拓扑、IPLC 内网专线调度与对抗网络拥塞 QoS 优化的资深网络测试工程师。"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://jichangtujian.vip/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "为什么在晚高峰期间普通网络节点丢包严重，而 IPLC 专线依然坚挺？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "普通公网直连或普通中转节点在经过公网国际出入口网关时，必须参与运营商的 QoS 队列排队，晚高峰 20:00 - 23:00 骨干海缆拥塞会导致无差别丢包（常达 15%-40%）。而 IPLC（国际私有租用线路）在境内入口即封装进入运营商私有物理光纤内网，全程不经过公网国际出口，不触发公网流量整形，因此能维持 0 丢包与毫秒级恒定延迟。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "如何辨别假冒的 IPLC 专线或虚假节点？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "真实的 IPLC 专线具备端到端物理光纤直连特征：晚高峰 20:00 - 23:00 进行连续 Ping 测算时，往返抖动标准差（Jitter StdDev）通常小于 1.5ms，丢包率趋近于 0%；通过 MTR 路由追踪，境内入口后直接进入私有内网段直达境外 POP，中间无公网 AS 级跳转。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "为什么访问 ChatGPT 或 Netflix 经常出现 403 阻断或无法解锁？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "主流 AI 与流媒体平台使用 IP 风险数据库（如 IPinfo、Scamalytics、MaxMind）实时识别数据中心广播 IP（Hosting/IDC）。若节点使用被污染或多人共用的机房 IP，将直接触发风控拦截。优质机场通常采用原生住宅 IP（Residential/ISP）或经过严格纯净度洗涤的落地出口，以保障 100% 通过率。"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
 
@@ -16,7 +99,7 @@
   <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
       <a href="./index.html" class="flex items-center gap-2.5">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0iI2E4NTMyZiIvPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzYwIiBmb250LWZhbWlseT0iJ05vdG8gU2FucyBTQycsICdNaWNyb3NvZnQgWWFIZWknLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4MCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2Y3ZjVmMSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+5Zu+PC90ZXh0Pgo8L3N2Zz4=" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <img src="./assets/logo-mark.svg" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
         <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
       </a>
 
@@ -51,9 +134,9 @@
         <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
 
         <!-- Telegram Contact Link -->
-        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="点击跳转 Telegram 客服" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+        <a href="/about.html" target="_blank" rel="noopener noreferrer" aria-label="Telegram 客服" title="关于图鉴与交流" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          <span>TG 客服</span>
+          <span>图鉴交流</span>
         </a>
 
         <!-- GitHub Icon Link -->
@@ -110,7 +193,7 @@
             <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
           </div>
           <div class="mt-2 border-t border-ink/10 pt-2">
-            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+            <a href="/about.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
               <span>Telegram 客服</span>
             </a>
@@ -308,7 +391,7 @@
                 <a href="./rankings.html#item-1" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://123pps01.huanqiutiaff.com/#/?code=j5VBUvw0" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/post.html" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达环球梯官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -381,7 +464,7 @@
                 <a href="./rankings.html#item-2" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://ppsvip01.dalaoyunaff.com/#/?code=Iz1GlCVa" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-2" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达大佬云官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -454,7 +537,7 @@
                 <a href="./rankings.html#item-3" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://pp01.yunjiexianaff.com/#/?code=bp0ZSKBV" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-3" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达云界线官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -527,7 +610,7 @@
                 <a href="./rankings.html#item-4" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://123pp01.liulianyunaff.com/#/?code=MsZP3u7G" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-4" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达榴莲云官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -600,7 +683,7 @@
                 <a href="./rankings.html#item-5" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://pps123.shenxingaff.com/#/?code=6tQ7zHUc" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-5" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达神行加速官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -673,7 +756,7 @@
                 <a href="./rankings.html#item-6" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://ppsvip01.shandianshuaff.com/#/?code=QbLF8tjB" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-6" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达闪电鼠官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -745,7 +828,7 @@
                 <a href="./rankings.html#item-7" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://ddd.jichang.best/#/register?code=nldUZaYc" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-7" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达瞬云官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -799,7 +882,7 @@
                 <a href="./rankings.html#item-8" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://haozevpn.jlyvipaff.com/#/?code=jwCMOvQO" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-8" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达极连云官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -872,7 +955,7 @@
                 <a href="./rankings.html#item-9" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://wep.edgenovaaff.com/#/?code=mLLL6h6F" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-9" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达边缘节点官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -926,7 +1009,7 @@
                 <a href="./rankings.html#item-10" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://fanxiaobin.kuailiaff.com/#/?code=e0cAmK7F" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-10" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达快狸快狸官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -980,7 +1063,7 @@
                 <a href="./rankings.html#item-11" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://everett7623.kosingaff.com/#/?code=sFKKfEYs" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-11" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达可信云官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -1034,7 +1117,7 @@
                 <a href="./rankings.html#item-12" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://pygllc.speedworldaff.cc/#/?code=kcoensXG" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-12" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达速界官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -1088,7 +1171,7 @@
                 <a href="./rankings.html#item-13" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://super.ytjcok.org/#/register?code=poKwFVtv" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-13" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达云图机场官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -1161,7 +1244,7 @@
                 <a href="./rankings.html#item-14" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://kunpengjiasu.com/#/register?code=WPugVZUe" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-14" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达鲲鹏加速官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -1215,7 +1298,7 @@
                 <a href="./rankings.html#item-15" class="btn-secondary text-sm">
                   查看各套餐方案 →
                 </a>
-                <a href="https://gnt001.gntvipaff.cc/#/?code=PQhPFDhO" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
+                <a href="/rankings.html#item-15" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm inline-flex items-center gap-1.5">
                   直达光年梯官网
                   <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -1332,9 +1415,9 @@
           <p class="mt-3 text-sm text-ink/70 leading-relaxed">
             专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
           </p>
-          <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+          <a href="/about.html" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            <span>点击跳转 Telegram 客服</span>
+            <span>关于图鉴与交流</span>
           </a>
         </div>
         <div>
@@ -1365,7 +1448,7 @@
           <ul class="mt-3 space-y-2">
             <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
             <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
-            <li><a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">Telegram 客服</a></li>
+            <li><a href="/about.html" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">图鉴交流与关于</a></li>
             <li><a href="./about.html#privacy" class="text-sm text-ink/70 transition-colors hover:text-ink">隐私政策</a></li>
             <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">免责声明</a></li>
           </ul>
@@ -1381,7 +1464,7 @@
     </div>
   </footer>
   <!-- Floating Telegram Contact Widget -->
-  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="联系 Telegram 客服" title="点击跳转 Telegram 客服" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+  <a href="/about.html" target="_blank" rel="noopener noreferrer" id="tg-float-btn" aria-label="关于图鉴与交流" title="关于图鉴与交流" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
     <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
       <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
     </svg>
