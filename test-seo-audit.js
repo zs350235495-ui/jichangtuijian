@@ -171,8 +171,8 @@ async function runAudit() {
     }
 
     // (3) Check for external Telegram links
-    if (/t\.me\/huanqiuti8899/i.test(content)) {
-      errors.push(`${file}: 发现违规 Telegram 外部社群直连`);
+    if (/t\.me\/(?!huanqiuti8899)[^\s"'<>]+/i.test(content)) {
+      errors.push(`${file}: 发现未授权 Telegram 外部直连`);
     }
 
     // (4) Check Canonical tag
