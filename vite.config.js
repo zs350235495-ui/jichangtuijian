@@ -37,7 +37,8 @@ export default defineConfig({
         coupons: resolve(__dirname, 'coupons.html'),
         brands: resolve(__dirname, 'brands.html'),
         sitemap: resolve(__dirname, 'sitemap.html'),
-        notFound: resolve(__dirname, '404.html')
+        notFound: resolve(__dirname, '404.html'),
+        go: resolve(__dirname, 'go.html')
       }
     }
   }

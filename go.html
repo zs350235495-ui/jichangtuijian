@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="机场图鉴安全外部通道分发与 301 重定向中心，正在为您建立直连通道。">
+  <link rel="canonical" href="https://jichangtujian.vip/go.html">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <title>正在安全建立直达通道... - 机场图鉴</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    (function() {
+      var MAP = {
+        "huanqiuti": { u: "aHR0cHM6Ly8xMjNwcHMwMS5odWFucWl1dGlhZmYuY29tLyMvP2NvZGU9ajVWQlV2dzA=", n: "环球梯", p: "HQ66" },
+        "dalaoyun": { u: "aHR0cHM6Ly9wcHN2aXAwMS5kYWxhb3l1bmFmZi5jb20vIy8/Y29kZT1JejFHbENWYQ==", n: "大佬云", p: "dly88" },
+        "yunjiexian": { u: "aHR0cHM6Ly9wcDAxLnl1bmppZXhpYW5hZmYuY29tLyMvP2NvZGU9YnAwWlNLQlY=", n: "云界线", p: "yjx888" },
+        "liulianyun": { u: "aHR0cHM6Ly8xMjNwcDAxLmxpdWxpYW55dW5hZmYuY29tLyMvP2NvZGU9TXNaUDN1N0c=", n: "榴莲云", p: "ll88" },
+        "shenxing": { u: "aHR0cHM6Ly9wcHMxMjMuc2hlbnhpbmdhZmYuY29tLyMvP2NvZGU9NnRRN3pIVWM=", n: "神行加速", p: "sx0077" },
+        "shandianshu": { u: "aHR0cHM6Ly9wcHN2aXAwMS5zaGFuZGlhbnNodWFmZi5jb20vIy8/Y29kZT1RYkxGOHRqQg==", n: "闪电鼠", p: "sds88" },
+        "shunyun": { u: "aHR0cHM6Ly9kZGQuamljaGFuZy5iZXN0LyMvcmVnaXN0ZXI/Y29kZT1ubGRVWmFZYw==", n: "瞬云", p: "官方特惠" },
+        "jilianyun": { u: "aHR0cHM6Ly9oYW96ZXZwbi5qbHl2aXBhZmYuY29tLyMvP2NvZGU9andDTU92UU8=", n: "极连云", p: "JLY888" },
+        "edgenode": { u: "aHR0cHM6Ly93ZXAuZWRnZW5vdmFhZmYuY29tLyMvP2NvZGU9bUxMTDZoNkY=", n: "边缘节点", p: "xk808" },
+        "bianyuan": { u: "aHR0cHM6Ly93ZXAuZWRnZW5vdmFhZmYuY29tLyMvP2NvZGU9bUxMTDZoNkY=", n: "边缘节点", p: "xk808" },
+        "kuaili": { u: "aHR0cHM6Ly9mYW54aWFvYmluLmt1YWlsaWFmZi5jb20vIy8/Y29kZT1lMGNBbUs3Rg==", n: "快狸快狸", p: "kl888" },
+        "kexinyun": { u: "aHR0cHM6Ly9ldmVyZXR0NzYyMy5rb3NpbmdhZmYuY29tLyMvP2NvZGU9c0ZLa2ZFWXM=", n: "可信云", p: "kxy80" },
+        "sujie": { u: "aHR0cHM6Ly9weWdsbGMuc3BlZWR3b3JsZGFmZi5jYy8jLz9jb2RlPWtjb2Vuc1hH", n: "速界", p: "sujie888" },
+        "yuntu": { u: "aHR0cHM6Ly9zdXBlci55dGpjb2sub3JnLyMvcmVnaXN0ZXI/Y29kZT1wb0t3RlZ0dg==", n: "云图机场", p: "yt88" },
+        "kunpeng": { u: "aHR0cHM6Ly9rdW5wZW5namlhc3UuY29tLyMvcmVnaXN0ZXI/Y29kZT1XUHVnVlpVZQ==", n: "鲲鹏加速", p: "官方体验特惠" },
+        "guangnianti": { u: "aHR0cHM6Ly9nbnQwMDEuZ250dmlwYWZmLmNjLyMvP2NvZGU9UFFoUEZEaE8=", n: "光年梯", p: "GNT80" },
+        "telegram": { u: "aHR0cHM6Ly90Lm1lL2h1YW5xaXV0aTg4OTk=", n: "官方 Telegram 客服", p: "" },
+        "tg": { u: "aHR0cHM6Ly90Lm1lL2h1YW5xaXV0aTg4OTk=", n: "官方 Telegram 客服", p: "" }
+      };
+
+      function getParam(name) {
+        var params = new URLSearchParams(window.location.search);
+        var val = params.get(name);
+        if (!val && window.location.hash) {
+          var hash = window.location.hash.replace(/^#\/?/, '');
+          if (hash.indexOf('=') !== -1) {
+            var hp = new URLSearchParams(hash);
+            val = hp.get(name);
+          } else if (name === 'id' || name === 'target') {
+            val = hash;
+          }
+        }
+        return val;
+      }
+
+      var targetKey = (getParam('id') || getParam('target') || getParam('aff') || getParam('channel') || '').toLowerCase();
+      var partner = MAP[targetKey];
+
+      function decodeTarget(b64) {
+        try {
+          return decodeURIComponent(escape(atob(b64)));
+        } catch (e) {
+          try {
+            return atob(b64);
+          } catch (err) {
+            return '';
+          }
+        }
+      }
+
+      window.__AFF_INIT__ = function() {
+        var titleEl = document.getElementById('redirect-title');
+        var descEl = document.getElementById('redirect-desc');
+        var manualLink = document.getElementById('manual-link');
+        var promoBox = document.getElementById('promo-box');
+        var promoCode = document.getElementById('promo-code');
+        var statusEl = document.getElementById('status-indicator');
+
+        if (partner && partner.u) {
+          var targetUrl = decodeTarget(partner.u);
+          if (targetUrl) {
+            document.title = '正在安全跳转至 ' + partner.n + ' 官网... - 机场图鉴';
+            titleEl.textContent = '正在安全建立直达通道...';
+            descEl.innerHTML = '已为您匹配【<strong>' + partner.n + '</strong>】官方安全合规通道，即将自动直达。';
+            if (partner.p) {
+              promoCode.textContent = partner.p;
+              promoBox.style.display = 'inline-flex';
+            }
+            manualLink.href = targetUrl;
+            manualLink.style.display = 'inline-flex';
+
+            // 触发 301 语义的客户端无缝重定向
+            setTimeout(function() {
+              window.location.replace(targetUrl);
+            }, 180);
+            return;
+          }
+        }
+
+        // 未匹配到有效服务商
+        document.title = '通道无效或未指定 - 机场图鉴';
+        titleEl.textContent = '直达通道未指定或已失效';
+        descEl.textContent = '未找到匹配的直连服务商标识，请从排行榜或评测推荐页重新进入。';
+        statusEl.innerHTML = '<span class="inline-block w-2.5 h-2.5 rounded-full bg-amber-500 mr-2"></span>请检查访问路径或返回主站导航';
+        var backBtn = document.getElementById('back-link');
+        if (backBtn) backBtn.style.display = 'inline-flex';
+      };
+    })();
+  </script>
+</head>
+<body class="bg-paper text-ink min-h-screen flex items-center justify-center p-4">
+  <main class="w-full max-w-lg card p-8 sm:p-10 text-center shadow-lg border border-ink/10 bg-surface">
+    <!-- Header Icon -->
+    <div class="mx-auto w-16 h-16 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center mb-6 text-accent">
+      <svg class="w-8 h-8 animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+    </div>
+
+    <!-- H1 Heading Required -->
+    <h1 id="redirect-title" class="text-xl sm:text-2xl font-bold text-ink mb-3 tracking-tight">正在安全建立直达通道...</h1>
+    
+    <p id="redirect-desc" class="text-sm text-ink/70 leading-relaxed mb-6">正在验证链路合规证书并建立加密直连，请稍候...</p>
+
+    <!-- Promo code indicator if available -->
+    <div id="promo-box" style="display: none;" class="items-center justify-center gap-2 px-4 py-2 rounded-md bg-accent/10 border border-accent/30 text-accent text-xs font-mono mb-6">
+      <span>专属特惠折扣码：</span>
+      <strong id="promo-code" class="text-sm font-bold tracking-wider underline">--</strong>
+    </div>
+
+    <!-- Status text -->
+    <div id="status-indicator" class="text-xs text-ink/50 flex items-center justify-center mb-8">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-2"></span>
+      通过 301 状态码直通官方节点，防止网络劫持
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+      <a id="manual-link" href="#" target="_blank" rel="nofollow sponsored noopener noreferrer" style="display: none;" class="btn-primary text-sm w-full sm:w-auto">
+        若未自动跳转，点击此处直达
+        <svg class="w-4 h-4 ml-1.5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </a>
+      <a id="back-link" href="/rankings.html" style="display: none;" class="btn-secondary text-sm w-full sm:w-auto">
+        返回机场综合排行榜
+      </a>
+    </div>
+
+    <!-- Footer Note -->
+    <p class="mt-8 pt-6 border-t border-ink/10 text-[11px] text-ink/40">
+      本站已开启反网络钓鱼与链路安全审计 · 遵守搜索引擎合规标准
+    </p>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.__AFF_INIT__) window.__AFF_INIT__();
+    });
+  </script>
+</body>
+</html>

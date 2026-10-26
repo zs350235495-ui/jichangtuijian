@@ -4,6 +4,9 @@ Allow: /
 Allow: /css/
 Allow: /js/
 Allow: /assets/
+# AFF Redirection Routes (Allow crawling to read <meta name="robots" content="noindex, nofollow"> without Blocked by robots.txt warnings)
+Allow: /go/
+Allow: /go.html
 Disallow: /api/
 
 # Mainstream AI & Search Engine Crawlers
