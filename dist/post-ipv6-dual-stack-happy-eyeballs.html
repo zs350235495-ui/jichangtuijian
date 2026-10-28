@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+  <meta name="theme-color" content="#a8532f">
+  <title>为什么开启 IPv6 网络反而变慢变卡？双栈路由劣化与 Happy Eyeballs 竞速陷阱深度拆解 | 机场图鉴</title>
+  <meta name="description" content="深度解析开启 IPv6 后网络卡顿延迟暴涨根因！拆解跨境骨干网 IPv4/IPv6 不对称物理绕路、RFC 8305 Happy Eyeballs 竞速机制副作用与代理分流断流排查，提供工业级双栈网络优化指南。">
+  <link rel="canonical" href="https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html">
+  <link rel="preload" href="./css/style.css" as="style">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- Social Graph Meta Tags -->
+  <meta property="og:title" content="为什么开启 IPv6 网络反而变慢变卡？双栈路由劣化与 Happy Eyeballs 竞速陷阱深度拆解 | 机场图鉴">
+  <meta property="og:description" content="深度解析开启 IPv6 后网络卡顿延迟暴涨根因！拆解跨境骨干网 IPv4/IPv6 不对称物理绕路、RFC 8305 Happy Eyeballs 竞速机制副作用与代理分流断流排查，提供工业级双栈网络优化指南。">
+  <meta property="og:url" content="https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html">
+  <meta property="og:image" content="https://jichangtujian.vip/assets/logo.png">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="为什么开启 IPv6 网络反而变慢变卡？双栈路由劣化与 Happy Eyeballs 竞速陷阱深度拆解 | 机场图鉴">
+  <meta name="twitter:description" content="深度解析开启 IPv6 后网络卡顿延迟暴涨根因！拆解跨境骨干网 IPv4/IPv6 不对称物理绕路、RFC 8305 Happy Eyeballs 竞速机制副作用与代理分流断流排查，提供工业级双栈网络优化指南。">
+  <meta name="twitter:image" content="https://jichangtujian.vip/assets/logo.png">
+  <!-- Schema.org E-E-A-T Entity Graph -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html#article",
+      "headline": "为什么开启 IPv6 后网络反而变慢变卡？深度拆解双栈路由劣化、Happy Eyeballs 竞速与跨境节点隐形陷阱",
+      "description": "深入解析开启 IPv6 后网络卡顿延迟暴涨根因！拆解跨境骨干网 IPv4/IPv6 不对称物理绕路、RFC 8305 Happy Eyeballs 竞速机制副作用与代理分流断流排查，提供工业级双栈网络优化指南。",
+      "url": "https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html",
+      "inLanguage": "zh-CN",
+      "datePublished": "2026-10-28T18:00:00+08:00",
+      "dateModified": "2026-10-28T18:00:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "反重力",
+        "url": "https://jichangtujian.vip/about.html"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "机场图鉴评测智库",
+        "url": "https://jichangtujian.vip/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jichangtujian.vip/assets/logo-mark.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "图鉴首页",
+          "item": "https://jichangtujian.vip/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "图鉴档案库",
+          "item": "https://jichangtujian.vip/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "为什么开启 IPv6 网络反而变慢变卡？双栈路由劣化与 Happy Eyeballs 竞速陷阱深度拆解",
+          "item": "https://jichangtujian.vip/post-ipv6-dual-stack-happy-eyeballs.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="min-h-screen bg-paper font-display text-ink antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-ink/10 bg-paper">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <a href="./index.html" class="flex items-center gap-2.5">
+        <img src="./assets/logo-mark.svg" alt="机场图鉴" width="28" height="28" class="h-7 w-7" style="width:28px;height:28px;">
+        <span class="font-display text-xl font-semibold tracking-tight text-ink">机场图鉴</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav aria-label="主导航" class="hidden items-center gap-1 lg:flex">
+        <a href="./rankings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场推荐</a>
+        <a href="./best-value.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">性价比机场</a>
+        <a href="./compare.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场对比</a>
+        <a href="./coupons.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场优惠码</a>
+        <a href="./brands.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场库</a>
+        <a href="./faq.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">机场 FAQ</a>
+        <a href="./airport-warnings.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">跑路预警</a>
+        <a href="./blog.html" class="rounded-md px-3 py-2 text-sm font-semibold text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">博客</a>
+        
+        <!-- Resources Dropdown -->
+        <details class="disclosure group relative">
+          <summary class="flex cursor-pointer items-center gap-1 rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink" aria-haspopup="true" aria-expanded="false">
+            资源
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-ink/70 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" style="width:14px;height:14px;max-width:100%;">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </summary>
+          <div class="absolute left-0 top-full z-20 mt-2 w-48 rounded-lg border border-ink/10 bg-surface p-2 shadow-md">
+            <a href="./downloads.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">客户端下载</a>
+            <a href="./clash-verge.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">Clash Verge 下载</a>
+            <a href="./v2rayn.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">v2rayN 下载</a>
+            <a href="./tools.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">工具</a>
+            <a href="./topics.html" class="block rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">专题</a>
+          </div>
+        </details>
+
+        <a href="./about.html" class="rounded-md px-3 py-2 text-sm text-ink/70 transition-colors hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">关于</a>
+
+        <!-- Telegram Contact Link -->
+        <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer nofollow" aria-label="Telegram 在线客服" title="关于图鉴与交流" class="ml-2 inline-flex items-center gap-1.5 rounded-md border border-accent/30 bg-accent/10 px-2.5 py-1 text-xs font-semibold text-accent transition-all hover:bg-accent hover:text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>图鉴交流</span>
+        </a>
+
+        <!-- GitHub Icon Link -->
+        <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库（在新标签页打开）" title="GitHub 仓库" class="ml-1 flex h-9 w-9 items-center justify-center rounded-md text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink focus-visible:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true" width="20" height="20" style="width:20px;height:20px;max-width:100%;">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <details class="disclosure relative lg:hidden">
+        <summary class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-ink/70 hover:text-ink" aria-label="打开菜单" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20" style="width:20px;height:20px;">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </summary>
+        <div class="absolute right-0 top-full z-20 mt-2 w-56 rounded-lg border border-ink/10 bg-surface p-3 shadow-md">
+          <div class="py-1">
+            <a href="./rankings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场推荐</a>
+          </div>
+          <div class="py-1">
+            <a href="./best-value.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">性价比机场</a>
+          </div>
+          <div class="py-1">
+            <a href="./compare.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场对比</a>
+          </div>
+          <div class="py-1">
+            <a href="./coupons.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场优惠码</a>
+          </div>
+          <div class="py-1">
+            <a href="./brands.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场库</a>
+          </div>
+          <div class="py-1">
+            <a href="./faq.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">机场 FAQ</a>
+          </div>
+          <div class="py-1">
+            <a href="./airport-warnings.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">跑路预警</a>
+          </div>
+          <div class="py-1">
+            <a href="./blog.html" class="block rounded-md px-2 py-2 text-sm font-semibold text-accent bg-accent/5">博客</a>
+          </div>
+          <div class="py-1">
+            <p class="px-2 py-1 text-sm font-medium text-ink/70">资源</p>
+            <div class="ml-2 border-l border-ink/10 pl-2">
+              <a href="./downloads.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">客户端下载</a>
+              <a href="./clash-verge.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">Clash Verge 下载</a>
+              <a href="./v2rayn.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">v2rayN 下载</a>
+              <a href="./tools.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">工具</a>
+              <a href="./topics.html" class="block rounded-md px-2 py-1.5 text-sm text-ink/70 hover:bg-ink/5">专题</a>
+            </div>
+          </div>
+          <div class="py-1">
+            <a href="./about.html" class="block rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">关于</a>
+          </div>
+          <div class="mt-2 border-t border-ink/10 pt-2">
+            <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer nofollow" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-semibold text-accent hover:bg-accent/10">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              <span>Telegram 在线客服</span>
+            </a>
+            <a href="https://github.com/zs350235495-ui/jichangtuijian" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-ink hover:bg-ink/5">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0" fill="currentColor" width="16" height="16" style="width:16px;height:16px;">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1 scroll-mt-24">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="面包屑" class="text-sm text-ink/70">
+        <ol class="flex flex-wrap items-center gap-1.5">
+          <li class="flex items-center gap-1.5">
+            <a href="./index.html" class="transition-colors hover:text-ink">首页</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html" class="transition-colors hover:text-ink">博客</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <a href="./blog.html?cat=reviews" class="transition-colors hover:text-ink">深度评测</a>
+          </li>
+          <li class="flex items-center gap-1.5">
+            <span aria-hidden="true">›</span>
+            <span class="text-ink/80 truncate max-w-xs md:max-w-md" aria-current="page">为什么开启 IPv6 网络反而变慢变卡？双栈路由劣化与 Happy Eyeballs 竞速陷阱深度拆解</span>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- Layout: Main Article + Right Sticky TOC -->
+      <div class="mt-8 flex gap-12">
+
+        <!-- Left Column: Article -->
+        <article class="min-w-0 max-w-3xl flex-1">
+          <!-- Category Badge -->
+          <span class="rounded-full border border-accent/40 px-2.5 py-1 text-xs font-medium text-accent">
+            网络架构手记
+          </span>
+
+          <!-- Article Title -->
+          <h1 class="font-display mt-4 text-3xl font-semibold text-ink md:text-4xl leading-tight">
+            为什么开启 IPv6 后网络反而变慢变卡？深度拆解双栈路由劣化、Happy Eyeballs 竞速与跨境节点隐形陷阱
+          </h1>
+
+          <!-- Meta Bar -->
+          <div class="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink/70">
+            <a href="./about.html" class="hover:text-ink hover:underline font-medium">反重力</a>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-10-28">发布于 2026年10月28日</time>
+            <span aria-hidden="true">·</span>
+            <span>预计阅读 10 分钟 (2400 字)</span>
+          </div>
+
+          <!-- Tags List -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#IPv6变慢排查</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#HappyEyeballs</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#双栈路由</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#跨境BGP绕路</a>
+            <a href="./blog.html" class="rounded-full border border-ink/10 px-2.5 py-0.5 text-xs text-ink/70 hover:border-ink/30">#代理调优</a>
+          </div>
+
+          <!-- Notice Callout Box -->
+          <div class="mt-6 mb-8 rounded-lg border border-accent/30 bg-accent/5 px-4 py-3.5 text-sm text-ink/80 leading-relaxed">
+            <div class="flex items-start gap-2">
+              <svg class="h-4 w-4 mt-0.5 shrink-0 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>
+                <strong>架构师核心手记：</strong>在网络工程实践中，用户频繁遭遇“开启 IPv6 后网页白屏 3 秒、跨境节点频繁断流、联机游戏延迟翻倍”的反常现象。本文以底层协议与双栈路由工程视角，拆解骨干网对等互联的非对称物理鸿沟与 RFC 8305 竞速算法副作用，并给出工业级客户端排查与决策闭环。
+              </span>
+            </div>
+          </div>
+
+          <!-- Article Prose Body -->
+          <div class="article-content mt-8 text-ink/85 leading-relaxed text-base space-y-6">
+            
+            <p>
+              在网络工程实践与极客社群中，IPv6 一直被赋予无数光环：百亿级公网寻址空间、彻底根除 NAT 转发的算力与状态表开销、精简报头处理逻辑……随着国内各大 ISP 在光猫与接入网侧全面推行双栈（Dual-Stack），不少开发者与网络重度用户第一时间在家庭路由器上启用了 IPv6 SLAAC/DHCPv6。
+            </p>
+            <p>
+              然而，随之而来的反常网络体验却屡见不鲜：<strong>访问境外技术站点时首屏加载往往卡顿 3 秒以上、多人在线游戏延迟毫无预警地翻倍暴涨、原本稳定的代理中继节点频繁出现 TCP 重置或掉线。</strong>
+            </p>
+            <p>
+              这并非错觉，更非本地终端配置失误。<strong>IPv6 并不天然代表更快。</strong> 在全球尤其是跨国互联网拓扑中，IPv6 基础设施的对等互联（Peering）与物理路由调度，与高度商业成熟化的 IPv4 相比依然存在巨大的<strong>结构性不对称劣化</strong>。
+            </p>
+
+            <h2 id="section-1" class="font-display text-2xl font-semibold text-ink pt-4">一、跨境骨干网的物理鸿沟：IPv4 与 IPv6 的不对称路由</h2>
+            <p>
+              许多用户默认一个直觉假设：“既然是同一家运营商的物理光纤，IPv4 走什么路径，IPv6 也必然走什么路径。”但在 BGP 动态路由与跨自治系统（AS）互联层面，这一假设完全不成立。
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">1. 商业互联与物理绕路机理</h3>
+            <p>
+              IPv4 历经三十余年的商业运作，各大 Tier 1/Tier 2 运营商之间已经建立了错综复杂且高度优化的对等互联协议（Peering SLA）以及昂贵的直连商业专线（如电信 CN2 GIA/AS4809、联通 AS9929/AS10099、移动 CMIN2 等）。这些链路具备严格的 QoS 优先级与定向回国路由。
+            </p>
+            <p>
+              而在 IPv6 侧，绝大多数跨国流量依然依赖<strong>基础骨干网的公共对等点（Free Peering）</strong>。由于历史结算协议、商业博弈及设备升级成本等原因，优质的高 SLA 跨国链路往往缺乏对应规格的 IPv6 路由注入。这导致了极其夸张的<strong>跨境 IPv6 绕路现象</strong>：
+            </p>
+
+            <div class="my-4 rounded-lg bg-surface p-4 text-xs font-mono leading-relaxed border border-ink/10">
+              <div class="text-ink/60 mb-1">// 典型 IPv4 优质直连路径</div>
+              <div class="text-accent">本地终端 (AS4134) -&gt; 广州/上海出口 -&gt; (直连海缆 35ms) -&gt; 香港/日本节点 (总延迟 ~45ms)</div>
+              <div class="text-ink/60 mt-3 mb-1">// 同一运营商 IPv6 畸形绕路路径</div>
+              <div class="text-rose-600">本地终端 (AS4134 v6) -&gt; 北京出口 -&gt; 跨太平洋海缆 (150ms) -&gt; 美国西海岸骨干网 -&gt; 跨大西洋海缆 (80ms) -&gt; 欧洲法兰克福互联中心 (40ms) -&gt; 折返亚洲目标 (120ms) (总延迟 ~390ms)</div>
+            </div>
+
+            <p>
+              即使目标服务器物理位于距离中国大陆极近的中国香港、东京或新加坡，你的 IPv6 数据包也完全可能在太平洋与大西洋上空做一次“环球旅行”，网络变慢甚至严重丢包自然不可避免。
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">2. 国际出口带宽配比与“高峰期静默下坠”</h3>
+            <p>
+              除了拓扑绕路，国际出口的带宽容量与拥塞控制差异同样致命：
+            </p>
+
+            <!-- Comparison Table -->
+            <div class="my-6 overflow-x-auto rounded-lg border border-ink/10">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-surface text-ink/70">
+                  <tr class="border-b border-ink/10">
+                    <th class="p-3">核心维度</th>
+                    <th class="p-3">国际出口 IPv4 链路</th>
+                    <th class="p-3">国际出口 IPv6 链路</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/5">
+                  <tr>
+                    <td class="p-3 font-medium">承载结构</td>
+                    <td class="p-3 text-ink/70">分级明确（普通 163 vs 商业高优先级优化专线）</td>
+                    <td class="p-3 text-ink/70">绝大部分混跑在普通骨干网的公共 IPv6 通道中</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">对等互联带宽冗余</td>
+                    <td class="p-3 text-ink/70">长期高负荷扩容，各 ISP 互联带宽充沛</td>
+                    <td class="p-3 text-rose-600 font-medium">跨国 Peering 带宽配比严重不足，冗余度低</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">晚高峰 QoS 行为</td>
+                    <td class="p-3 text-ink/70">商业流量优先，普通通道丢包但仍有保底传输</td>
+                    <td class="p-3 text-rose-600 font-medium">极易发生尾部丢弃（Tail Drop），整段静默下坠</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">MTU 黑洞敏感度</td>
+                    <td class="p-3 text-ink/70">路径 MTU 较为稳定，NAT 网关多有 MSS Clamping</td>
+                    <td class="p-3 text-ink/70">缺少 Fragment 报头机制，ICMPv6 被阻断时直接假死</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              在晚高峰（20:00 - 23:30）网络拥塞期间，运营商的跨国 IPv6 出口往往最早发生严重的缓存溢出。此时链路丢包率可能从白天的 0.5% 瞬间暴涨至 30% 以上，而此时同链路的 IPv4 可能仅有轻微抖动。
+            </p>
+
+            <h2 id="section-2" class="font-display text-2xl font-semibold text-ink pt-6">二、Happy Eyeballs 竞速算法（RFC 8305）的副作用：延迟成倍拉长</h2>
+            <p>
+              为了平滑过渡到双栈互联网，IETF 制定了 <strong>Happy Eyeballs（双栈快速回退竞速机制，RFC 6555 及升级版 RFC 8305）</strong>。它的设计初衷是在客户端同时发起 IPv6 与 IPv4 连接尝试，避免单一协议栈故障导致用户长期白屏。
+            </p>
+            <p>
+              然而，在跨国网络这种高延迟、高丢包、劣质路由的特殊拓扑中，Happy Eyeballs 的算法机制往往反而变成了“首屏卡顿 3 秒”的直接元凶。
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">1. Happy Eyeballs RFC 8305 核心执行时序</h3>
+            <p>
+              RFC 8305 规范要求优先青睐（Favor）IPv6。标准建议的算法时序如下：
+            </p>
+            <ol class="space-y-2 list-decimal pl-5">
+              <li><strong>DNS 并发解析：</strong>系统解析器同时向 DNS 服务器请求 <code>A</code> 记录（IPv4）与 <code>AAAA</code> 记录（IPv6）。</li>
+              <li><strong>IPv6 优先发起：</strong>当 AAAA 解析成功返回后，协议栈立即向 IPv6 地址发起第一个 TCP SYN 握手包。</li>
+              <li><strong>连接尝试延迟（Connection Attempt Delay）：</strong>算法启动一个计时器（推荐值通常为 <strong>250ms ~ 300ms</strong>）。在此期间，系统<strong>暂停</strong>发起 IPv4 SYN，静默等待 IPv6 握手响应。</li>
+              <li><strong>竞速回退：</strong>若在 250ms 内未收到 IPv6 SYN-ACK，算法才允许向 IPv4 地址发起第二个 TCP SYN。</li>
+              <li><strong>胜者锁定：</strong>率先完成三次握手（收到 SYN-ACK）的连接被用于传输 HTTP 载荷，失败或落后的另一条连接被 RST 销毁。</li>
+            </ol>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">2. 为什么导致“网页加载前卡顿 3 秒”？</h3>
+            <p>
+              在本地至目标链路中，如果跨境 IPv6 存在严重的抖动或丢包，Happy Eyeballs 会陷入极其尴尬的恶性循环：
+            </p>
+            <ul class="space-y-2 list-disc pl-5">
+              <li><strong>延迟垫底：</strong>每次发起新域名的 TCP 连接时，算法均被强制垫入 250ms~300ms 的无谓等待；</li>
+              <li><strong>半开连接与重试：</strong>如果 IPv6 SYN 在绕路链路中发生丢包，系统 TCP 协议栈会执行退避重传（初始 RTO 通常为 1s）。部分不严格遵循 RFC 8305 的浏览器或操作系统底层网络库，可能会等待完整的 TCP 握手失败（3 秒以上）才将连接降级至 IPv4；</li>
+              <li><strong>页面资源碎片化并发：</strong>现代 Web 页面包含数十个来自不同第三方 CDN 域名的 JS、CSS 与图片资源。若浏览器对每个跨域连接都在 IPv6 劣质链路上反复尝试与超时回退，累计的首屏渲染时间（TTFB / FCP）就会从正常的几百毫秒飙升至数秒。</li>
+            </ul>
+
+            <h2 id="section-3" class="font-display text-2xl font-semibold text-ink pt-6">三、代理与复杂分流环境下的 IPv6 隐形陷阱</h2>
+            <p>
+              当引入代理客户端（Clash Verge、Sing-box、Surge、Loon 等）时，系统网络栈被 TUN/TAP 虚拟网卡或系统代理接管，双栈路由的复杂性呈指数级上升。
+            </p>
+
+            <h3 class="font-display text-lg font-semibold text-ink pt-2">1. 节点接入端的 IPv6 污染与握手阻断</h3>
+            <p>
+              多数商业加速节点的接入端通过域名提供解析。若客户端解析该域名得到了节点服务器的 IPv6 地址并优先连接，而你本地运营商至节点机房的 IPv6 路由极其恶劣或存在阻断，<strong>代理客户端就会在此节点上频繁经历重连与超时，造成全局网络彻底“假死”。</strong>
+            </p>
+
+            <h3 class="font-display text-lg font-semibold text-ink pt-2">2. 落地出口端的非对称风控与 IP 欺诈惩罚</h3>
+            <p>
+              许多 VPS 厂商分配的 IPv6 段（如 <code>/64</code> 网段）往往因缺乏有效监管，被大量用于自动化爬虫或恶意行为，导致各大知名互联网服务商（Google、Cloudflare、Netflix 等）对该 IPv6 C 段施加极高的风控评级。节点从 IPv6 出站极易触发频繁的 CAPTCHA 人机验证、403 Access Denied，甚至导致账号被标红。
+            </p>
+
+            <h2 id="section-4" class="font-display text-2xl font-semibold text-ink pt-6">四、双栈网络路由劣化排查与落地调优指南</h2>
+            <p>
+              要解决双栈网络带来的负向收益，必须建立一套量化诊断工具链，并根据应用场景实施精准分流策略。
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">1. 双栈链路精准诊断实操</h3>
+            <p>
+              不要依赖普通的单向 Ping，必须使用双栈 MTR 与路由追踪工具对比真实跳数与延迟跃迁点：
+            </p>
+
+            <div class="my-4 rounded-lg bg-surface p-4 text-xs font-mono leading-relaxed border border-ink/10">
+              <div class="text-ink/60 mb-1"># 测试 IPv4 路由拓扑</div>
+              <div>mtr -4 -rw -c 50 target.example.com</div>
+              <div class="text-ink/60 mt-3 mb-1"># 测试 IPv6 路由拓扑</div>
+              <div>mtr -6 -rw -c 50 target.example.com</div>
+            </div>
+
+            <p>
+              <strong>排查研判原则：</strong>观察 IPv6 路由中跳出境内骨干节点后的首个境外 IP。若出现 <code>ash-b1.ip6.gtt.net</code>、<code>sjc-b21.ip6.telia.net</code> 等美国西海岸/东海岸路由标识，而目标地址在亚洲，可百分之百判定为<strong>严重跨洋绕路</strong>。若 IPv6 的 Packet Loss &gt; 5% 且 RTT 超过 IPv4 的 1.5 倍，该链路应果断降级。
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">2. 代理客户端最佳实践配置</h3>
+            <p>
+              在跨境加速与代理环境中，最稳妥的工程策略是<strong>“入站隔离，出站可控”</strong>。
+            </p>
+
+            <h4 class="font-display text-base font-semibold text-ink pt-1">A. Clash 内核（Meta / Mihomo）配置规范</h4>
+            <div class="my-3 rounded-lg bg-surface p-4 text-xs font-mono leading-relaxed border border-ink/10">
+              <pre><code># 1. 禁用节点自身的 IPv6 域名解析，强制通过 IPv4 连接中继节点
+ipv6: false
+
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false                  # 彻底关闭本地客户端对境内外域名的 AAAA 解析
+  prefer-h3: false
+  enhanced-mode: fake-ip      # 配合 fake-ip，将连接决策完全交由远程节点处理
+  fake-ip-range: 198.18.0.1/16
+
+# 2. 若必须使用 IPv6，可通过 fallback-filter 过滤境外回包
+fallback-filter:
+  geoip: true
+  geoip-code: CN
+  ipcidr:
+    - 2400::/12               # 过滤境外的 IPv6 回包</code></pre>
+            </div>
+
+            <h4 class="font-display text-base font-semibold text-ink pt-1">B. Sing-box 核心配置规范</h4>
+            <div class="my-3 rounded-lg bg-surface p-4 text-xs font-mono leading-relaxed border border-ink/10">
+              <pre><code>{
+  "dns": {
+    "strategy": "ipv4_only",
+    "servers": [
+      {
+        "tag": "remote_dns",
+        "address": "tls://1.1.1.1",
+        "detour": "proxy_node"
+      }
+    ]
+  },
+  "route": {
+    "auto_detect_interface": true,
+    "final": "direct"
+  }
+}</code></pre>
+            </div>
+            <p>
+              通过指定 <code>"strategy": "ipv4_only"</code>，彻底切断应用层触发 RFC 8305 竞速超时的可能，从根源上消灭首屏加载卡顿。
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-ink pt-2">3. 双栈场景决策矩阵：何时开启？何时强制禁用？</h3>
+
+            <!-- Decision Table -->
+            <div class="my-6 overflow-x-auto rounded-lg border border-ink/10">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-surface text-ink/70">
+                  <tr class="border-b border-ink/10">
+                    <th class="p-3">应用场景</th>
+                    <th class="p-3">推荐策略</th>
+                    <th class="p-3">核心技术原因</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-ink/5">
+                  <tr>
+                    <td class="p-3 font-medium">家庭 NAS / 远程桌面 / P2P 下载</td>
+                    <td class="p-3 font-semibold text-emerald-600">开启 IPv6</td>
+                    <td class="p-3 text-ink/70">获取独立全球单播公网地址，无需进行复杂的 NAT 穿透打洞，P2P 连接成功率提升 80% 以上。</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">国内主流 App / 视频流媒体</td>
+                    <td class="p-3 font-semibold text-accent">双栈共存默认</td>
+                    <td class="p-3 text-ink/70">国内各大云厂商与 CDN（阿里云、腾讯云等）对三大运营商的 IPv6 骨干互联优化已基本对齐 IPv4，体验平滑。</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">国际联机游戏（Steam/PSN/Xbox）</td>
+                    <td class="p-3 font-semibold text-rose-600">强制 IPv4</td>
+                    <td class="p-3 text-ink/70">国际游戏服务器大多部署于境外，IPv6 极易遭遇恶性跨洋绕路，导致游戏内 Ping 暴涨并引发丢包抖动。</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-medium">代理分流与加速客户端</td>
+                    <td class="p-3 font-semibold text-rose-600">强制 IPv4 (ipv4_only)</td>
+                    <td class="p-3 text-ink/70">根除 Happy Eyeballs 的握手等待回退超时，保障节点落地 IP 的信誉纯净度，杜绝跨境断流。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="section-5" class="font-display text-2xl font-semibold text-ink pt-6">五、总结：走出“协议升级即网络优化”的认知误区</h2>
+            <p>
+              在计算机网络工程中，<strong>协议的先进性（Architecture）永远不能替代物理拓扑与商业对等（Topology &amp; Peering）的现实基石。</strong>
+            </p>
+            <p>
+              IPv6 在报头设计、寻址灵活性和 NAT 消除上的确代表着未来，但在当下全球复杂的跨境网络博弈与基础设施沉淀中，它的跨国互联通道依然是一块尚未完全平整的“非对称试验场”。当你在家庭路由或代理工具中盲目开启 IPv6 时，实际上是将自己的网络流量置于一个缺乏冗余保障、动辄绕行半个地球的链路上，并承受 Happy Eyeballs 算法在握手阶段强加的延迟惩罚。
+            </p>
+            <p>
+              理性的网络架构师从不迷信版本号。深入理解 BGP 路由的物理路径，利用工具诊断链路质量，并在不同网络协议栈之间做出精准的分流隔离，才是保障现代网络高吞吐、低延迟与高可用性的唯一科学路径。
+            </p>
+
+          </div>
+
+          <!-- Bottom Action Buttons / Nav -->
+          <div class="mt-12 flex flex-wrap items-center justify-between gap-4 border-t border-ink/10 pt-6">
+            <a href="./blog.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-ink/70 hover:text-accent">
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"></path>
+              </svg>
+              返回文章库
+            </a>
+            <a href="./rankings.html" class="inline-flex items-center gap-1.5 rounded-md bg-accent px-4 py-2 text-sm font-medium text-paper transition-all hover:bg-accent/90">
+              查看 2026 稳定网络节点测评
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- Right Column: Sticky Table of Contents -->
+        <nav aria-label="文章目录" class="hidden lg:sticky lg:top-24 lg:block lg:h-fit lg:max-h-[calc(100vh-7rem)] lg:w-64 lg:shrink-0 lg:self-start lg:overflow-y-auto lg:rounded-lg lg:border lg:border-ink/10 lg:bg-surface lg:p-4">
+          <p class="px-2 text-xs font-semibold uppercase tracking-wide text-ink/70">
+            本文目录
+          </p>
+          <ul class="mt-2 space-y-1">
+            <li>
+              <a href="#section-1" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                一、跨境骨干网不对称物理路由
+              </a>
+            </li>
+            <li>
+              <a href="#section-2" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                二、Happy Eyeballs 竞速算法副作用
+              </a>
+            </li>
+            <li>
+              <a href="#section-3" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                三、代理环境下的 IPv6 隐形陷阱
+              </a>
+            </li>
+            <li>
+              <a href="#section-4" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                四、排查诊断与落地调优指南
+              </a>
+            </li>
+            <li>
+              <a href="#section-5" class="toc-link block truncate rounded-md px-2 py-1.5 text-xs leading-snug text-ink/70 transition-colors hover:bg-ink/5 hover:text-ink">
+                五、架构师手记与认知总结
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-ink/10 bg-paper">
+    <div class="mx-auto max-w-6xl px-6 py-14">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div class="col-span-2 md:col-span-2">
+          <p class="font-display text-lg font-semibold text-ink">机场图鉴</p>
+          <p class="mt-3 text-sm text-ink/70 leading-relaxed">
+            专注真实体验与长期跟踪：好的地方说好，容易踩坑的地方不藏着掖着，提供清晰、客观、值得参考的技术评测与使用经验分享。
+          </p>
+          <a href="/about.html" target="_blank" rel="noopener noreferrer" class="mt-4 inline-flex items-center gap-2 rounded-md border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-colors hover:bg-accent hover:text-paper">
+            <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 fill-current" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span>关于图鉴与交流</span>
+          </a>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">内容</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./blog.html" class="text-sm text-ink/70 transition-colors hover:text-ink">全部博客</a></li>
+            <li><a href="./blog.html?cat=reviews" class="text-sm text-ink/70 transition-colors hover:text-ink">深度评测</a></li>
+            <li><a href="./blog.html?cat=client-tutorials" class="text-sm text-ink/70 transition-colors hover:text-ink">实用教程</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">榜单</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./rankings.html" class="text-sm text-ink/70 transition-colors hover:text-ink">综合榜单</a></li>
+            <li><a href="./best-value.html" class="text-sm text-ink/70 transition-colors hover:text-ink">性价比排行</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">资源</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./post.html" class="text-sm text-ink/70 transition-colors hover:text-ink">文章模板</a></li>
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">常见问题</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-ink">关于与政策</p>
+          <ul class="mt-3 space-y-2">
+            <li><a href="./about.html" class="text-sm text-ink/70 transition-colors hover:text-ink">关于本站</a></li>
+            <li><a href="./sitemap.html" class="text-sm text-ink/70 transition-colors hover:text-ink">网站地图</a></li>
+            <li><a href="/about.html" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent transition-colors hover:underline">图鉴交流与关于</a></li>
+            <li><a href="./about.html#terms" class="text-sm text-ink/70 transition-colors hover:text-ink">使用条款</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ink/10 pt-6 text-sm text-ink/70">
+        <p>&copy; 2026 机场图鉴. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Telegram Contact Widget -->
+  <a href="https://t.me/huanqiuti8899" target="_blank" rel="noopener noreferrer nofollow" id="tg-float-btn" aria-label="关于图鉴与交流" title="关于图鉴与交流" class="fixed bottom-20 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-accent text-paper shadow-md transition-all duration-200 hover:scale-110 hover:shadow-lg focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5 fill-current" aria-hidden="true">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  </a>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" type="button" aria-label="返回顶部" class="fixed bottom-6 right-6 z-30 hidden h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-surface text-ink shadow-md transition-all hover:border-accent hover:text-accent">
+    <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <script src="./js/main.js" defer></script>
+</body>
+</html>

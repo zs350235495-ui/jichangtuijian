@@ -22,6 +22,7 @@ export default defineConfig({
         postEcommerce: resolve(__dirname, 'post-cross-border-ecommerce-network.html'),
         postSoftRouter: resolve(__dirname, 'post-soft-router-openclash-setup.html'),
         postTroubleshooting: resolve(__dirname, 'post-network-latency-packet-loss-troubleshooting.html'),
+        postIpv6DualStack: resolve(__dirname, 'post-ipv6-dual-stack-happy-eyeballs.html'),
         networkProtocolHandbook: resolve(__dirname, 'network-protocol-topology-handbook-2026.html'),
         rankings: resolve(__dirname, 'rankings.html'),
         faq: resolve(__dirname, 'faq.html'),
