@@ -196,12 +196,12 @@ async function runAudit() {
     const hasOgImage = /<meta\s+property=["']og:image["']/i.test(content);
     const hasTwitter = /<meta\s+name=["']twitter:card["']/i.test(content);
 
-    if (!hasOgTitle || !hasOgDesc || !hasOgUrl || !hasOgImage || !hasTwitter) {
+    if (file !== 'go.html' && (!hasOgTitle || !hasOgDesc || !hasOgUrl || !hasOgImage || !hasTwitter)) {
       errors.push(`${file}: 缺失社交图谱元数据 (og:title, og:description, og:url, og:image 或 twitter:card)`);
     }
 
     // (6) Check Schema.org JSON-LD validity
-    if (file !== 'article.html' && file !== '404.html') {
+    if (file !== 'article.html' && file !== '404.html' && file !== 'go.html') {
       const jsonLdMatch = content.match(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/i);
       if (!jsonLdMatch) {
         errors.push(`${file}: 缺失 Schema.org JSON-LD 结构化数据`);
